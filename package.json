@@ -1,0 +1,23 @@
+{
+  "name": "snippets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radiorz/snippets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radiorz/snippets/issues"
+  },
+  "homepage": "https://github.com/radiorz/snippets#readme",
+  "dependencies": {
+    "glob": "^8.0.3"
+  }
+}
