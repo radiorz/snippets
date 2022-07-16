@@ -17,10 +17,10 @@ files.forEach((file) => {
     language: filename,
     path: `./snippets/${filename}.json`,
   });
+  // 复制 build 文件 到 vscode-extension
+  fs.copyFileSync(file, `./vscode-extension/snippets/${filename}.json`);
 });
 console.log(`packageJson`, packageJson.contributes.snippets);
-// 复制 build 文件 到 vscode-extension
-
 // 将 packageJson写回到文件中
 const version = dayjs().format("YYYY.M.DD");
 packageJson.version = version;
