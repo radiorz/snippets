@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "vsce package",
-    "install": "yarn build && code --install-extension vue-vscode-snippets-$npm_package_version.vsix"
+    "install": "code --install-extension tikkhun-vscode-snippets-$npm_package_version.vsix"
   },
   "contributes": {
     "snippets": [
