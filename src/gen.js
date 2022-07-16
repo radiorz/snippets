@@ -11,17 +11,23 @@ const isArray = (a) => Array.isArray(a);
   };
   console.log(`files`, files);
   files.forEach((file) => {
-    const snippet = require(path.join("../", file));
-    snippet.body = snippet.body.split("\n");
-    let { key, type, ...rest } = snippet;
-    if (!key) key = path.basename(file, ".js");
-    console.log(`key,type,rest`, key, type, rest);
-    if (isString(type)) snippets[type][key] = rest;
-    else if (isArray(type)) {
-      type.forEach((t) => {
-        if (!snippets[t]) snippets[t] = {};
-        snippets[t][key] = rest;
-      });
+    try {
+      const snippet = require(path.join("../", file));
+      if (!snippet) return;
+
+      snippet.body = snippet.body.split("\n");
+      let { key, type, ...rest } = snippet;
+      if (!key) key = path.basename(file, ".js");
+      // console.log(`key,type,rest`, key, type, rest);
+      if (isString(type)) snippets[type][key] = rest;
+      else if (isArray(type)) {
+        type.forEach((t) => {
+          if (!snippets[t]) snippets[t] = {};
+          snippets[t][key] = rest;
+        });
+      }
+    } catch (error) {
+      console.warn(`error`, file, error);
     }
   });
   Object.entries(snippets).forEach(([language, snippets]) => {

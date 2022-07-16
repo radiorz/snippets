@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "gen": "node ./src/gen.js",
-    "publish": "powershell ./src/publish.ps1"
+    "push": "powershell ./src/publish.ps1",
+    "post": "yarn gen && yarn push"
   },
   "repository": {
     "type": "git",

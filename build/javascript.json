@@ -45,10 +45,11 @@
     "prefix": [
       "!fh"
     ],
-    "description": "\n/**\n * @author $AUTHOR\n * @todo\n * \n * @done\n * @example\n",
+    "description": "\n/**\n * @author \n * @desc $1\n * @todo\n * \n * @done\n * @example\n",
     "body": [
       "/**",
-      " * @author $AUTHOR",
+      " * @author ",
+      " * @desc $1",
       " * @todo",
       " * ",
       " * @done",
@@ -121,6 +122,60 @@
       "})"
     ]
   },
+  "react_flat_list": {
+    "prefix": [
+      "!flatlist"
+    ],
+    "description": "react_flat_list",
+    "body": [
+      "(",
+      "  <FlatList",
+      "      data={$data}",
+      "      keyExtractor={(item, index) => index}",
+      "      renderItem={({ item }) => (",
+      "        <>",
+      "          $2",
+      "        </>",
+      "      )}",
+      "    />",
+      ")"
+    ]
+  },
+  "rn_func_component": {
+    "prefix": [
+      "!snippet"
+    ],
+    "description": "",
+    "body": [
+      ""
+    ]
+  },
+  "snippet": {
+    "prefix": [
+      "!snippet"
+    ],
+    "description": "\nconst body = ``\nconst description = \"\";\n\nmodule.exports = {\n  prefix: [\"!snippet\"],\n  type: [\"javascript\"],\n  description: description || body,\n  body: body.trim(),\n};\n\n\n\n",
+    "body": [
+      "const body = ``",
+      "const description = \"\";",
+      "",
+      "module.exports = {",
+      "  prefix: [\"!snippet\"],",
+      "  type: [\"javascript\"],",
+      "  description: description || body,",
+      "  body: body.trim(),",
+      "};"
+    ]
+  },
+  "time_version": {
+    "prefix": [
+      "!tv"
+    ],
+    "body": [
+      "\"$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE\""
+    ],
+    "description": "今天日期"
+  },
   "try_catch": {
     "prefix": [
       "trycc"
@@ -132,6 +187,52 @@
       "}catch(err){",
       "  $2",
       "}"
+    ]
+  },
+  "vue2_component": {
+    "prefix": [
+      "!vue2"
+    ],
+    "description": "vue2",
+    "body": [
+      "",
+      "<!--",
+      "* @FileDescription: ${1:该文件的描述信息}",
+      "* @Date: $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+      "* TODO:",
+      "* [] ${2}",
+      "-->",
+      "",
+      "<template>",
+      "  <div>",
+      "  </div>",
+      "</template>",
+      "",
+      "<script>",
+      "export default {",
+      "  // 组件名",
+      "  name: '${2:Demo}',",
+      "  components: {},",
+      "  // filters:{},",
+      "  // mixins:[],",
+      "  // props: {},",
+      "  data(){",
+      "    return{",
+      "      ",
+      "    }",
+      "  },",
+      "  // 组件方法",
+      "  // computed:{},",
+      "  // watch:{},",
+      "  // created(){},",
+      "  methods: {},",
+      "}",
+      "</script> ",
+      "",
+      "<style lang=\"scss\" scoped>",
+      "",
+      "</style>",
+      ""
     ]
   },
   "vue2_mixin": {
