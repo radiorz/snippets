@@ -1,11 +1,11 @@
 const body = `
-\/** ****** \$1 ****** *\/
+\${LINE_COMMENT} ****** $1 ******
 `;
 
 const description = "";
 module.exports = {
-  prefix: [`\/\/*`, "ltc"],
-  type: ["javascript", "typescript"],
+  prefix: ["///"],
+  type: ["javascript", "typescript","java"],
   description: description || body,
   body: body.trim(),
 };

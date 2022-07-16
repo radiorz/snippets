@@ -103,23 +103,23 @@
       "}"
     ]
   },
-  "one_line_comment": {
+  "one_line_comment_close": {
     "prefix": [
-      "//*",
-      "ltc"
+      "//",
+      "ccc"
     ],
-    "description": "\n/** ****** $1 ****** */\n",
+    "description": "\n${BLOCK_COMMENT_START}* ****** $1 ****** ${BLOCK_COMMENT_END}\n",
     "body": [
-      "/** ****** $1 ****** */"
+      "${BLOCK_COMMENT_START}* ****** $1 ****** ${BLOCK_COMMENT_END}"
     ]
   },
-  "one_line_comment2": {
+  "one_line_comment": {
     "prefix": [
       "///"
     ],
-    "description": "\n// ****** $1 ******\n",
+    "description": "\n${LINE_COMMENT} ****** $1 ******\n",
     "body": [
-      "// ****** $1 ******"
+      "${LINE_COMMENT} ****** $1 ******"
     ]
   },
   "promise": {
