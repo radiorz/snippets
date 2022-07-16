@@ -8,9 +8,6 @@ module.exports = {
   description: description || body,
   body: body.trim(),
 };
-
-
-
 `;
 
 const description = "";

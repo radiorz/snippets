@@ -154,7 +154,7 @@
     "prefix": [
       "!snippet"
     ],
-    "description": "\nconst body = ``\nconst description = \"\";\n\nmodule.exports = {\n  prefix: [\"!snippet\"],\n  type: [\"javascript\"],\n  description: description || body,\n  body: body.trim(),\n};\n\n\n\n",
+    "description": "\nconst body = ``\nconst description = \"\";\n\nmodule.exports = {\n  prefix: [\"!snippet\"],\n  type: [\"javascript\"],\n  description: description || body,\n  body: body.trim(),\n};\n",
     "body": [
       "const body = ``",
       "const description = \"\";",
