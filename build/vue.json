@@ -8,6 +8,15 @@
       "console.log(`$1`,$1)"
     ]
   },
+  "date_version": {
+    "prefix": [
+      "!tv"
+    ],
+    "body": [
+      "\"$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE\""
+    ],
+    "description": "今天日期"
+  },
   "now": {
     "prefix": [
       "now",
@@ -17,15 +26,6 @@
       "\"$CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND\""
     ],
     "description": "当前时间"
-  },
-  "time_version": {
-    "prefix": [
-      "!tv"
-    ],
-    "body": [
-      "\"$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE\""
-    ],
-    "description": "今天日期"
   },
   "vue_header": {
     "prefix": [

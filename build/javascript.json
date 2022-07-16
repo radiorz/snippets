@@ -18,6 +18,15 @@
       "console.log(`$1`,$1)"
     ]
   },
+  "date_version": {
+    "prefix": [
+      "!tv"
+    ],
+    "body": [
+      "\"$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE\""
+    ],
+    "description": "今天日期"
+  },
   "esmodule__dirname": {
     "prefix": [
       "!dirname"
@@ -45,10 +54,11 @@
     "prefix": [
       "!fh"
     ],
-    "description": "\n/**\n * @author \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n",
+    "description": "\n/**\n * @author \n * @file \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n",
     "body": [
       "/**",
       " * @author ",
+      " * @file ",
       " * @desc $1",
       " * @todo",
       " * ",
@@ -167,15 +177,6 @@
       "  body: body.trim(),",
       "};"
     ]
-  },
-  "time_version": {
-    "prefix": [
-      "!tv"
-    ],
-    "body": [
-      "\"$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE\""
-    ],
-    "description": "今天日期"
   },
   "try_catch": {
     "prefix": [
