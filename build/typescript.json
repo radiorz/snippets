@@ -163,6 +163,20 @@
       "}"
     ]
   },
+  "var_comment": {
+    "prefix": [
+      "!vh"
+    ],
+    "description": "\n/**\n * @var $1  \n * @desc $变量定义\n * @property {string} $2 $变量名\n * \n */\n",
+    "body": [
+      "/**",
+      " * @var $1  ",
+      " * @desc $变量定义",
+      " * @property {string} $2 $变量名",
+      " * ",
+      " */"
+    ]
+  },
   "vue2_component": {
     "prefix": [
       "!vue2"

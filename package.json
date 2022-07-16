@@ -6,12 +6,17 @@
   "scripts": {
     "gen": "node ./src/gen.js",
     "push": "powershell ./src/publish.ps1",
-    "post": "yarn gen && yarn push"
+    "install:local": "yarn gen && yarn push",
+    "build:vscode": "yarn gen && yarn workspace tikkhun-vscode-snippets build",
+    "install:vscode": "yarn workspace tikkhun-vscode-snippets install"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/radiorz/snippets.git"
   },
+  "categories": [
+    "Snippets"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
