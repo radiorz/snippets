@@ -6,6 +6,7 @@ const body = `
  * 
  * @done
  * @example
+ */
 `;
 const description = "";
 module.exports = {

@@ -3,7 +3,7 @@
     "prefix": [
       "!fh"
     ],
-    "description": "\n/**\n * @author \n * @desc $1\n * @todo\n * \n * @done\n * @example\n",
+    "description": "\n/**\n * @author \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n",
     "body": [
       "/**",
       " * @author ",
@@ -11,7 +11,8 @@
       " * @todo",
       " * ",
       " * @done",
-      " * @example"
+      " * @example",
+      " */"
     ]
   },
   "method_header": {
