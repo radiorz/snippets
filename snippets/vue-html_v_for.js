@@ -6,7 +6,8 @@ const description = "vfor has a key";
 
 module.exports = {
   prefix: ["vfor"],
-  type: ["vue-html"],
+  // 不知为何 vue-html 不生效 只好加上 html
+  type: ["vue-html",'html'],
   description: description || body,
   body:body.trim(),
 }

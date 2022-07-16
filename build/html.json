@@ -16,5 +16,14 @@
     "body": [
       "<span style=\"color:red\"> $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 [${2} {{${1}}}]</span>"
     ]
+  },
+  "vue-html_v_for": {
+    "prefix": [
+      "vfor"
+    ],
+    "description": "vfor has a key",
+    "body": [
+      "v-for='(item,i) of ${1:lists}' :key='i'"
+    ]
   }
 }
