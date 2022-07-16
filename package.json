@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "gen": "node ./gen"
+    "gen": "node ./src/gen.js",
+    "publish": "node ./src/publish.js"
   },
   "repository": {
     "type": "git",
