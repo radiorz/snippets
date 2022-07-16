@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "gen": "node ./src/gen.js",
-    "publish": "node ./src/publish.js"
+    "publish": "powershell ./src/publish.ps1"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,7 @@
 const body = `
 /**
- * @author $AUTHOR
+ * @author 
+ * @desc $1
  * @todo
  * 
  * @done
