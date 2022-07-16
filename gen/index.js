@@ -13,18 +13,20 @@ const isArray = (a) => Array.isArray(a);
   files.forEach((file) => {
     const snippet = require(path.join("../", file));
     snippet.body = snippet.body.split("\n");
-    const { key, type, ...rest } = snippet;
+    let { key, type, ...rest } = snippet;
+    if (!key) key = path.basename(file, ".js");
     console.log(`key,type,rest`, key, type, rest);
     if (isString(type)) snippets[type][key] = rest;
     else if (isArray(type)) {
       type.forEach((t) => {
+        if (!snippets[t]) snippets[t] = {};
         snippets[t][key] = rest;
       });
     }
   });
   Object.entries(snippets).forEach(([language, snippets]) => {
     const file = fs.createWriteStream(`./build/${language}.json`);
-    file.write(JSON.stringify(snippets, null, 4));
+    file.write(JSON.stringify(snippets, null, 2));
     file.end();
     console.log(`language done`, language);
   });

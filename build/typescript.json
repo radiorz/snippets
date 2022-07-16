@@ -1,11 +1,166 @@
 {
-    "console_log": {
-        "prefix": [
-            "csl"
-        ],
-        "description": "console.log(*)",
-        "body": [
-            "console.log(`$1`,$1)"
-        ]
-    }
+  "array_func": {
+    "prefix": [
+      "anfn"
+    ],
+    "description": "console.log(`$1`,$1)",
+    "body": [
+      "console.log(`$1`,$1)"
+    ]
+  },
+  "console_log": {
+    "prefix": [
+      "csl",
+      "logg"
+    ],
+    "description": "console.log(*)",
+    "body": [
+      "console.log(`$1`,$1)"
+    ]
+  },
+  "esmodule__dirname": {
+    "prefix": [
+      "!dirname"
+    ],
+    "description": "import { fileURLToPath } from 'url';\nimport { dirname } from 'path';\nconst __filename = fileURLToPath(import.meta.url);\nconst __dirname = dirname(__filename);",
+    "body": [
+      "import { fileURLToPath } from 'url';",
+      "import { dirname } from 'path';",
+      "const __filename = fileURLToPath(import.meta.url);",
+      "const __dirname = dirname(__filename);"
+    ]
+  },
+  "esmodule__filename": {
+    "prefix": [
+      "!filename"
+    ],
+    "description": "import { fileURLToPath } from 'url';\nimport { dirname } from 'path';\nconst __filename = fileURLToPath(import.meta.url);",
+    "body": [
+      "import { fileURLToPath } from 'url';",
+      "import { dirname } from 'path';",
+      "const __filename = fileURLToPath(import.meta.url);"
+    ]
+  },
+  "file_header": {
+    "prefix": [
+      "!fh"
+    ],
+    "description": "\n/**\n * @author $AUTHOR\n * @todo\n * \n * @done\n * @example\n",
+    "body": [
+      "/**",
+      " * @author $AUTHOR",
+      " * @todo",
+      " * ",
+      " * @done",
+      " * @example"
+    ]
+  },
+  "method_header": {
+    "prefix": [
+      "!mh"
+    ],
+    "description": "\n/**\n * @method $1\n * @param {} \n * @returns {}\n * @desc $2\n * @example\n */\n",
+    "body": [
+      "/**",
+      " * @method $1",
+      " * @param {} ",
+      " * @returns {}",
+      " * @desc $2",
+      " * @example",
+      " */"
+    ]
+  },
+  "object_entries_foreach": {
+    "prefix": [
+      "oef"
+    ],
+    "description": "Object.entries(options).forEach(([key,value])=>{\n$1\n}",
+    "body": [
+      "Object.entries(options).forEach(([key,value])=>{",
+      "$1",
+      "}"
+    ]
+  },
+  "one_line_comment": {
+    "prefix": [
+      "//*",
+      "ltc"
+    ],
+    "description": "\n/** ****** $1 ****** */\n",
+    "body": [
+      "/** ****** $1 ****** */"
+    ]
+  },
+  "one_line_comment2": {
+    "prefix": [
+      "///"
+    ],
+    "description": "\n// ****** $1 ******\n",
+    "body": [
+      "// ****** $1 ******"
+    ]
+  },
+  "promise": {
+    "prefix": [
+      "!promise"
+    ],
+    "description": "\nnew Promise((resolve,reject)=>{\n  $1\n})\n",
+    "body": [
+      "new Promise((resolve,reject)=>{",
+      "  $1",
+      "})"
+    ]
+  },
+  "try_catch": {
+    "prefix": [
+      "trycc"
+    ],
+    "description": "try{\n  $1\n}catch(err){\n  $2\n}",
+    "body": [
+      "try{",
+      "  $1",
+      "}catch(err){",
+      "  $2",
+      "}"
+    ]
+  },
+  "vue2_mixin": {
+    "prefix": [
+      "oef"
+    ],
+    "description": "export default {\n  // 组件名\n  components: {},\n  // filters:{},\n  // mixins:[],\n  // props: {},\n  // data(){\n  //   return{\n  //     \n  //   }\n  // },\n  // 组件方法\n  // computed:{},\n  // watch:{},\n  // mounted(){},\n  methods: {},\n}",
+    "body": [
+      "export default {",
+      "  // 组件名",
+      "  components: {},",
+      "  // filters:{},",
+      "  // mixins:[],",
+      "  // props: {},",
+      "  // data(){",
+      "  //   return{",
+      "  //     ",
+      "  //   }",
+      "  // },",
+      "  // 组件方法",
+      "  // computed:{},",
+      "  // watch:{},",
+      "  // mounted(){},",
+      "  methods: {},",
+      "}"
+    ]
+  },
+  "zx": {
+    "prefix": [
+      "!zx"
+    ],
+    "description": "\n#!/usr/bin/env zx\n/**\n * 功能: $1\n * \n */ \nawait $``\n",
+    "body": [
+      "#!/usr/bin/env zx",
+      "/**",
+      " * 功能: $1",
+      " * ",
+      " */ ",
+      "await $``"
+    ]
+  }
 }

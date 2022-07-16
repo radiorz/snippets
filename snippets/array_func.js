@@ -1,9 +1,9 @@
 const body = `console.log(\`\$1\`,$1)`;
-
+const description = "";
 module.exports = {
-  key: "console_log",
-  prefix: ["csl", "logg"],
+  key: "array_func",
+  prefix: ["anfn"],
   type: ["javascript", "typescript"],
-  description: "console.log(*)",
+  description: description || body,
   body,
 };

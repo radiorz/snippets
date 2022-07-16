@@ -1,0 +1,31 @@
+{
+  "file_header": {
+    "prefix": [
+      "!fh"
+    ],
+    "description": "\n/**\n * @author $AUTHOR\n * @todo\n * \n * @done\n * @example\n",
+    "body": [
+      "/**",
+      " * @author $AUTHOR",
+      " * @todo",
+      " * ",
+      " * @done",
+      " * @example"
+    ]
+  },
+  "method_header": {
+    "prefix": [
+      "!mh"
+    ],
+    "description": "\n/**\n * @method $1\n * @param {} \n * @returns {}\n * @desc $2\n * @example\n */\n",
+    "body": [
+      "/**",
+      " * @method $1",
+      " * @param {} ",
+      " * @returns {}",
+      " * @desc $2",
+      " * @example",
+      " */"
+    ]
+  }
+}
