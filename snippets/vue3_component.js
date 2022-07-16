@@ -1,11 +1,6 @@
+const vueHeader = require("./vue_header");
 const body = `
-<!--
-* @file: \${1:该文件的描述信息}
-* @date: $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND
-* TODO:
-* [] \${3}
--->
-
+${vueHeader.origin}
 <script>
   export default {
     name: \"$2\"
@@ -23,7 +18,7 @@ const body = `
 <style lang=\"scss\" scoped>
 
 </style>"
-`
+`;
 const description = "";
 
 module.exports = {

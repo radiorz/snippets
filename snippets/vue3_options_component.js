@@ -1,11 +1,6 @@
+const vueHeader = require("./vue_header");
 const body = `
-<!--
-* @FileDescription: \${1:该文件的描述信息}
-* @Date: $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND
-* TODO:
-* [] \${2}
--->
-
+${vueHeader.origin}
 <script>
 import { defineComponent } from 'vue'
 export default defineComponent({

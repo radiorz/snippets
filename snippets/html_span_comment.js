@@ -6,7 +6,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!span"],
-  type: ["vue-html"],
+  type: ["vue-html", "html"],
   description: description || body,
   body: body.trim(),
 };

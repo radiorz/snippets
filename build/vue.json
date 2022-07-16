@@ -32,6 +32,7 @@
       "!vh"
     ],
     "description": "\n <!--\n  * @file ${1:该文件的描述信息}\n  * @Date $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND\n  * TODO\n  * [] ${2}\n  * @example\n  * \n-->\n",
+    "origin": "\n <!--\n  * @file ${1:该文件的描述信息}\n  * @Date $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND\n  * TODO\n  * [] ${2}\n  * @example\n  * \n-->\n",
     "body": [
       "<!--",
       "  * @file ${1:该文件的描述信息}",
@@ -47,13 +48,15 @@
     "prefix": [
       "!vue3"
     ],
-    "description": "\n<!--\n* @file: ${1:该文件的描述信息}\n* @date: $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND\n* TODO:\n* [] ${3}\n-->\n\n<script>\n  export default {\n    name: \"$2\"\n  };\n</script>\n<script setup>\n\n</script>\n\n<template>\n  <div class=\"$2\">\n  </div>\n</template>\n\n<style lang=\"scss\" scoped>\n\n</style>\"\n",
+    "description": "\n\n <!--\n  * @file ${1:该文件的描述信息}\n  * @Date $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND\n  * TODO\n  * [] ${2}\n  * @example\n  * \n-->\n\n<script>\n  export default {\n    name: \"$2\"\n  };\n</script>\n<script setup>\n\n</script>\n\n<template>\n  <div class=\"$2\">\n  </div>\n</template>\n\n<style lang=\"scss\" scoped>\n\n</style>\"\n",
     "body": [
       "<!--",
-      "* @file: ${1:该文件的描述信息}",
-      "* @date: $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-      "* TODO:",
-      "* [] ${3}",
+      "  * @file ${1:该文件的描述信息}",
+      "  * @Date $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+      "  * TODO",
+      "  * [] ${2}",
+      "  * @example",
+      "  * ",
       "-->",
       "",
       "<script>",
@@ -79,13 +82,15 @@
     "prefix": [
       "!vueo"
     ],
-    "description": "\n<!--\n* @FileDescription: ${1:该文件的描述信息}\n* @Date: $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND\n* TODO:\n* [] ${2}\n-->\n\n<script>\nimport { defineComponent } from 'vue'\nexport default defineComponent({\n  name: '${3:}',\n  // components: {},\n  props: {},\n  // 从组件触发 emits 事件\n  // emits:{},\n  // 暴露\n  // expose: {},\n  data() {\n    return {}\n  }\n  // computed:{},\n  // watch:{},\n  // create(){},\n  // methods:{}\n})\n</script>\n\n<template>\n  <div class=\"${3}\">\n  </div>\n</template>\n\n<style lang=\"scss\" scoped></style>\"\n",
+    "description": "\n\n <!--\n  * @file ${1:该文件的描述信息}\n  * @Date $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND\n  * TODO\n  * [] ${2}\n  * @example\n  * \n-->\n\n<script>\nimport { defineComponent } from 'vue'\nexport default defineComponent({\n  name: '${3:}',\n  // components: {},\n  props: {},\n  // 从组件触发 emits 事件\n  // emits:{},\n  // 暴露\n  // expose: {},\n  data() {\n    return {}\n  }\n  // computed:{},\n  // watch:{},\n  // create(){},\n  // methods:{}\n})\n</script>\n\n<template>\n  <div class=\"${3}\">\n  </div>\n</template>\n\n<style lang=\"scss\" scoped></style>\"\n",
     "body": [
       "<!--",
-      "* @FileDescription: ${1:该文件的描述信息}",
-      "* @Date: $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-      "* TODO:",
-      "* [] ${2}",
+      "  * @file ${1:该文件的描述信息}",
+      "  * @Date $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+      "  * TODO",
+      "  * [] ${2}",
+      "  * @example",
+      "  * ",
       "-->",
       "",
       "<script>",

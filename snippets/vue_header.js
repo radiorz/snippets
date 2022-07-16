@@ -14,5 +14,6 @@ module.exports = {
   prefix: ["!vh"],
   type: ["vue"],
   description: description || body,
+  origin: body,
   body: body.trim(),
 };
