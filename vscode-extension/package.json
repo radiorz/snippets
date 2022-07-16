@@ -1,0 +1,63 @@
+{
+  "name": "tikkhun-vscode-snippets",
+  "displayName": "tikkhun-vscode-snippets",
+  "description": "tikkhun-vscode-snippets",
+  "version": "2022.7.16",
+  "engines": {
+    "vscode": "^1.69.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "scripts": {
+    "build": "vsce package",
+    "install": "yarn build && code --install-extension vue-vscode-snippets-$npm_package_version.vsix"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "html",
+        "path": "./snippets/html.json"
+      },
+      {
+        "language": "java",
+        "path": "./snippets/java.json"
+      },
+      {
+        "language": "javascript",
+        "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./snippets/markdown.json"
+      },
+      {
+        "language": "sass",
+        "path": "./snippets/sass.json"
+      },
+      {
+        "language": "scss",
+        "path": "./snippets/scss.json"
+      },
+      {
+        "language": "shellscript",
+        "path": "./snippets/shellscript.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "vue-html",
+        "path": "./snippets/vue-html.json"
+      },
+      {
+        "language": "vue",
+        "path": "./snippets/vue.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "vsce": "^2.9.3"
+  }
+}
