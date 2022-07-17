@@ -1,5 +1,5 @@
 
-const body = `console.log(\`\$1\`,$1)`;
+const body = `($1) => { $2 }`;
 const description = "";
 module.exports = {
   key: "array_func",
