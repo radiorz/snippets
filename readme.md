@@ -20,9 +20,10 @@
 ```
 yarn build:vscode 
 ```
+### 据说通过 插件 可以在 jetbrains 比如 idea 或者 webstorm 中运行 vscode snippets 不过没有成功
+https://github.com/brpaz/jetbrains-plugin-vscode-snippets
 
-
- ## 编写自己的snippets 系统
+ ## 编写自己的 snippets 插件
  感兴趣的可以fork 我的仓库,新需求也可以提 pr 到我仓库中
  如果觉得好可以加星哦.
  
