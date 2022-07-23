@@ -14,5 +14,6 @@ module.exports = {
   prefix: ["!fh"],
   type: ["javascript", "typescript", "java"],
   description: description || body,
+  origin: body,
   body: body.trim(),
 };

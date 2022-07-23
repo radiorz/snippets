@@ -55,6 +55,7 @@
       "!fh"
     ],
     "description": "\n/**\n * @author \n * @file \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n",
+    "origin": "\n/**\n * @author \n * @file \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n",
     "body": [
       "/**",
       " * @author ",
@@ -108,7 +109,7 @@
       "//",
       "ccc"
     ],
-    "description": "\n${BLOCK_COMMENT_START}* ****** $1 ****** ${BLOCK_COMMENT_END}\n",
+    "description": "/** ******  ****** */",
     "body": [
       "${BLOCK_COMMENT_START}* ****** $1 ****** ${BLOCK_COMMENT_END}"
     ]
@@ -154,11 +155,30 @@
   },
   "rn_func_component": {
     "prefix": [
-      "!snippet"
+      "!rn"
     ],
-    "description": "",
+    "description": "\n/**\n * @author \n * @file \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n\nimport { View, Text } from 'react-native'\nimport React, {useState,useEffect} from 'react'\n\nexport default function $1() {\n  return (\n    <View>\n      <Text>rn_func_component</Text>\n    </View>\n  )\n}\n\n\n\n",
     "body": [
-      ""
+      "/**",
+      " * @author ",
+      " * @file ",
+      " * @desc $1",
+      " * @todo",
+      " * ",
+      " * @done",
+      " * @example",
+      " */",
+      "",
+      "import { View, Text } from 'react-native'",
+      "import React, {useState,useEffect} from 'react'",
+      "",
+      "export default function $1() {",
+      "  return (",
+      "    <View>",
+      "      <Text>rn_func_component</Text>",
+      "    </View>",
+      "  )",
+      "}"
     ]
   },
   "snippet": {

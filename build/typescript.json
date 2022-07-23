@@ -55,6 +55,7 @@
       "!fh"
     ],
     "description": "\n/**\n * @author \n * @file \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n",
+    "origin": "\n/**\n * @author \n * @file \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n",
     "body": [
       "/**",
       " * @author ",
@@ -108,7 +109,7 @@
       "//",
       "ccc"
     ],
-    "description": "\n${BLOCK_COMMENT_START}* ****** $1 ****** ${BLOCK_COMMENT_END}\n",
+    "description": "/** ******  ****** */",
     "body": [
       "${BLOCK_COMMENT_START}* ****** $1 ****** ${BLOCK_COMMENT_END}"
     ]

@@ -3,7 +3,6 @@ const path = require("path");
 const fs = require("fs");
 const isString = (a) => typeof a === "string";
 const isArray = (a) => Array.isArray(a);
-const isObject = (a) => typeof a === "object";
 (async () => {
   const files = glob.sync("./snippets/*.js");
   let snippets = {
@@ -15,9 +14,7 @@ const isObject = (a) => typeof a === "object";
     try {
       const snippet = require(path.join("../", file));
       if (!snippet) return;
-      if (!isObject(snippet) || !snippet.body) {
-        throw new Error(`snippet must be an object with !body!`);
-      }
+
       snippet.body = snippet.body.split("\n");
       let { key, type, ...rest } = snippet;
       if (!key) key = path.basename(file, ".js");
@@ -30,7 +27,7 @@ const isObject = (a) => typeof a === "object";
         });
       }
     } catch (error) {
-      console.warn(`[ERROR] [files.forEach]`, JSON.stringify({ file }), error.message);
+      console.warn(`error`, file, error);
     }
   });
   Object.entries(snippets).forEach(([language, snippets]) => {
@@ -40,3 +37,4 @@ const isObject = (a) => typeof a === "object";
     console.log(`language done`, language);
   });
 })();
+
