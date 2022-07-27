@@ -6,7 +6,7 @@ new Promise((resolve,reject)=>{
 const description = "";
 module.exports = {
   prefix: ["!promise"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript","javascriptreact"],
   description: description || body,
   body: body.trim(),
 };

@@ -10,7 +10,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!vh"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript","javascriptreact"],
   description: description || body,
   body: body.trim(),
 };

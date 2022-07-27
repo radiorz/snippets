@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2022.7.18",
+  "version": "2022.7.27",
   "engines": {
     "vscode": "^1.69.0"
   },
@@ -12,6 +12,10 @@
   "scripts": {
     "build": "vsce package",
     "install": "code --install-extension tikkhun-vscode-snippets-$npm_package_version.vsix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radiorz/snippets.git"
   },
   "contributes": {
     "snippets": [
@@ -26,6 +30,10 @@
       {
         "language": "javascript",
         "path": "./snippets/javascript.json"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/javascriptreact.json"
       },
       {
         "language": "markdown",
@@ -58,6 +66,6 @@
     ]
   },
   "devDependencies": {
-    "vsce": "^2.9.3"
+    "vsce": "^2.10.0"
   }
 }

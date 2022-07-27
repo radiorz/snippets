@@ -40,7 +40,7 @@ const description = "vue2";
 
 module.exports = {
   prefix: ["!vue2"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript","javascriptreact"],
   description: description || body,
   body,
 };
