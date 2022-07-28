@@ -20,6 +20,7 @@
 ```
 yarn build:vscode 
 ```
+###  如果不想下载源码 可以直接使用 release 中的 vscode 插件
 ### 据说通过 插件 可以在 jetbrains 比如 idea 或者 webstorm 中运行 vscode snippets 不过没有成功
 https://github.com/brpaz/jetbrains-plugin-vscode-snippets
 
