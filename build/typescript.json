@@ -8,6 +8,61 @@
       "($1) => { $2 }"
     ]
   },
+  "commonjs_exec_exe_file": {
+    "prefix": [
+      "exe"
+    ],
+    "description": "\nconst { execFile } = require(\"child_process\");\nconst command = `$1.exe`\nexec(command, function (err, data) {\n  console.log(err);\n  console.log(data.toString());\n});\n",
+    "body": [
+      "const { execFile } = require(\"child_process\");",
+      "const command = `$1.exe`",
+      "exec(command, function (err, data) {",
+      "  console.log(err);",
+      "  console.log(data.toString());",
+      "});"
+    ]
+  },
+  "commonjs_exec": {
+    "prefix": [
+      "exec"
+    ],
+    "description": "\nconst { exec } = require(\"child_process\");\nconst command = `$1`\nexec(command, (err, stdout, stderr) => {\n  if (err) {\n    console.error(err);\n    return;\n  }\n  console.log(stdout);\n});\n",
+    "body": [
+      "const { exec } = require(\"child_process\");",
+      "const command = `$1`",
+      "exec(command, (err, stdout, stderr) => {",
+      "  if (err) {",
+      "    console.error(err);",
+      "    return;",
+      "  }",
+      "  console.log(stdout);",
+      "});"
+    ]
+  },
+  "commonjs_spawn": {
+    "prefix": [
+      "spawnexe"
+    ],
+    "description": "\nconst { spawn } = require(\"child_process\");\nconst [command,...args] = `$1`.split(\" \");\nconst child = spawn(command,args,{stdio:\"inherit\"});\nchild.stdout.on('data', (data) => {\n  console.log(data.toString());\n});\n\nchild.stderr.on('data', (data) => {\n  console.error(data.toString());\n});\n\nchild.on('exit', (code) => {\n  console.log(`Child exited with code ${code}`);\n});\nchild.on(\"error\", (err) => {})\nchild.on(\"close\", () => {})\n",
+    "body": [
+      "const { spawn } = require(\"child_process\");",
+      "const [command,...args] = `$1`.split(\" \");",
+      "const child = spawn(command,args,{stdio:\"inherit\"});",
+      "child.stdout.on('data', (data) => {",
+      "  console.log(data.toString());",
+      "});",
+      "",
+      "child.stderr.on('data', (data) => {",
+      "  console.error(data.toString());",
+      "});",
+      "",
+      "child.on('exit', (code) => {",
+      "  console.log(`Child exited with code ${code}`);",
+      "});",
+      "child.on(\"error\", (err) => {})",
+      "child.on(\"close\", () => {})"
+    ]
+  },
   "console_log": {
     "prefix": [
       "csl",
