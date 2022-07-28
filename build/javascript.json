@@ -12,11 +12,11 @@
     "prefix": [
       "exe"
     ],
-    "description": "\nconst { execFile } = require(\"child_process\");\nconst command = `$1.exe`\nexec(command, function (err, data) {\n  console.log(err);\n  console.log(data.toString());\n});\n",
+    "description": "\nconst { execFile } = require(\"child_process\");\nconst command = `$1.exe`\nexecFile(command, function (err, data) {\n  console.log(err);\n  console.log(data.toString());\n});\n",
     "body": [
       "const { execFile } = require(\"child_process\");",
       "const command = `$1.exe`",
-      "exec(command, function (err, data) {",
+      "execFile(command, function (err, data) {",
       "  console.log(err);",
       "  console.log(data.toString());",
       "});"
@@ -103,6 +103,15 @@
       "import { fileURLToPath } from 'url';",
       "import { dirname } from 'path';",
       "const __filename = fileURLToPath(import.meta.url);"
+    ]
+  },
+  "ffmpeg_to_mp4": {
+    "prefix": [
+      "tomp4"
+    ],
+    "description": "\n  ffmpeg -acodec aac -filter_complex amix=inputs=2:duration=longest -vcodec copy -movflags faststart+frag_keyframe+separate_moof+omit_tfhd_offset+empty_moov\n",
+    "body": [
+      "ffmpeg -acodec aac -filter_complex amix=inputs=2:duration=longest -vcodec copy -movflags faststart+frag_keyframe+separate_moof+omit_tfhd_offset+empty_moov"
     ]
   },
   "file_header": {

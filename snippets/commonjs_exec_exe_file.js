@@ -4,7 +4,7 @@
 const body = `
 const { execFile } = require("child_process");
 const command = \`$1.exe\`
-exec(command, function (err, data) {
+execFile(command, function (err, data) {
   console.log(err);
   console.log(data.toString());
 });

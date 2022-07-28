@@ -12,11 +12,11 @@
     "prefix": [
       "exe"
     ],
-    "description": "\nconst { execFile } = require(\"child_process\");\nconst command = `$1.exe`\nexec(command, function (err, data) {\n  console.log(err);\n  console.log(data.toString());\n});\n",
+    "description": "\nconst { execFile } = require(\"child_process\");\nconst command = `$1.exe`\nexecFile(command, function (err, data) {\n  console.log(err);\n  console.log(data.toString());\n});\n",
     "body": [
       "const { execFile } = require(\"child_process\");",
       "const command = `$1.exe`",
-      "exec(command, function (err, data) {",
+      "execFile(command, function (err, data) {",
       "  console.log(err);",
       "  console.log(data.toString());",
       "});"
