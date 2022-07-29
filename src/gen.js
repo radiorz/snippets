@@ -16,7 +16,11 @@ const isObject = (a) => typeof a === "object";
       const snippet = require(path.join("../", file));
       if (!snippet) return;
       if (!isObject(snippet) || !snippet.body) {
-        throw new Error(`snippet must be an object with !body!`);
+        throw new Error(`snippet must be an object with \"body\"!`);
+      }
+      if (snippet.disabled) {
+        console.warn(`[WARN] snippet disabled`, file);
+        return;
       }
       snippet.body = snippet.body.split("\n");
       let { key, type, ...rest } = snippet;
@@ -30,7 +34,11 @@ const isObject = (a) => typeof a === "object";
         });
       }
     } catch (error) {
-      console.warn(`[ERROR] [files.forEach]`, JSON.stringify({ file }), error.message);
+      console.warn(
+        `[ERROR] [files.forEach]`,
+        JSON.stringify({ file }),
+        error.message
+      );
     }
   });
   Object.entries(snippets).forEach(([language, snippets]) => {
@@ -40,3 +48,4 @@ const isObject = (a) => typeof a === "object";
     console.log(`language done`, language);
   });
 })();
+

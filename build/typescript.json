@@ -208,6 +208,38 @@
       ")"
     ]
   },
+  "redux_toolkit_slice": {
+    "prefix": [
+      "!slice"
+    ],
+    "description": "\nimport { createSlice } from \"@reduxjs/toolkit\";\n\n/**\n * 初始state\n */\nconst initialState = {\n  value,\n};\n\nexport const ${1:name}Slice = createSlice({\n  name: \"${1:name}\",\n  initialState,\n  reducers: {\n    setValue(state,{payload}) {\n      \n    }\n  },\n});\n// Action creators are generated for each case reducer function\nexport const {\n  setValue\n} = ${1:name}Slice.actions;\n\nexport default ${1:name}Slice.reducer;\n",
+    "body": [
+      "import { createSlice } from \"@reduxjs/toolkit\";",
+      "",
+      "/**",
+      " * 初始state",
+      " */",
+      "const initialState = {",
+      "  value,",
+      "};",
+      "",
+      "export const ${1:name}Slice = createSlice({",
+      "  name: \"${1:name}\",",
+      "  initialState,",
+      "  reducers: {",
+      "    setValue(state,{payload}) {",
+      "      ",
+      "    }",
+      "  },",
+      "});",
+      "// Action creators are generated for each case reducer function",
+      "export const {",
+      "  setValue",
+      "} = ${1:name}Slice.actions;",
+      "",
+      "export default ${1:name}Slice.reducer;"
+    ]
+  },
   "try_catch": {
     "prefix": [
       "trycc"

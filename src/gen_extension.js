@@ -1,3 +1,4 @@
+// console.time('gen')
 const fs = require("fs");
 const path = require("path");
 const dayjs = require("dayjs");
@@ -26,3 +27,4 @@ const version = dayjs().format("YYYY.M.DD");
 packageJson.version = version;
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 console.log(`写入文件成功`, packageJsonPath);
+// console.timeEnd('gen')
