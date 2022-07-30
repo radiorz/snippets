@@ -26,6 +26,15 @@
       " */"
     ]
   },
+  "java_log": {
+    "prefix": [
+      "csl"
+    ],
+    "description": "System.out.println($1);",
+    "body": [
+      "System.out.println($1);"
+    ]
+  },
   "method_header": {
     "prefix": [
       "!mh"

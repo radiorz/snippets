@@ -8,6 +8,24 @@
       "($1) => { $2 }"
     ]
   },
+  "axios_instance": {
+    "prefix": [
+      "!axios"
+    ],
+    "description": "\nimport axios from \"axios\";\nconst options = {\n  baseUrl: \"/\",\n  timeout: 10 * 1000,\n  headers: {\n    Accept: \"application/json\",\n    \"Content-Type\": \"application/json\",\n  },\n};\nconst instance = axios.create(options);\n\n",
+    "body": [
+      "import axios from \"axios\";",
+      "const options = {",
+      "  baseUrl: \"/\",",
+      "  timeout: 10 * 1000,",
+      "  headers: {",
+      "    Accept: \"application/json\",",
+      "    \"Content-Type\": \"application/json\",",
+      "  },",
+      "};",
+      "const instance = axios.create(options);"
+    ]
+  },
   "commonjs_exec_exe_file": {
     "prefix": [
       "exe"
@@ -82,6 +100,16 @@
     ],
     "description": "今天日期"
   },
+  "delay": {
+    "prefix": [
+      "await",
+      "delay"
+    ],
+    "description": "\nawait new Promise(resolve=>{setTimeout(resolve,${1:1000})})\n",
+    "body": [
+      "await new Promise(resolve=>{setTimeout(resolve,${1:1000})})"
+    ]
+  },
   "esmodule__dirname": {
     "prefix": [
       "!dirname"
@@ -145,6 +173,48 @@
       " * @desc $2",
       " * @example",
       " */"
+    ]
+  },
+  "mobx_class_store": {
+    "prefix": [
+      "!mobxclass"
+    ],
+    "description": "\nimport { action, observable } from 'mobx';\n\nclass Store {\n    @observable\n    count = 1;\n    \n    @action\n    setCount = () => {\n        this.count++;\n    }\n}\nexport const store = new Store();\n\n",
+    "body": [
+      "import { action, observable } from 'mobx';",
+      "",
+      "class Store {",
+      "    @observable",
+      "    count = 1;",
+      "    ",
+      "    @action",
+      "    setCount = () => {",
+      "        this.count++;",
+      "    }",
+      "}",
+      "export const store = new Store();"
+    ]
+  },
+  "mobx_store": {
+    "prefix": [
+      "!mobx"
+    ],
+    "description": "\nimport {observable, action} from 'mobx';\nconst store = observable(\n  {\n    value: 0,\n    setValue(value) {\n      this.value = value;\n    },\n  },\n  {\n    setValue:action\n  }\n);\n\nexport default store;\n\n",
+    "body": [
+      "import {observable, action} from 'mobx';",
+      "const store = observable(",
+      "  {",
+      "    value: 0,",
+      "    setValue(value) {",
+      "      this.value = value;",
+      "    },",
+      "  },",
+      "  {",
+      "    setValue:action",
+      "  }",
+      ");",
+      "",
+      "export default store;"
     ]
   },
   "now": {
@@ -312,6 +382,18 @@
       "  description: description || body,",
       "  body: body.trim(),",
       "};"
+    ]
+  },
+  "then_catch": {
+    "prefix": [
+      ".thencatch"
+    ],
+    "description": "\n.then(()=>{\n\n})\n.catch(()=>{})\n",
+    "body": [
+      ".then(()=>{",
+      "",
+      "})",
+      ".catch(()=>{})"
     ]
   },
   "try_catch": {
