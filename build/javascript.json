@@ -133,6 +133,16 @@
       "const __filename = fileURLToPath(import.meta.url);"
     ]
   },
+  "expect_output": {
+    "prefix": [
+      "expect",
+      "//-"
+    ],
+    "description": "\n// -> $1\n",
+    "body": [
+      "// -> $1"
+    ]
+  },
   "ffmpeg_to_mp4": {
     "prefix": [
       "tomp4"

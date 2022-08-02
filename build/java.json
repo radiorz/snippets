@@ -28,11 +28,14 @@
   },
   "java_log": {
     "prefix": [
-      "csl"
+      "csl",
+      "system",
+      "logg",
+      "sop"
     ],
-    "description": "System.out.println($1);",
+    "description": "System.out.println(\"$1\" + \" \" + $1);",
     "body": [
-      "System.out.println($1);"
+      "System.out.println(\"$1\" + \" \" + $1);"
     ]
   },
   "method_header": {
