@@ -5,7 +5,9 @@
  并且 有时候一个 snippets 适合多种文件格式(比如 typescript 和 JavaScript 经常都会用到相同的 snippets),所以我使用 type 属性进行配置适用文件,这样就共享snippets给不同语言了了.(不需要复制黏贴了爽歪歪)
  
  ##  用法(都写在了scripts 运行即可)
- 
+ ### 快速使用
+ 直接使用 release中的插件文件安装到 vscode 中即可使用。
+ ### 源码自编
  `gen` 就是打包成 vscode 可用的json格式
  ```bash
  yarn gen 
