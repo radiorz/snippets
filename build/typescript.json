@@ -208,6 +208,21 @@
       ")"
     ]
   },
+  "react_hook": {
+    "prefix": [
+      "!hook"
+    ],
+    "description": "\nimport { useState, useEffect } from \"react\";\n// import { useDispatch } from \"react-redux\";\n\nexport default function use${1:Something}() {\n  const [$2] = useState(null);\n  return {$2};\n}\n\n",
+    "body": [
+      "import { useState, useEffect } from \"react\";",
+      "// import { useDispatch } from \"react-redux\";",
+      "",
+      "export default function use${1:Something}() {",
+      "  const [$2] = useState(null);",
+      "  return {$2};",
+      "}"
+    ]
+  },
   "redux_toolkit_slice": {
     "prefix": [
       "!slice"

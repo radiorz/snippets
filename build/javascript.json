@@ -102,12 +102,13 @@
   },
   "delay": {
     "prefix": [
-      "await",
+      "wait",
       "delay"
     ],
-    "description": "\nawait new Promise(resolve=>{setTimeout(resolve,${1:1000})})\n",
+    "description": "\nconst timeout = ${1:1000}\nawait new Promise((resolve) => setTimeout(resolve, timeout))\n",
     "body": [
-      "await new Promise(resolve=>{setTimeout(resolve,${1:1000})})"
+      "const timeout = ${1:1000}",
+      "await new Promise((resolve) => setTimeout(resolve, timeout))"
     ]
   },
   "esmodule__dirname": {
@@ -295,6 +296,21 @@
       "      )}",
       "    />",
       ")"
+    ]
+  },
+  "react_hook": {
+    "prefix": [
+      "!hook"
+    ],
+    "description": "\nimport { useState, useEffect } from \"react\";\n// import { useDispatch } from \"react-redux\";\n\nexport default function use${1:Something}() {\n  const [$2] = useState(null);\n  return {$2};\n}\n\n",
+    "body": [
+      "import { useState, useEffect } from \"react\";",
+      "// import { useDispatch } from \"react-redux\";",
+      "",
+      "export default function use${1:Something}() {",
+      "  const [$2] = useState(null);",
+      "  return {$2};",
+      "}"
     ]
   },
   "redux_toolkit_slice": {

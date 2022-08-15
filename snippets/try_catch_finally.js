@@ -1,11 +1,17 @@
 const body = `
-const timeout = \${1:1000}
-await new Promise((resolve) => setTimeout(resolve, timeout))
+try {
+  
+} catch (err) {
+  console.log('err',err)
+} finally {
+  
+}
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["wait", "delay"],
+  disabled: true, // javscript snippets 已经有了
+  prefix: ["tcf"],
   type: ["javascript"],
   description: description || body,
   body: body.trim(),

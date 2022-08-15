@@ -38,6 +38,15 @@
       "System.out.println(\"$1\" + \" \" + $1);"
     ]
   },
+  "java_time": {
+    "prefix": [
+      "time"
+    ],
+    "description": "\nSystem.currentTimeMillis();\n",
+    "body": [
+      "System.currentTimeMillis();"
+    ]
+  },
   "method_header": {
     "prefix": [
       "!mh"
