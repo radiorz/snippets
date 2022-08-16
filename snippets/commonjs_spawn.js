@@ -17,7 +17,7 @@ child.on("error", (err) => {})
 child.on("close", () => {})
 `;
 
-const description = "";
+const description = "使用 nodejs spawn 执行命令";
 
 module.exports = {
   prefix: ["spawnexe"],

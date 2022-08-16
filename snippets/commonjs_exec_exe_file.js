@@ -1,5 +1,6 @@
 /**
  * child_process.exec(command[, options][, callback])
+ * 使用 nodejs 执行文件
  */
 const body = `
 const { execFile } = require("child_process");
@@ -10,7 +11,7 @@ execFile(command, function (err, data) {
 });
 `;
 
-const description = "";
+const description = "使用 nodejs 执行exe文件";
 
 module.exports = {
   prefix: ["exe"],
@@ -18,4 +19,3 @@ module.exports = {
   description: description || body,
   body: body.trim(),
 };
-

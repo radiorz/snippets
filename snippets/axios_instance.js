@@ -11,7 +11,7 @@ const options = {
 const instance = axios.create(options);
 
 `;
-const description = "";
+const description = "axios 实例";
 
 module.exports = {
   prefix: ["!axios"],

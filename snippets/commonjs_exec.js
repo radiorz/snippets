@@ -13,7 +13,7 @@ exec(command, (err, stdout, stderr) => {
 });
 `;
 
-const description = "";
+const description = "使用 nodejs 执行某个命令";
 
 module.exports = {
   prefix: ["exec"],
