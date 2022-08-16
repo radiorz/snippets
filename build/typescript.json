@@ -123,6 +123,17 @@
       " */"
     ]
   },
+  "get_now_dayjs": {
+    "prefix": [
+      "gnow"
+    ],
+    "description": "function getNow() {\n  return dayjs().format(\"YYYY-MM-DD dddd HH:mm:ss\");\n}",
+    "body": [
+      "function getNow() {",
+      "  return dayjs().format(\"YYYY-MM-DD dddd HH:mm:ss\");",
+      "}"
+    ]
+  },
   "method_header": {
     "prefix": [
       "!mh"

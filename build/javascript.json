@@ -171,6 +171,29 @@
       " */"
     ]
   },
+  "get_now_dayjs": {
+    "prefix": [
+      "gnow"
+    ],
+    "description": "function getNow() {\n  return dayjs().format(\"YYYY-MM-DD dddd HH:mm:ss\");\n}",
+    "body": [
+      "function getNow() {",
+      "  return dayjs().format(\"YYYY-MM-DD dddd HH:mm:ss\");",
+      "}"
+    ]
+  },
+  "immediately_async_function": {
+    "prefix": [
+      "!async",
+      "iaf"
+    ],
+    "description": "\n(${2:async} () => {\n  $1\n})();\n",
+    "body": [
+      "(${2:async} () => {",
+      "  $1",
+      "})();"
+    ]
+  },
   "method_header": {
     "prefix": [
       "!mh"
