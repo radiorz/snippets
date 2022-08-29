@@ -1,18 +1,20 @@
 {
-  "arrow_funcion": {
+  "arrow_function": {
     "prefix": [
       "anfn"
     ],
-    "description": "($1) => { $2 }",
+    "description": "箭头函数",
     "body": [
-      "($1) => { $2 }"
+      "($1) => { ",
+      "  $2 ",
+      "}"
     ]
   },
   "axios_instance": {
     "prefix": [
       "!axios"
     ],
-    "description": "\nimport axios from \"axios\";\nconst options = {\n  baseUrl: \"/\",\n  timeout: 10 * 1000,\n  headers: {\n    Accept: \"application/json\",\n    \"Content-Type\": \"application/json\",\n  },\n};\nconst instance = axios.create(options);\n\n",
+    "description": "axios 实例",
     "body": [
       "import axios from \"axios\";",
       "const options = {",
@@ -26,11 +28,28 @@
       "const instance = axios.create(options);"
     ]
   },
+  "class_enum": {
+    "prefix": [
+      "!enum"
+    ],
+    "description": "\nclass $1 {\n  // Create new instances of the same class as static attributes\n  static $2 = new $1(\"$2\")\n  static $3= new $1(\"$3\")\n\n  constructor(name) {\n    this.name = name\n  }\n}\n",
+    "body": [
+      "class $1 {",
+      "  // Create new instances of the same class as static attributes",
+      "  static $2 = new $1(\"$2\")",
+      "  static $3= new $1(\"$3\")",
+      "",
+      "  constructor(name) {",
+      "    this.name = name",
+      "  }",
+      "}"
+    ]
+  },
   "commonjs_exec_exe_file": {
     "prefix": [
       "exe"
     ],
-    "description": "\nconst { execFile } = require(\"child_process\");\nconst command = `$1.exe`\nexecFile(command, function (err, data) {\n  console.log(err);\n  console.log(data.toString());\n});\n",
+    "description": "使用 nodejs 执行exe文件",
     "body": [
       "const { execFile } = require(\"child_process\");",
       "const command = `$1.exe`",
@@ -44,7 +63,7 @@
     "prefix": [
       "exec"
     ],
-    "description": "\nconst { exec } = require(\"child_process\");\nconst command = `$1`\nexec(command, (err, stdout, stderr) => {\n  if (err) {\n    console.error(err);\n    return;\n  }\n  console.log(stdout);\n});\n",
+    "description": "使用 nodejs 执行某个命令",
     "body": [
       "const { exec } = require(\"child_process\");",
       "const command = `$1`",
@@ -61,7 +80,7 @@
     "prefix": [
       "spawnexe"
     ],
-    "description": "\nconst { spawn } = require(\"child_process\");\nconst [command,...args] = `$1`.split(\" \");\nconst child = spawn(command,args,{stdio:\"inherit\"});\nchild.stdout.on('data', (data) => {\n  console.log(data.toString());\n});\n\nchild.stderr.on('data', (data) => {\n  console.error(data.toString());\n});\n\nchild.on('exit', (code) => {\n  console.log(`Child exited with code ${code}`);\n});\nchild.on(\"error\", (err) => {})\nchild.on(\"close\", () => {})\n",
+    "description": "使用 nodejs spawn 执行命令",
     "body": [
       "const { spawn } = require(\"child_process\");",
       "const [command,...args] = `$1`.split(\" \");",
@@ -194,9 +213,22 @@
       "})();"
     ]
   },
+  "immediately_function": {
+    "prefix": [
+      "!if",
+      "if"
+    ],
+    "description": "\n(() => {\n  $1\n})();\n",
+    "body": [
+      "(() => {",
+      "  $1",
+      "})();"
+    ]
+  },
   "method_header": {
     "prefix": [
-      "!mh"
+      "!mh",
+      "!funh"
     ],
     "description": "\n/**\n * @method $1\n * @param {} \n * @returns {}\n * @desc $2\n * @example\n */\n",
     "body": [

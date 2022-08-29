@@ -1,11 +1,13 @@
 {
-  "arrow_funcion": {
+  "arrow_function": {
     "prefix": [
       "anfn"
     ],
-    "description": "($1) => { $2 }",
+    "description": "箭头函数",
     "body": [
-      "($1) => { $2 }"
+      "($1) => { ",
+      "  $2 ",
+      "}"
     ]
   },
   "date_version": {

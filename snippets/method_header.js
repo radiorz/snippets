@@ -9,7 +9,7 @@ const body = `
 `;
 const description = "";
 module.exports = {
-  prefix: ["!mh"],
+  prefix: ["!mh","!funh"],
   type: ["javascript", "typescript", "java"],
   description: description || body,
   body: body.trim(),
