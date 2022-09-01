@@ -283,6 +283,16 @@
       "export default store;"
     ]
   },
+  "node_bin": {
+    "prefix": [
+      "!node",
+      "!nb"
+    ],
+    "description": "\n#!/usr/bin/env node\n",
+    "body": [
+      "#!/usr/bin/env node"
+    ]
+  },
   "now": {
     "prefix": [
       "now",

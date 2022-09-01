@@ -1,0 +1,29 @@
+{
+  "adb_force_stop": {
+    "prefix": [
+      "astop"
+    ],
+    "description": "\nadb shell am force-stop com.${packageName}\n",
+    "body": [
+      "adb shell am force-stop com.${packageName}"
+    ]
+  },
+  "adb_packages_names": {
+    "prefix": [
+      "apacakges"
+    ],
+    "description": "adb 查看包名",
+    "body": [
+      "adb shell pm list packages"
+    ]
+  },
+  "powershell_select_string": {
+    "prefix": [
+      "ss"
+    ],
+    "description": "过滤字符串",
+    "body": [
+      "| select-string -pattern \\$pattern"
+    ]
+  }
+}
