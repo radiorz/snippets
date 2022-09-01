@@ -1,4 +1,22 @@
 {
+  "adb_force_stop": {
+    "prefix": [
+      "astop"
+    ],
+    "description": "终止某个应用",
+    "body": [
+      "adb shell am force-stop com.${packageName}"
+    ]
+  },
+  "adb_packages_names": {
+    "prefix": [
+      "apacakges"
+    ],
+    "description": "adb 查看包名",
+    "body": [
+      "adb shell pm list packages"
+    ]
+  },
   "shellscript_tar_out": {
     "prefix": [
       "!tarout"

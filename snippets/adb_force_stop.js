@@ -5,7 +5,7 @@ const description = "终止某个应用";
 
 module.exports = {
   prefix: ["astop"],
-  type: ["shell", "powershell"],
+  type: ["shellscript", "powershell"],
   description: description || body,
   body: body.trim(),
 };

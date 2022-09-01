@@ -3,7 +3,7 @@
     "prefix": [
       "astop"
     ],
-    "description": "\nadb shell am force-stop com.${packageName}\n",
+    "description": "终止某个应用",
     "body": [
       "adb shell am force-stop com.${packageName}"
     ]
