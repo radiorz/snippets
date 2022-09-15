@@ -281,6 +281,20 @@
       "export default ${1:name}Slice.reducer;"
     ]
   },
+  "state_action_function": {
+    "prefix": [
+      "state"
+    ],
+    "description": "\n(state, { payload }) => {\n  if (!payload) {\n    return;\n  }\n  state.${1:value} = payload;\n}\n\n",
+    "body": [
+      "(state, { payload }) => {",
+      "  if (!payload) {",
+      "    return;",
+      "  }",
+      "  state.${1:value} = payload;",
+      "}"
+    ]
+  },
   "try_catch": {
     "prefix": [
       "trycc"

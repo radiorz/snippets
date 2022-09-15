@@ -344,6 +344,15 @@
       "})"
     ]
   },
+  "random_color_value": {
+    "prefix": [
+      "!color"
+    ],
+    "description": "\nconst color = `#${(~~(Math.random() * (1 << 24))).toString(16)}`\n",
+    "body": [
+      "const color = `#${(~~(Math.random() * (1 << 24))).toString(16)}`"
+    ]
+  },
   "react_flat_list": {
     "prefix": [
       "!flatlist"
@@ -473,6 +482,20 @@
       "  description: description || body,",
       "  body: body.trim(),",
       "};"
+    ]
+  },
+  "state_action_function": {
+    "prefix": [
+      "state"
+    ],
+    "description": "\n(state, { payload }) => {\n  if (!payload) {\n    return;\n  }\n  state.${1:value} = payload;\n}\n\n",
+    "body": [
+      "(state, { payload }) => {",
+      "  if (!payload) {",
+      "    return;",
+      "  }",
+      "  state.${1:value} = payload;",
+      "}"
     ]
   },
   "then_catch": {
