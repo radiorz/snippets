@@ -1,5 +1,5 @@
 const body = `
-const first = \${1:arr}.pop()
+const \${2:last} = \${1:arr}.pop()
 `;
 const description = "";
 
