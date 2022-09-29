@@ -148,6 +148,25 @@
       "})();"
     ]
   },
+  "item_remove_from_array_immutable": {
+    "prefix": [
+      "item_remove_from_array_immutable"
+    ],
+    "description": "\n  ${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})\n",
+    "body": [
+      "${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})"
+    ]
+  },
+  "item_remove_from_array_mutable": {
+    "prefix": [
+      "item_remove_from_array_mutable"
+    ],
+    "description": "\n  const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})\n  ${1:arr}.splice(index, 1)\n",
+    "body": [
+      "const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})",
+      "  ${1:arr}.splice(index, 1)"
+    ]
+  },
   "method_header": {
     "prefix": [
       "!mh",
@@ -213,6 +232,15 @@
       "new Promise((resolve,reject)=>{",
       "  $1",
       "})"
+    ]
+  },
+  "random_color_value": {
+    "prefix": [
+      "color"
+    ],
+    "description": "\nconst color = `#${(~~(Math.random() * (1 << 24))).toString(16)}`\n",
+    "body": [
+      "const color = `#${(~~(Math.random() * (1 << 24))).toString(16)}`"
     ]
   },
   "react_flat_list": {

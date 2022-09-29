@@ -1,7 +1,18 @@
+// https://www.cnblogs.com/jyaray/archive/2011/04/30/2033362.html
 const body = `
 tar -zcvf \${1:$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND}.tar.gz \${2:*} 
 `;
-const description = "";
+const description = `此为压缩
+
+-f <filename>  后加 filename
+-z 压缩 采用 gz
+-j 压缩 采用 bz2
+-c: 建立压缩档案（.tar)
+-v 显示所有过程
+
+-x 解压
+-O 解开到标准输出
+`;
 
 module.exports = {
   prefix: ["!tar"],
