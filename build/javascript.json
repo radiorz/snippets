@@ -1,4 +1,57 @@
 {
+  "array_item_remove_end_mutable": {
+    "prefix": [
+      "aer",
+      "item_remove_from_array_end_mutable"
+    ],
+    "description": "\nconst ${2:last} = ${1:arr}.pop()\n",
+    "body": [
+      "const ${2:last} = ${1:arr}.pop()"
+    ]
+  },
+  "array_item_remove_first_immutable": {
+    "prefix": [
+      "afri",
+      "item_remove_from_array_first_immutable"
+    ],
+    "description": "\nconst [first,...${2:rest}] = ${1:arr}\n",
+    "body": [
+      "const [first,...${2:rest}] = ${1:arr}"
+    ]
+  },
+  "array_item_remove_first_mutable": {
+    "prefix": [
+      "afr",
+      "item_remove_from_array_first_mutable"
+    ],
+    "description": "\nconst ${2:first} = ${1:arr}.shift()\n",
+    "body": [
+      "const ${2:first} = ${1:arr}.shift()"
+    ]
+  },
+  "array_item_remove_immutable": {
+    "prefix": [
+      "ari",
+      "item_remove_from_array_immutable"
+    ],
+    "description": "\n  ${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})\n",
+    "body": [
+      "${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})"
+    ]
+  },
+  "array_item_remove_mutable": {
+    "prefix": [
+      "arm",
+      "item_remove_from_array_mutable"
+    ],
+    "description": "\n  const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})\n  if(index > -1){\n    ${1:arr}.splice(index, 1)\n  }\n",
+    "body": [
+      "const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})",
+      "  if(index > -1){",
+      "    ${1:arr}.splice(index, 1)",
+      "  }"
+    ]
+  },
   "arrow_function": {
     "prefix": [
       "anfn"
@@ -26,6 +79,19 @@
       "  },",
       "};",
       "const instance = axios.create(options);"
+    ]
+  },
+  "Capitalize": {
+    "prefix": [
+      "Capitalize"
+    ],
+    "description": "\nfunction capitalize(str){\n  const [first,...rest] = str\n  if(!first) return ''\n  return first.toUpperCase()+ rest.join('').toLowerCase()\n}\n",
+    "body": [
+      "function capitalize(str){",
+      "  const [first,...rest] = str",
+      "  if(!first) return ''",
+      "  return first.toUpperCase()+ rest.join('').toLowerCase()",
+      "}"
     ]
   },
   "class_enum": {
@@ -118,6 +184,35 @@
       "\"$CURRENT_YEAR.$CURRENT_MONTH.$CURRENT_DATE\""
     ],
     "description": "今天日期"
+  },
+  "debounce": {
+    "prefix": [
+      "debounce"
+    ],
+    "description": "\nconst debounce = (fn, delay, immediate)=> {\n  let timer\n  let result\n  return function(...args) {\n    if (timer) clearTimeout(timer)\n\n    if (immediate) {\n      // 如果timer存在，说明第二次调用的时候还没到delay时间，因为如果超过delay时间\n      // timer会被赋值为null，所以这个时候我们不应该执行fn，应该重新设置一个定时器\n      // 但如果是一次的时候，因为还没有设过定时器，所以这里timer会是undefined\n      if (timer) {\n        timer = setTimeout(() => timer = null, delay)\n      } else {\n        result = fn.apply(this, args)\n        return result\n      }\n    } else {\n      timer = setTimeout(() => fn.apply(this, args), delay)\n    }\n  }\n}\n\n",
+    "body": [
+      "const debounce = (fn, delay, immediate)=> {",
+      "  let timer",
+      "  let result",
+      "  return function(...args) {",
+      "    if (timer) clearTimeout(timer)",
+      "",
+      "    if (immediate) {",
+      "      // 如果timer存在，说明第二次调用的时候还没到delay时间，因为如果超过delay时间",
+      "      // timer会被赋值为null，所以这个时候我们不应该执行fn，应该重新设置一个定时器",
+      "      // 但如果是一次的时候，因为还没有设过定时器，所以这里timer会是undefined",
+      "      if (timer) {",
+      "        timer = setTimeout(() => timer = null, delay)",
+      "      } else {",
+      "        result = fn.apply(this, args)",
+      "        return result",
+      "      }",
+      "    } else {",
+      "      timer = setTimeout(() => fn.apply(this, args), delay)",
+      "    }",
+      "  }",
+      "}"
+    ]
   },
   "delay": {
     "prefix": [
@@ -225,56 +320,6 @@
       "})();"
     ]
   },
-  "item_remove_from_array_end_immutable": {
-    "prefix": [
-      "aeir",
-      "item_remove_from_array_end_immutable"
-    ],
-    "description": "\nconst [first,...rest] = ${1:arr}\n${1:arr} = rest\n",
-    "body": [
-      "const [first,...rest] = ${1:arr}",
-      "${1:arr} = rest"
-    ]
-  },
-  "item_remove_from_array_end_mutable": {
-    "prefix": [
-      "aer",
-      "item_remove_from_array_end_mutable"
-    ],
-    "description": "\nconst first = ${1:arr}.pop()\n",
-    "body": [
-      "const first = ${1:arr}.pop()"
-    ]
-  },
-  "item_remove_from_array_first_mutable": {
-    "prefix": [
-      "afir",
-      "item_remove_from_array_first_mutable"
-    ],
-    "description": "\nconst ${2:lastItem} = ${1:arr}.shift()\n",
-    "body": [
-      "const ${2:lastItem} = ${1:arr}.shift()"
-    ]
-  },
-  "item_remove_from_array_immutable": {
-    "prefix": [
-      "item_remove_from_array_immutable"
-    ],
-    "description": "\n  ${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})\n",
-    "body": [
-      "${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})"
-    ]
-  },
-  "item_remove_from_array_mutable": {
-    "prefix": [
-      "item_remove_from_array_mutable"
-    ],
-    "description": "\n  const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})\n  ${1:arr}.splice(index, 1)\n",
-    "body": [
-      "const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})",
-      "  ${1:arr}.splice(index, 1)"
-    ]
-  },
   "method_header": {
     "prefix": [
       "!mh",
@@ -362,6 +407,39 @@
       "Object.entries(options).forEach(([key,value])=>{",
       "$1",
       "}"
+    ]
+  },
+  "object_get_by_path_lodash": {
+    "prefix": [
+      "lg",
+      "ogpl"
+    ],
+    "description": "\nimport {get} from 'lodash-es'\nget(obj, path,defaultValue)\n",
+    "body": [
+      "import {get} from 'lodash-es'",
+      "get(obj, path,defaultValue)"
+    ]
+  },
+  "object_mergeRight": {
+    "prefix": [
+      "mergeRight"
+    ],
+    "description": "\n  function mergeRight(obj, theOtherObj){\n    return \n  }\n",
+    "body": [
+      "function mergeRight(obj, theOtherObj){",
+      "    return ",
+      "  }"
+    ]
+  },
+  "object_set_by_path_lodash": {
+    "prefix": [
+      "ls",
+      "ospl"
+    ],
+    "description": "\nimport {set} from 'lodash-es'\nset(obj, path, value)\n",
+    "body": [
+      "import {set} from 'lodash-es'",
+      "set(obj, path, value)"
     ]
   },
   "one_line_comment_close": {
@@ -560,6 +638,46 @@
       ".catch(()=>{})"
     ]
   },
+  "throttle": {
+    "prefix": [
+      "throttle"
+    ],
+    "description": "debounce 实现，虽然已经有 lodash 库 但是有时候不用 lodash",
+    "body": [
+      "function throttle(fn, delay=1000) {",
+      "  let prevTime = 0",
+      "  let timer",
+      "  return function(...args) {",
+      "    const now = Date.now()",
+      "    const remaining = delay - (now - prevTime);",
+      "    // 如果第二次执行超过delay了就立即执行",
+      "    // remaining > wait是为了处理修改了系统时间的情况",
+      "    // 比如把当前系统时间往过去调了十分钟，那么now其实是比prevTime小的",
+      "    // 那么remaning就可能是一个比较大的数了",
+      "    if (remaining > 0 || remaining > wait) {",
+      "      if (timer) {",
+      "        clearTimeout(timer)",
+      "        timer = null",
+      "      }",
+      "      fn.apply(this, args)",
+      "      prevTimer = now",
+      "    } else if (!timer) {",
+      "      // 这里就是为了处理1.5s停止触发的情况",
+      "      // 以1.5s为例，delay为1s，这个时候我们设置一个定时器",
+      "      // 让它在0.5s后执行",
+      "      // 这样在整个过程中，就是第0s, 第1s，第2s分别执行一次，共三次",
+      "      // 虽然我们是1.5s就停止触发了",
+      "      // 这样就保证了最后一次动作一直可以执行",
+      "      timer = setTimeout(() => {",
+      "        fn.apply(this, args)",
+      "        timer = null",
+      "        prevTime = Date.now()",
+      "      }, remaining)",
+      "    }",
+      "  }",
+      "}"
+    ]
+  },
   "try_catch": {
     "prefix": [
       "trycc"
@@ -570,6 +688,17 @@
       "  $1",
       "}catch(err){",
       "  $2",
+      "}"
+    ]
+  },
+  "type_of": {
+    "prefix": [
+      "typeOf"
+    ],
+    "description": "检验数据类型",
+    "body": [
+      "function typeOf (value){",
+      "  return Object.prototype.toString.call(value).slice(8,-1).toLowerCase()",
       "}"
     ]
   },

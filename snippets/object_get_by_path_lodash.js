@@ -1,12 +1,12 @@
 const body = `
-  \${1:arr} = \${1:arr}.filter((item)=>\${2:item.id === id})
+import {get} from 'lodash-es'
+get(obj, path,defaultValue)
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["item_remove_from_array_immutable"],
+  prefix: ["lg", "ogpl"],
   type: ["javascript", "typescript"],
   description: description || body,
   body: body.trim(),
 };
-

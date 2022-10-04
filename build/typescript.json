@@ -1,4 +1,57 @@
 {
+  "array_item_remove_end_mutable": {
+    "prefix": [
+      "aer",
+      "item_remove_from_array_end_mutable"
+    ],
+    "description": "\nconst ${2:last} = ${1:arr}.pop()\n",
+    "body": [
+      "const ${2:last} = ${1:arr}.pop()"
+    ]
+  },
+  "array_item_remove_first_immutable": {
+    "prefix": [
+      "afri",
+      "item_remove_from_array_first_immutable"
+    ],
+    "description": "\nconst [first,...${2:rest}] = ${1:arr}\n",
+    "body": [
+      "const [first,...${2:rest}] = ${1:arr}"
+    ]
+  },
+  "array_item_remove_first_mutable": {
+    "prefix": [
+      "afr",
+      "item_remove_from_array_first_mutable"
+    ],
+    "description": "\nconst ${2:first} = ${1:arr}.shift()\n",
+    "body": [
+      "const ${2:first} = ${1:arr}.shift()"
+    ]
+  },
+  "array_item_remove_immutable": {
+    "prefix": [
+      "ari",
+      "item_remove_from_array_immutable"
+    ],
+    "description": "\n  ${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})\n",
+    "body": [
+      "${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})"
+    ]
+  },
+  "array_item_remove_mutable": {
+    "prefix": [
+      "arm",
+      "item_remove_from_array_mutable"
+    ],
+    "description": "\n  const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})\n  if(index > -1){\n    ${1:arr}.splice(index, 1)\n  }\n",
+    "body": [
+      "const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})",
+      "  if(index > -1){",
+      "    ${1:arr}.splice(index, 1)",
+      "  }"
+    ]
+  },
   "arrow_function": {
     "prefix": [
       "anfn"
@@ -148,25 +201,6 @@
       "})();"
     ]
   },
-  "item_remove_from_array_immutable": {
-    "prefix": [
-      "item_remove_from_array_immutable"
-    ],
-    "description": "\n  ${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})\n",
-    "body": [
-      "${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})"
-    ]
-  },
-  "item_remove_from_array_mutable": {
-    "prefix": [
-      "item_remove_from_array_mutable"
-    ],
-    "description": "\n  const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})\n  ${1:arr}.splice(index, 1)\n",
-    "body": [
-      "const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})",
-      "  ${1:arr}.splice(index, 1)"
-    ]
-  },
   "method_header": {
     "prefix": [
       "!mh",
@@ -202,6 +236,28 @@
       "Object.entries(options).forEach(([key,value])=>{",
       "$1",
       "}"
+    ]
+  },
+  "object_get_by_path_lodash": {
+    "prefix": [
+      "lg",
+      "ogpl"
+    ],
+    "description": "\nimport {get} from 'lodash-es'\nget(obj, path,defaultValue)\n",
+    "body": [
+      "import {get} from 'lodash-es'",
+      "get(obj, path,defaultValue)"
+    ]
+  },
+  "object_set_by_path_lodash": {
+    "prefix": [
+      "ls",
+      "ospl"
+    ],
+    "description": "\nimport {set} from 'lodash-es'\nset(obj, path, value)\n",
+    "body": [
+      "import {set} from 'lodash-es'",
+      "set(obj, path, value)"
     ]
   },
   "one_line_comment_close": {
