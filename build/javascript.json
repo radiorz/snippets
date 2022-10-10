@@ -515,6 +515,21 @@
       "}"
     ]
   },
+  "readable": {
+    "prefix": [
+      "!readable"
+    ],
+    "description": "\nconst { Readable } = require(\"stream\");\n\nconst readableStream = new Readable({\n  // highWaterMark: \n  read: (size) => {},\n});\nreadableStream.push(\"test\");\n",
+    "body": [
+      "const { Readable } = require(\"stream\");",
+      "",
+      "const readableStream = new Readable({",
+      "  // highWaterMark: ",
+      "  read: (size) => {},",
+      "});",
+      "readableStream.push(\"test\");"
+    ]
+  },
   "redux_toolkit_slice": {
     "prefix": [
       "!slice"
@@ -785,6 +800,22 @@
       "  // mounted(){},",
       "  methods: {},",
       "}"
+    ]
+  },
+  "writable": {
+    "prefix": [
+      "!writable"
+    ],
+    "description": "\nconst { Writable } = require(\"stream\");\n\n\nconst writableStream = new Writable({\n  write(chunk, encoding, callback) {\n    callback();\n  },\n});\n\n\n",
+    "body": [
+      "const { Writable } = require(\"stream\");",
+      "",
+      "",
+      "const writableStream = new Writable({",
+      "  write(chunk, encoding, callback) {",
+      "    callback();",
+      "  },",
+      "});"
     ]
   },
   "zx": {
