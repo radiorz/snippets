@@ -271,8 +271,8 @@
     "prefix": [
       "!fh"
     ],
-    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc \n * @todo\n *\n * @done\n * @example\n */\n",
-    "origin": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc \n * @todo\n *\n * @done\n * @example\n */\n",
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc $2\n * @todo\n *\n * @done\n * @example\n */\n",
+    "origin": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc $2\n * @todo\n *\n * @done\n * @example\n */\n",
     "body": [
       "/**",
       " * @author",
@@ -280,7 +280,7 @@
       " * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}",
       " * @path $RELATIVE_FILEPATH",
       " * @dir $TM_DIRECTORY",
-      " * @desc ",
+      " * @desc $2",
       " * @todo",
       " *",
       " * @done",
@@ -599,7 +599,7 @@
     "prefix": [
       "!rn"
     ],
-    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc \n * @todo\n *\n * @done\n * @example\n */\n\nimport { View, Text } from 'react-native'\nimport React, { useState, useEffect, memo } from 'react'\n\n function ${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}() {\n  return (\n    <View>\n      <Text>${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}</Text>\n    </View>\n  )\n}\nexport default memo(${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}})\n\n\n",
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc $2\n * @todo\n *\n * @done\n * @example\n */\n\nimport { View, Text } from 'react-native'\nimport React, { useState, useEffect, memo } from 'react'\n\n function ${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}() {\n  return (\n    <View>\n      <Text>${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}</Text>\n    </View>\n  )\n}\nexport default memo(${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}})\n\n\n",
     "body": [
       "/**",
       " * @author",
@@ -607,7 +607,7 @@
       " * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}",
       " * @path $RELATIVE_FILEPATH",
       " * @dir $TM_DIRECTORY",
-      " * @desc ",
+      " * @desc $2",
       " * @todo",
       " *",
       " * @done",

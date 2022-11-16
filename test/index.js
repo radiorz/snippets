@@ -4,21 +4,21 @@
  * @fileBase test
  * @path test\index.js
  * @dir D:\code\snippets\test
- * @desc 
+ * @desc
  * @todo
  *
  * @done
  * @example
  */
 
-import { View, Text } from 'react-native'
-import React, { useState, useEffect, memo } from 'react'
+import { View, Text } from "react-native";
+import React, { useState, useEffect, memo } from "react";
 
- function Componen() {
+function test() {
   return (
     <View>
-      <Text>Componen</Text>
+      <Text>test</Text>
     </View>
-  )
+  );
 }
-export default memo(Componen)
+export default memo(test);

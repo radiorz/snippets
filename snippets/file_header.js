@@ -7,7 +7,7 @@ const body = `
  * @fileBase ${filename}
  * @path $RELATIVE_FILEPATH
  * @dir $TM_DIRECTORY
- * @desc 
+ * @desc $2
  * @todo
  *
  * @done
