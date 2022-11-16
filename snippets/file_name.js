@@ -11,8 +11,9 @@
  * @done
  * @example
  */
+
 const body =
-  "${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}";
+  "${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}";
 const description = "";
 
 module.exports = {
