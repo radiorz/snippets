@@ -12,7 +12,7 @@
  * @example
  */
 const body =
-  "${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}";
+  "${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}";
 const description = "";
 
 module.exports = {
