@@ -12,15 +12,18 @@
     "prefix": [
       "!fh"
     ],
-    "description": "\n/**\n * @author \n * @file \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n",
-    "origin": "\n/**\n * @author \n * @file \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n",
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc \n * @todo\n *\n * @done\n * @example\n */\n",
+    "origin": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc \n * @todo\n *\n * @done\n * @example\n */\n",
     "body": [
       "/**",
-      " * @author ",
-      " * @file ",
-      " * @desc $1",
+      " * @author",
+      " * @file $TM_FILENAME",
+      " * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}",
+      " * @path $RELATIVE_FILEPATH",
+      " * @dir $TM_DIRECTORY",
+      " * @desc ",
       " * @todo",
-      " * ",
+      " *",
       " * @done",
       " * @example",
       " */"

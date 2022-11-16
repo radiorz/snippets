@@ -271,18 +271,31 @@
     "prefix": [
       "!fh"
     ],
-    "description": "\n/**\n * @author \n * @file \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n",
-    "origin": "\n/**\n * @author \n * @file \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n",
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc \n * @todo\n *\n * @done\n * @example\n */\n",
+    "origin": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc \n * @todo\n *\n * @done\n * @example\n */\n",
     "body": [
       "/**",
-      " * @author ",
-      " * @file ",
-      " * @desc $1",
+      " * @author",
+      " * @file $TM_FILENAME",
+      " * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}",
+      " * @path $RELATIVE_FILEPATH",
+      " * @dir $TM_DIRECTORY",
+      " * @desc ",
       " * @todo",
-      " * ",
+      " *",
       " * @done",
       " * @example",
       " */"
+    ]
+  },
+  "file_name": {
+    "prefix": [
+      "!file_name"
+    ],
+    "description": "${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}",
+    "origin": "${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}",
+    "body": [
+      "${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}"
     ]
   },
   "get_now_dayjs": {
@@ -519,7 +532,7 @@
     "prefix": [
       "!readable"
     ],
-    "description": "\nconst { Readable } = require(\"stream\");\n\nconst readableStream = new Readable({\n  // highWaterMark: \n  read: (size) => {},\n});\nreadableStream.push(\"test\");\n",
+    "description": "\nconst { Readable } = require(\"stream\");\n\nconst readableStream = new Readable({\n  // highWaterMark: \n  read: (size) => {},\n});\n// readableStream.push(\"test\");\n",
     "body": [
       "const { Readable } = require(\"stream\");",
       "",
@@ -527,7 +540,7 @@
       "  // highWaterMark: ",
       "  read: (size) => {},",
       "});",
-      "readableStream.push(\"test\");"
+      "// readableStream.push(\"test\");"
     ]
   },
   "redux_toolkit_slice": {
@@ -586,28 +599,32 @@
     "prefix": [
       "!rn"
     ],
-    "description": "\n/**\n * @author \n * @file \n * @desc $1\n * @todo\n * \n * @done\n * @example\n */\n\nimport { View, Text } from 'react-native'\nimport React, {useState,useEffect} from 'react'\n\nexport default function $1() {\n  return (\n    <View>\n      <Text>rn_func_component</Text>\n    </View>\n  )\n}\n\n\n\n",
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc \n * @todo\n *\n * @done\n * @example\n */\n\nimport { View, Text } from 'react-native'\nimport React, { useState, useEffect, memo } from 'react'\n\n function ${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}() {\n  return (\n    <View>\n      <Text>${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}</Text>\n    </View>\n  )\n}\nexport default memo(${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}})\n\n\n",
     "body": [
       "/**",
-      " * @author ",
-      " * @file ",
-      " * @desc $1",
+      " * @author",
+      " * @file $TM_FILENAME",
+      " * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}",
+      " * @path $RELATIVE_FILEPATH",
+      " * @dir $TM_DIRECTORY",
+      " * @desc ",
       " * @todo",
-      " * ",
+      " *",
       " * @done",
       " * @example",
       " */",
       "",
       "import { View, Text } from 'react-native'",
-      "import React, {useState,useEffect} from 'react'",
+      "import React, { useState, useEffect, memo } from 'react'",
       "",
-      "export default function $1() {",
+      " function ${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}() {",
       "  return (",
       "    <View>",
-      "      <Text>rn_func_component</Text>",
+      "      <Text>${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}</Text>",
       "    </View>",
       "  )",
-      "}"
+      "}",
+      "export default memo(${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}})"
     ]
   },
   "snippet": {

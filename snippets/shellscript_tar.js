@@ -1,6 +1,8 @@
 // https://www.cnblogs.com/jyaray/archive/2011/04/30/2033362.html
+// tart -zcvf 目标名称 源文件
 const body = `
-tar -zcvf \${1:$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND}.tar.gz \${2:*} 
+$now = \${1:$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND}
+tar -zcvf target.tar.gz \${2:./*} 
 `;
 const description = `此为压缩
 

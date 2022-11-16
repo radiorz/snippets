@@ -32,7 +32,8 @@
     ],
     "description": "此为压缩\n\n-f <filename>  后加 filename\n-z 压缩 采用 gz\n-j 压缩 采用 bz2\n-c: 建立压缩档案（.tar)\n-v 显示所有过程\n\n-x 解压\n-O 解开到标准输出\n",
     "body": [
-      "tar -zcvf ${1:$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND}.tar.gz ${2:*}"
+      "$now = ${1:$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND}",
+      "tar -zcvf target.tar.gz ${2:./*}"
     ]
   }
 }

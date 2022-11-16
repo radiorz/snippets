@@ -1,14 +1,20 @@
+const dirname = "${TM_DIRECTORY/^(.*[\\\\|\\/])(.*)/$2/}";
+const { origin: filename } = require("./file_name");
 const body = `
 /**
- * @author 
- * @file 
- * @desc $1
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${filename}
+ * @path $RELATIVE_FILEPATH
+ * @dir $TM_DIRECTORY
+ * @desc 
  * @todo
- * 
+ *
  * @done
  * @example
  */
 `;
+
 const description = "";
 module.exports = {
   prefix: ["!fh"],
