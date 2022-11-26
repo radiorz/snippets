@@ -48,3 +48,16 @@ https://github.com/brpaz/jetbrains-plugin-vscode-snippets
   // 	"description": "Log output to console"
   // }
 ```
+## 比较推荐的快捷命令
+###  快捷键 csl 
+```js
+## 直接console.log 大量的时候无法判断变量到底是个啥子,还是加个字符串在前头比较舒服
+console.log(`$1`,$1)
+```
+
+
+### 快捷键 !rn
+全局性的快捷键我喜欢+! 表示 用于对应 原本 vscode 就有的 !html 之类的
+这个的好处就是可以快速生成 文件头 还有 react-native 的基础组件架构
+亮点是可以自动获取组件的名称
+虽然file_name的正则写的很不友好,但是能用(求优化 当是 index.js 用 父组件当组件名称, 当是 xxx.js 直接用 父组件当组件名称.
