@@ -313,7 +313,22 @@
       "const color = `#${(~~(Math.random() * (1 << 24))).toString(16)}`"
     ]
   },
-  "react_flat_list": {
+  "react_hook": {
+    "prefix": [
+      "!hook"
+    ],
+    "description": "\nimport { useState, useEffect } from \"react\";\n// import { useDispatch } from \"react-redux\";\n\nexport default function use${1:Something}() {\n  const [$2] = useState(null);\n  return {$2};\n}\n\n",
+    "body": [
+      "import { useState, useEffect } from \"react\";",
+      "// import { useDispatch } from \"react-redux\";",
+      "",
+      "export default function use${1:Something}() {",
+      "  const [$2] = useState(null);",
+      "  return {$2};",
+      "}"
+    ]
+  },
+  "reactnative_flat_list": {
     "prefix": [
       "!flatlist"
     ],
@@ -332,19 +347,22 @@
       ")"
     ]
   },
-  "react_hook": {
+  "reactnative_section_list": {
     "prefix": [
-      "!hook"
+      "!sectionlist"
     ],
-    "description": "\nimport { useState, useEffect } from \"react\";\n// import { useDispatch } from \"react-redux\";\n\nexport default function use${1:Something}() {\n  const [$2] = useState(null);\n  return {$2};\n}\n\n",
+    "description": "react native sectionlist",
     "body": [
-      "import { useState, useEffect } from \"react\";",
-      "// import { useDispatch } from \"react-redux\";",
-      "",
-      "export default function use${1:Something}() {",
-      "  const [$2] = useState(null);",
-      "  return {$2};",
-      "}"
+      "(",
+      "  <SectionList",
+      "    flex={1}",
+      "    sections={data}",
+      "    keyExtractor={(item, index) => index}",
+      "    ItemSeparatorComponent={ItemSeparatorComponent}",
+      "    renderItem={renderItem || (({ item }) => <SectionItem item={item} onPress={item?.onPress} />)}",
+      "    renderSectionHeader={renderHeader || (({ section }) => <SectionHeader title={section.title} />)}",
+      "  />",
+      ")"
     ]
   },
   "redux_toolkit_slice": {
