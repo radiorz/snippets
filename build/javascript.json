@@ -271,17 +271,18 @@
     "prefix": [
       "!fh"
     ],
-    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc $2\n * @todo\n *\n * @done\n * @example\n */\n",
-    "origin": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc $2\n * @todo\n *\n * @done\n * @example\n */\n",
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n",
+    "origin": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n",
     "body": [
       "/**",
       " * @author",
       " * @file $TM_FILENAME",
-      " * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}",
+      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
       " * @path $RELATIVE_FILEPATH",
-      " * @dir $TM_DIRECTORY",
+      " * @from ",
       " * @desc $2",
       " * @todo",
+      "",
       " *",
       " * @done",
       " * @example",
@@ -292,10 +293,10 @@
     "prefix": [
       "!file_name"
     ],
-    "description": "${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}",
-    "origin": "${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}",
+    "description": "${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
+    "origin": "${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
     "body": [
-      "${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}"
+      "${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}"
     ]
   },
   "get_now_dayjs": {
@@ -599,32 +600,34 @@
     "prefix": [
       "!rn"
     ],
-    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}\n * @path $RELATIVE_FILEPATH\n * @dir $TM_DIRECTORY\n * @desc $2\n * @todo\n *\n * @done\n * @example\n */\n\nimport { View, Text } from 'react-native'\nimport React, { useState, useEffect, memo } from 'react'\n\n function ${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}() {\n  return (\n    <View>\n      <Text>${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}</Text>\n    </View>\n  )\n}\nexport default memo(${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}})\n\n\n",
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\nimport React, { useState, useEffect, memo } from 'react'\nimport { View, Text } from 'react-native'\n\nfunction ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {\n  return (\n    <View>\n      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>\n    </View>\n  )\n}\n\nexport default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}\n\n",
     "body": [
       "/**",
       " * @author",
       " * @file $TM_FILENAME",
-      " * @fileBase ${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}",
+      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
       " * @path $RELATIVE_FILEPATH",
-      " * @dir $TM_DIRECTORY",
+      " * @from ",
       " * @desc $2",
       " * @todo",
+      "",
       " *",
       " * @done",
       " * @example",
       " */",
       "",
-      "import { View, Text } from 'react-native'",
       "import React, { useState, useEffect, memo } from 'react'",
+      "import { View, Text } from 'react-native'",
       "",
-      " function ${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}() {",
+      "function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {",
       "  return (",
       "    <View>",
-      "      <Text>${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}}</Text>",
+      "      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>",
       "    </View>",
       "  )",
       "}",
-      "export default memo(${1:${RELATIVE_FILEPATH/(.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*).*\\..*/$1$2/}})"
+      "",
+      "export default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}"
     ]
   },
   "snippet": {

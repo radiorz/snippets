@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2022.8.16",
+  "version": "2022.11.16",
   "engines": {
     "vscode": "^1.69.0"
   },
@@ -38,6 +38,10 @@
       {
         "language": "markdown",
         "path": "./snippets/markdown.json"
+      },
+      {
+        "language": "powershell",
+        "path": "./snippets/powershell.json"
       },
       {
         "language": "sass",
