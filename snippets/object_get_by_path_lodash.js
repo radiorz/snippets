@@ -6,7 +6,7 @@ const description = "";
 
 module.exports = {
   prefix: ["lg", "ogpl"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };

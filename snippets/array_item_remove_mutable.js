@@ -8,7 +8,7 @@ const description = "";
 
 module.exports = {
   prefix: ["arm", "item_remove_from_array_mutable"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };

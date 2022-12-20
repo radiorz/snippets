@@ -28,7 +28,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!slice"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };

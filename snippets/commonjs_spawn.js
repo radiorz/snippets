@@ -21,7 +21,7 @@ const description = "使用 nodejs spawn 执行命令";
 
 module.exports = {
   prefix: ["spawnexe"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };

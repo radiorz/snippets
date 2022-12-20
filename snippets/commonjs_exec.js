@@ -17,7 +17,7 @@ const description = "使用 nodejs 执行某个命令";
 
 module.exports = {
   prefix: ["exec"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };

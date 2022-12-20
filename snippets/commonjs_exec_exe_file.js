@@ -15,7 +15,7 @@ const description = "使用 nodejs 执行exe文件";
 
 module.exports = {
   prefix: ["exe"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };
