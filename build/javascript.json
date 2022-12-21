@@ -495,6 +495,39 @@
       "const color = `#${(~~(Math.random() * (1 << 24))).toString(16)}`"
     ]
   },
+  "react_func_component": {
+    "prefix": [
+      "!react"
+    ],
+    "description": "react 函数组件",
+    "body": [
+      "/**",
+      " * @author",
+      " * @file $TM_FILENAME",
+      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
+      " * @path $RELATIVE_FILEPATH",
+      " * @from ",
+      " * @desc $2",
+      " * @todo",
+      "",
+      " *",
+      " * @done",
+      " * @example",
+      " */",
+      "",
+      "import React, { useState, useEffect, memo } from 'react'",
+      "",
+      "function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {",
+      "  return (",
+      "    <div>",
+      "      ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}",
+      "    </div>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}"
+    ]
+  },
   "react_hook": {
     "prefix": [
       "!hook"
@@ -527,6 +560,40 @@
       "      )}",
       "    />",
       ")"
+    ]
+  },
+  "reactnative_func_component": {
+    "prefix": [
+      "!rn"
+    ],
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\nimport React, { useState, useEffect, memo } from 'react'\nimport { View, Text } from 'react-native'\n\nfunction ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {\n  return (\n    <View>\n      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>\n    </View>\n  )\n}\n\nexport default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}\n\n",
+    "body": [
+      "/**",
+      " * @author",
+      " * @file $TM_FILENAME",
+      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
+      " * @path $RELATIVE_FILEPATH",
+      " * @from ",
+      " * @desc $2",
+      " * @todo",
+      "",
+      " *",
+      " * @done",
+      " * @example",
+      " */",
+      "",
+      "import React, { useState, useEffect, memo } from 'react'",
+      "import { View, Text } from 'react-native'",
+      "",
+      "function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {",
+      "  return (",
+      "    <View>",
+      "      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>",
+      "    </View>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}"
     ]
   },
   "reactnative_section_list": {
@@ -612,40 +679,6 @@
       "});",
       "",
       "globalThis.$store = store;"
-    ]
-  },
-  "rn_func_component": {
-    "prefix": [
-      "!rn"
-    ],
-    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\nimport React, { useState, useEffect, memo } from 'react'\nimport { View, Text } from 'react-native'\n\nfunction ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {\n  return (\n    <View>\n      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>\n    </View>\n  )\n}\n\nexport default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}\n\n",
-    "body": [
-      "/**",
-      " * @author",
-      " * @file $TM_FILENAME",
-      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
-      " * @path $RELATIVE_FILEPATH",
-      " * @from ",
-      " * @desc $2",
-      " * @todo",
-      "",
-      " *",
-      " * @done",
-      " * @example",
-      " */",
-      "",
-      "import React, { useState, useEffect, memo } from 'react'",
-      "import { View, Text } from 'react-native'",
-      "",
-      "function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {",
-      "  return (",
-      "    <View>",
-      "      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>",
-      "    </View>",
-      "  )",
-      "}",
-      "",
-      "export default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}"
     ]
   },
   "snippet": {
