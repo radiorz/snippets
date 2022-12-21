@@ -1,11 +1,23 @@
+/**
+ * @author
+ * @file vue_header.js
+ * @fileBase vue_header
+ * @path snippets\vue_header.js
+ * @from 
+ * @desc
+ *  vue 的文件头部标注
+ *  采用了统一的 file_header 标准
+ *  
+ * @todo
+
+ *
+ * @done
+ * @example
+ */
+const { origin: fileHeader } = require("./file_header");
 const body = `
- <!--
-  * @file \${1:该文件的描述信息}
-  * @Date $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND
-  * TODO
-  * [] \${2}
-  * @example
-  * 
+<!--
+ ${fileHeader}
 -->
 `;
 const description = "";

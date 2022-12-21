@@ -1,9 +1,27 @@
+/**
+ * @author
+ * @file vue3_component.js
+ * @fileBase vue3_component
+ * @path snippets\vue3_component.js
+ * @from 
+ * @desc 
+ * vue3 setup 通用组件格式
+ * 名称跟随文件名
+ * file header vue header 
+ * @todo
+
+ *
+ * @done
+ * @example
+ */
+
+const { origin: fileName } = require("./file_name");
 const vueHeader = require("./vue_header");
 const body = `
 ${vueHeader.origin}
 <script>
   export default {
-    name: \"$2\"
+    name: \"\${2:${fileName}}\"
   };
 </script>
 <script setup>

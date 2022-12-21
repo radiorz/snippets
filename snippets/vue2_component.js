@@ -1,11 +1,8 @@
-const body = `
-<!--
-* @FileDescription: \${1:该文件的描述信息}
-* @Date: $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND
-* TODO:
-* [] \${2}
--->
+const file_header = require("./file_header");
+const vue_header = require("./vue_header");
 
+const body = `
+${vue_header.origin}
 <template>
   <div>
   </div>
@@ -14,7 +11,7 @@ const body = `
 <script>
 export default {
   // 组件名
-  name: '\${2:Demo}',
+  name: '\${2:${file_header.origin}}',
   components: {},
   // filters:{},
   // mixins:[],
@@ -35,12 +32,12 @@ export default {
 <style lang=\"scss\" scoped>
 
 </style>
-`
+`;
 const description = "vue2";
 
 module.exports = {
   prefix: ["!vue2"],
-  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+  type: ["vue"],
   description: description || body,
   body,
 };
