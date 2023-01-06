@@ -1,8 +1,8 @@
-const file_header = require("./file_header");
-const vue_header = require("./vue_header");
+const fileName = require("./file_name");
+const vueHeader = require("./vue_header");
 
 const body = `
-${vue_header.origin}
+${vueHeader.origin}
 <template>
   <div>
   </div>
@@ -11,7 +11,7 @@ ${vue_header.origin}
 <script>
 export default {
   // 组件名
-  name: '\${2:${file_header.origin}}',
+  name: '\${1:${fileName.origin}}',
   components: {},
   // filters:{},
   // mixins:[],
