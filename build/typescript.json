@@ -52,6 +52,18 @@
       "  }"
     ]
   },
+  "arrow_function_named": {
+    "prefix": [
+      "afn"
+    ],
+    "description": "箭头函数",
+    "body": [
+      "",
+      "const ${1:func} = ($2) => { ",
+      "  $3",
+      "}"
+    ]
+  },
   "arrow_function": {
     "prefix": [
       "anfn"
@@ -317,15 +329,38 @@
     "prefix": [
       "!hook"
     ],
-    "description": "\nimport { useState, useEffect } from \"react\";\n// import { useDispatch } from \"react-redux\";\n\nexport default function use${1:Something}() {\n  const [$2] = useState(null);\n  return {$2};\n}\n\n",
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\nimport { useState, useEffect } from \"react\";\n// import { useDispatch } from \"react-redux\";\n\nexport default function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {\n  const [$2] = useState(null);\n  return {$2};\n}\n\n",
     "body": [
+      "/**",
+      " * @author",
+      " * @file $TM_FILENAME",
+      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
+      " * @path $RELATIVE_FILEPATH",
+      " * @from ",
+      " * @desc $2",
+      " * @todo",
+      "",
+      " *",
+      " * @done",
+      " * @example",
+      " */",
+      "",
       "import { useState, useEffect } from \"react\";",
       "// import { useDispatch } from \"react-redux\";",
       "",
-      "export default function use${1:Something}() {",
+      "export default function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {",
       "  const [$2] = useState(null);",
       "  return {$2};",
       "}"
+    ]
+  },
+  "react_import": {
+    "prefix": [
+      "ireact"
+    ],
+    "description": "\nimport React from 'react';\n",
+    "body": [
+      "import React from 'react';"
     ]
   },
   "reactnative_flat_list": {

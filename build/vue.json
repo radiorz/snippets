@@ -1,4 +1,16 @@
 {
+  "arrow_function_named": {
+    "prefix": [
+      "afn"
+    ],
+    "description": "箭头函数",
+    "body": [
+      "",
+      "const ${1:func} = ($2) => { ",
+      "  $3",
+      "}"
+    ]
+  },
   "arrow_function": {
     "prefix": [
       "anfn"
@@ -89,21 +101,7 @@
       "<script>",
       "export default {",
       "  // 组件名",
-      "  name: '${2:",
-      "/**",
-      " * @author",
-      " * @file $TM_FILENAME",
-      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
-      " * @path $RELATIVE_FILEPATH",
-      " * @from ",
-      " * @desc $2",
-      " * @todo",
-      "",
-      " *",
-      " * @done",
-      " * @example",
-      " */",
-      "}',",
+      "  name: '${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}',",
       "  components: {},",
       "  // filters:{},",
       "  // mixins:[],",
@@ -174,7 +172,7 @@
     "prefix": [
       "!vueo"
     ],
-    "description": "\n\n<!--\n \n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\n-->\n\n<script>\nimport { defineComponent } from 'vue'\nexport default defineComponent({\n  name: '${3:}',\n  // components: {},\n  props: {},\n  // 从组件触发 emits 事件\n  // emits:{},\n  // 暴露\n  // expose: {},\n  data() {\n    return {}\n  }\n  // computed:{},\n  // watch:{},\n  // create(){},\n  // methods:{}\n})\n</script>\n\n<template>\n  <div class=\"${3}\">\n  </div>\n</template>\n\n<style lang=\"scss\" scoped></style>\"\n",
+    "description": "\n\n<!--\n \n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\n-->\n\n<script>\nimport { defineComponent } from 'vue'\nexport default defineComponent({\n  name: '${2:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}',\n  // components: {},\n  props: {},\n  // 从组件触发 emits 事件\n  // emits:{},\n  // 暴露\n  // expose: {},\n  data() {\n    return {}\n  }\n  // computed:{},\n  // watch:{},\n  // create(){},\n  // methods:{}\n})\n</script>\n\n<template>\n  <div class=\"${3}\">\n  </div>\n</template>\n\n<style lang=\"scss\" scoped></style>\"\n",
     "body": [
       "<!--",
       " ",
@@ -197,7 +195,7 @@
       "<script>",
       "import { defineComponent } from 'vue'",
       "export default defineComponent({",
-      "  name: '${3:}',",
+      "  name: '${2:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}',",
       "  // components: {},",
       "  props: {},",
       "  // 从组件触发 emits 事件",

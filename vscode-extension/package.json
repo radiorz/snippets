@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2022.11.16",
+  "version": "2023.1.6",
   "engines": {
     "vscode": "^1.69.0"
   },
@@ -58,6 +58,10 @@
       {
         "language": "typescript",
         "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/typescriptreact.json"
       },
       {
         "language": "vue-html",

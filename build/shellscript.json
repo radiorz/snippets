@@ -17,7 +17,7 @@
       "adb shell pm list packages"
     ]
   },
-  "shellscript_tar_out": {
+  "shellscript_tar_out _from_gz": {
     "prefix": [
       "!tarout"
     ],
@@ -26,9 +26,10 @@
       "tar -zxvf ${1:压缩包名}.tar.gz -C ${2:.}"
     ]
   },
-  "shellscript_tar": {
+  "shellscript_tar_to_gz": {
     "prefix": [
-      "!tar"
+      "!tar",
+      "!gz"
     ],
     "description": "此为压缩\n\n-f <filename>  后加 filename\n-z 压缩 采用 gz\n-j 压缩 采用 bz2\n-c: 建立压缩档案（.tar)\n-v 显示所有过程\n\n-x 解压\n-O 解开到标准输出\n",
     "body": [
