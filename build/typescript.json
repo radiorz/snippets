@@ -52,6 +52,15 @@
       "  }"
     ]
   },
+  "array1to10": {
+    "prefix": [
+      "!ten"
+    ],
+    "description": "\n  [...new Array(10).keys()].map(i=>i+1)\n",
+    "body": [
+      "[...new Array(10).keys()].map(i=>i+1)"
+    ]
+  },
   "arrow_function_named": {
     "prefix": [
       "afn"
@@ -62,15 +71,6 @@
       "const ${1:func} = ($2) => { ",
       "  $3",
       "}"
-    ]
-  },
-  "array1to10": {
-    "prefix": [
-      "!ten"
-    ],
-    "description": "\n  [...new Array(10).keys()].map(i=>i+1)\n",
-    "body": [
-      "[...new Array(10).keys()].map(i=>i+1)"
     ]
   },
   "arrow_function": {
