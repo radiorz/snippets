@@ -1,3 +1,16 @@
+/**
+ * @author
+ * @file shellscript_tar.js
+ * @fileBase shellscript_tar
+ * @path snippets\shellscript_tar.js
+ * @from 
+ * @desc 这是 压缩成 * tar.gz
+ * @todo
+
+ *
+ * @done
+ * @example
+ */
 // https://www.cnblogs.com/jyaray/archive/2011/04/30/2033362.html
 // tart -zcvf 目标名称 源文件
 const body = `
@@ -17,7 +30,7 @@ const description = `此为压缩
 `;
 
 module.exports = {
-  prefix: ["!tar"],
+  prefix: ["!tar","!gz"],
   type: ["shellscript"],
   description: description || body,
   body: body.trim(),

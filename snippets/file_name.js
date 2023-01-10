@@ -11,14 +11,13 @@
  * @done
  * @example
  */
-
 const body =
   "${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}";
 const description = "";
 
 module.exports = {
   prefix: ["!file_name"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   origin: body,
   body: body.trim(),

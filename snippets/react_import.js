@@ -1,12 +1,11 @@
 const body = `
-  \${1:arr} = \${1:arr}.filter((item)=>\${2:item.id === id})
+import React from 'react';
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["ari","item_remove_from_array_immutable"],
+  prefix: ["ireact"],
   type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };
-

@@ -9,7 +9,7 @@ await \$\`\`
 const description = "";
 module.exports = {
   prefix: ["!zx"],
-  type: ["javascript", "typescript","javascriptreact"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };

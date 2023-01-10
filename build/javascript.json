@@ -52,6 +52,18 @@
       "  }"
     ]
   },
+  "arrow_function_named": {
+    "prefix": [
+      "afn"
+    ],
+    "description": "箭头函数",
+    "body": [
+      "",
+      "const ${1:func} = ($2) => { ",
+      "  $3",
+      "}"
+    ]
+  },
   "array1to10": {
     "prefix": [
       "!ten"
@@ -504,7 +516,78 @@
       "const color = `#${(~~(Math.random() * (1 << 24))).toString(16)}`"
     ]
   },
-  "react_flat_list": {
+  "react_func_component": {
+    "prefix": [
+      "!react"
+    ],
+    "description": "react 函数组件",
+    "body": [
+      "/**",
+      " * @author",
+      " * @file $TM_FILENAME",
+      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
+      " * @path $RELATIVE_FILEPATH",
+      " * @from ",
+      " * @desc $2",
+      " * @todo",
+      "",
+      " *",
+      " * @done",
+      " * @example",
+      " */",
+      "",
+      "import React, { useState, useEffect, memo } from 'react'",
+      "",
+      "function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {",
+      "  return (",
+      "    <div>",
+      "      ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}",
+      "    </div>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}"
+    ]
+  },
+  "react_hook": {
+    "prefix": [
+      "!hook"
+    ],
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\nimport { useState, useEffect } from \"react\";\n// import { useDispatch } from \"react-redux\";\n\nexport default function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {\n  const [$2] = useState(null);\n  return {$2};\n}\n\n",
+    "body": [
+      "/**",
+      " * @author",
+      " * @file $TM_FILENAME",
+      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
+      " * @path $RELATIVE_FILEPATH",
+      " * @from ",
+      " * @desc $2",
+      " * @todo",
+      "",
+      " *",
+      " * @done",
+      " * @example",
+      " */",
+      "",
+      "import { useState, useEffect } from \"react\";",
+      "// import { useDispatch } from \"react-redux\";",
+      "",
+      "export default function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {",
+      "  const [$2] = useState(null);",
+      "  return {$2};",
+      "}"
+    ]
+  },
+  "react_import": {
+    "prefix": [
+      "ireact"
+    ],
+    "description": "\nimport React from 'react';\n",
+    "body": [
+      "import React from 'react';"
+    ]
+  },
+  "reactnative_flat_list": {
     "prefix": [
       "!flatlist"
     ],
@@ -523,19 +606,56 @@
       ")"
     ]
   },
-  "react_hook": {
+  "reactnative_func_component": {
     "prefix": [
-      "!hook"
+      "!rn"
     ],
-    "description": "\nimport { useState, useEffect } from \"react\";\n// import { useDispatch } from \"react-redux\";\n\nexport default function use${1:Something}() {\n  const [$2] = useState(null);\n  return {$2};\n}\n\n",
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\nimport React, { useState, useEffect, memo } from 'react'\nimport { View, Text } from 'react-native'\n\nfunction ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {\n  return (\n    <View>\n      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>\n    </View>\n  )\n}\n\nexport default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}\n\n",
     "body": [
-      "import { useState, useEffect } from \"react\";",
-      "// import { useDispatch } from \"react-redux\";",
+      "/**",
+      " * @author",
+      " * @file $TM_FILENAME",
+      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
+      " * @path $RELATIVE_FILEPATH",
+      " * @from ",
+      " * @desc $2",
+      " * @todo",
       "",
-      "export default function use${1:Something}() {",
-      "  const [$2] = useState(null);",
-      "  return {$2};",
-      "}"
+      " *",
+      " * @done",
+      " * @example",
+      " */",
+      "",
+      "import React, { useState, useEffect, memo } from 'react'",
+      "import { View, Text } from 'react-native'",
+      "",
+      "function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {",
+      "  return (",
+      "    <View>",
+      "      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>",
+      "    </View>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}"
+    ]
+  },
+  "reactnative_section_list": {
+    "prefix": [
+      "!sectionlist"
+    ],
+    "description": "react native sectionlist",
+    "body": [
+      "(",
+      "  <SectionList",
+      "    flex={1}",
+      "    sections={data}",
+      "    keyExtractor={(item, index) => index}",
+      "    ItemSeparatorComponent={ItemSeparatorComponent}",
+      "    renderItem={renderItem || (({ item }) => <SectionItem item={item} onPress={item?.onPress} />)}",
+      "    renderSectionHeader={renderHeader || (({ section }) => <SectionHeader title={section.title} />)}",
+      "  />",
+      ")"
     ]
   },
   "readable": {
@@ -603,40 +723,6 @@
       "});",
       "",
       "globalThis.$store = store;"
-    ]
-  },
-  "rn_func_component": {
-    "prefix": [
-      "!rn"
-    ],
-    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\nimport React, { useState, useEffect, memo } from 'react'\nimport { View, Text } from 'react-native'\n\nfunction ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {\n  return (\n    <View>\n      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>\n    </View>\n  )\n}\n\nexport default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}\n\n",
-    "body": [
-      "/**",
-      " * @author",
-      " * @file $TM_FILENAME",
-      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
-      " * @path $RELATIVE_FILEPATH",
-      " * @from ",
-      " * @desc $2",
-      " * @todo",
-      "",
-      " *",
-      " * @done",
-      " * @example",
-      " */",
-      "",
-      "import React, { useState, useEffect, memo } from 'react'",
-      "import { View, Text } from 'react-native'",
-      "",
-      "function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {",
-      "  return (",
-      "    <View>",
-      "      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>",
-      "    </View>",
-      "  )",
-      "}",
-      "",
-      "export default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}"
     ]
   },
   "snippet": {
@@ -758,52 +844,6 @@
       " * @property {string} $2 $变量名",
       " * ",
       " */"
-    ]
-  },
-  "vue2_component": {
-    "prefix": [
-      "!vue2"
-    ],
-    "description": "vue2",
-    "body": [
-      "",
-      "<!--",
-      "* @FileDescription: ${1:该文件的描述信息}",
-      "* @Date: $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-      "* TODO:",
-      "* [] ${2}",
-      "-->",
-      "",
-      "<template>",
-      "  <div>",
-      "  </div>",
-      "</template>",
-      "",
-      "<script>",
-      "export default {",
-      "  // 组件名",
-      "  name: '${2:Demo}',",
-      "  components: {},",
-      "  // filters:{},",
-      "  // mixins:[],",
-      "  // props: {},",
-      "  data(){",
-      "    return{",
-      "      ",
-      "    }",
-      "  },",
-      "  // 组件方法",
-      "  // computed:{},",
-      "  // watch:{},",
-      "  // created(){},",
-      "  methods: {},",
-      "}",
-      "</script> ",
-      "",
-      "<style lang=\"scss\" scoped>",
-      "",
-      "</style>",
-      ""
     ]
   },
   "vue2_mixin": {

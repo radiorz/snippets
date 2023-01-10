@@ -23,7 +23,7 @@ files.forEach((file) => {
 });
 console.log(`packageJson`, packageJson.contributes.snippets);
 // 将 packageJson写回到文件中
-const version = dayjs().format("YYYY.M.DD");
+const version = dayjs().format("YYYY.M.D");
 packageJson.version = version;
 fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 console.log(`写入文件成功`, packageJsonPath);

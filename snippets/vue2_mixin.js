@@ -20,7 +20,7 @@ const description = "";
 
 module.exports = {
   prefix: ["oef"],
-  type: ["javascript", "typescript","javascriptreact"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body,
 };

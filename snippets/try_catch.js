@@ -6,7 +6,7 @@ const body = `try{
 const description = "";
 module.exports = {
   prefix: ["trycc"],
-  type: ["javascript", "typescript","javascriptreact"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body,
 };

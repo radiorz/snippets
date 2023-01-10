@@ -1,3 +1,16 @@
+/**
+ * @author
+ * @file shellscript_tar_out.js
+ * @fileBase shellscript_tar_out
+ * @path snippets\shellscript_tar_out.js
+ * @from 
+ * @desc 这是解压 *.tar.gz 文件用
+ * @todo
+
+ *
+ * @done
+ * @example
+ */
 const body = `
 tar -zxvf \${1:压缩包名}.tar.gz -C \${2:.}
 `;

@@ -17,7 +17,7 @@ const description = "react_flat_list";
 
 module.exports = {
   prefix: ["!flatlist"],
-  type: ["javascript", "typescript","javascriptreact"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };

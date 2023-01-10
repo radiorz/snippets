@@ -5,7 +5,7 @@ const description = "";
 
 module.exports = {
   prefix: ["aer", "item_remove_from_array_end_mutable"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };

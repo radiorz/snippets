@@ -52,6 +52,18 @@
       "  }"
     ]
   },
+  "arrow_function_named": {
+    "prefix": [
+      "afn"
+    ],
+    "description": "箭头函数",
+    "body": [
+      "",
+      "const ${1:func} = ($2) => { ",
+      "  $3",
+      "}"
+    ]
+  },
   "array1to10": {
     "prefix": [
       "!ten"
@@ -322,7 +334,45 @@
       "const color = `#${(~~(Math.random() * (1 << 24))).toString(16)}`"
     ]
   },
-  "react_flat_list": {
+  "react_hook": {
+    "prefix": [
+      "!hook"
+    ],
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\nimport { useState, useEffect } from \"react\";\n// import { useDispatch } from \"react-redux\";\n\nexport default function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {\n  const [$2] = useState(null);\n  return {$2};\n}\n\n",
+    "body": [
+      "/**",
+      " * @author",
+      " * @file $TM_FILENAME",
+      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
+      " * @path $RELATIVE_FILEPATH",
+      " * @from ",
+      " * @desc $2",
+      " * @todo",
+      "",
+      " *",
+      " * @done",
+      " * @example",
+      " */",
+      "",
+      "import { useState, useEffect } from \"react\";",
+      "// import { useDispatch } from \"react-redux\";",
+      "",
+      "export default function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {",
+      "  const [$2] = useState(null);",
+      "  return {$2};",
+      "}"
+    ]
+  },
+  "react_import": {
+    "prefix": [
+      "ireact"
+    ],
+    "description": "\nimport React from 'react';\n",
+    "body": [
+      "import React from 'react';"
+    ]
+  },
+  "reactnative_flat_list": {
     "prefix": [
       "!flatlist"
     ],
@@ -341,19 +391,22 @@
       ")"
     ]
   },
-  "react_hook": {
+  "reactnative_section_list": {
     "prefix": [
-      "!hook"
+      "!sectionlist"
     ],
-    "description": "\nimport { useState, useEffect } from \"react\";\n// import { useDispatch } from \"react-redux\";\n\nexport default function use${1:Something}() {\n  const [$2] = useState(null);\n  return {$2};\n}\n\n",
+    "description": "react native sectionlist",
     "body": [
-      "import { useState, useEffect } from \"react\";",
-      "// import { useDispatch } from \"react-redux\";",
-      "",
-      "export default function use${1:Something}() {",
-      "  const [$2] = useState(null);",
-      "  return {$2};",
-      "}"
+      "(",
+      "  <SectionList",
+      "    flex={1}",
+      "    sections={data}",
+      "    keyExtractor={(item, index) => index}",
+      "    ItemSeparatorComponent={ItemSeparatorComponent}",
+      "    renderItem={renderItem || (({ item }) => <SectionItem item={item} onPress={item?.onPress} />)}",
+      "    renderSectionHeader={renderHeader || (({ section }) => <SectionHeader title={section.title} />)}",
+      "  />",
+      ")"
     ]
   },
   "redux_toolkit_slice": {
@@ -427,52 +480,6 @@
       " * @property {string} $2 $变量名",
       " * ",
       " */"
-    ]
-  },
-  "vue2_component": {
-    "prefix": [
-      "!vue2"
-    ],
-    "description": "vue2",
-    "body": [
-      "",
-      "<!--",
-      "* @FileDescription: ${1:该文件的描述信息}",
-      "* @Date: $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-      "* TODO:",
-      "* [] ${2}",
-      "-->",
-      "",
-      "<template>",
-      "  <div>",
-      "  </div>",
-      "</template>",
-      "",
-      "<script>",
-      "export default {",
-      "  // 组件名",
-      "  name: '${2:Demo}',",
-      "  components: {},",
-      "  // filters:{},",
-      "  // mixins:[],",
-      "  // props: {},",
-      "  data(){",
-      "    return{",
-      "      ",
-      "    }",
-      "  },",
-      "  // 组件方法",
-      "  // computed:{},",
-      "  // watch:{},",
-      "  // created(){},",
-      "  methods: {},",
-      "}",
-      "</script> ",
-      "",
-      "<style lang=\"scss\" scoped>",
-      "",
-      "</style>",
-      ""
     ]
   },
   "vue2_mixin": {

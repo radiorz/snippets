@@ -7,7 +7,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!dirname"],
-  type: ["javascript", "typescript","javascriptreact"],
+  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body,
 };
