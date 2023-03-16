@@ -608,7 +608,8 @@
   },
   "reactnative_func_component": {
     "prefix": [
-      "!rn"
+      "!rn",
+      "!reactNative"
     ],
     "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\nimport React, { useState, useEffect, memo } from 'react'\nimport { View, Text } from 'react-native'\n\nfunction ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {\n  return (\n    <View>\n      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>\n    </View>\n  )\n}\n\nexport default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}\n\n",
     "body": [
@@ -899,6 +900,27 @@
       " * ",
       " */ ",
       "await $``"
+    ]
+  },
+  "function_capitalize": {
+    "body": "function capitalize(str) {\n  const [first, ...rest] = str;\n  if (!first) return \"\";\n  return first.toUpperCase() + rest.join(\"\").toLowerCase();\n}\n",
+    "description": "file",
+    "prefix": [
+      "!capitalize"
+    ]
+  },
+  "function_checkObjectValueEqualKey": {
+    "body": "function checkObjectValueEqualKey(obj, value) {\n  const [key] = Array.prototype.find.call(\n    Object.entries(obj),\n    ([key, _value]) => {\n      if (_value === value) {\n        return true;\n      } else {\n        return false;\n      }\n    }\n  );\n  return key;\n}\n// 这个可能重复\n",
+    "description": "file",
+    "prefix": [
+      "!checkObjectValueEqualKey"
+    ]
+  },
+  "function_nodejs_eventemitter": {
+    "body": "// nodejs\nconst { EventEmitter } = require(\"events\");\nconst eventEmitter = new EventEmitter();\n\n// 监听\neventEmitter.on(\"my_event\", (...args) => {\n  console.log(\"data received successfully.\", ...args);\n});\n// 发送\neventEmitter.emit(\"my_event\", \"num1\", \"num2\");\n",
+    "description": "file",
+    "prefix": [
+      "!nodejs_eventemitter"
     ]
   }
 }
