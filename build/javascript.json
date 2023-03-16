@@ -132,6 +132,33 @@
       "}"
     ]
   },
+  "class": {
+    "prefix": [
+      "!class"
+    ],
+    "description": "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n\n *\n * @done\n * @example\n */\n\nexport default class ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}} {\n  constructor(options) {\n    ${3:Object.assign(this, options)};\n  }\n}\n",
+    "body": [
+      "/**",
+      " * @author",
+      " * @file $TM_FILENAME",
+      " * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}",
+      " * @path $RELATIVE_FILEPATH",
+      " * @from ",
+      " * @desc $2",
+      " * @todo",
+      "",
+      " *",
+      " * @done",
+      " * @example",
+      " */",
+      "",
+      "export default class ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}} {",
+      "  constructor(options) {",
+      "    ${3:Object.assign(this, options)};",
+      "  }",
+      "}"
+    ]
+  },
   "commonjs_exec_exe_file": {
     "prefix": [
       "exe"
@@ -585,6 +612,15 @@
     "description": "\nimport React from 'react';\n",
     "body": [
       "import React from 'react';"
+    ]
+  },
+  "react-native-view": {
+    "prefix": [
+      "!view"
+    ],
+    "description": "引入view 做一些小事情经常会做",
+    "body": [
+      "import { View } from 'react-native';"
     ]
   },
   "reactnative_flat_list": {
