@@ -3,11 +3,20 @@ const path = require("path");
 const fs = require("fs");
 const isString = (a) => typeof a === "string";
 const isArray = (a) => Array.isArray(a);
-const isObject = (a) => typeof a === "object";
+const isObject = (a) => typeof a === "object" && a != null;
 const EXTS_LANGUAGE_MAP = {
   js: "javascript",
   ts: "typescript",
   sh: "shellscript",
+  java: "java",
+  jsx: "javascriptreact",
+  tsx: "typescriptreact",
+  ps1: "powershell",
+  sass: "sass",
+  scss: "scss",
+  html: "html",
+  go: "go",
+  md: "markdown",
 };
 const logger = {
   warn: (...args) => console.warn("[WARN]", ...args),
@@ -74,7 +83,7 @@ const logger = {
         prefix: [`!${fileName}`],
       };
     } catch (error) {
-      console.warn(`[WARN] 读取纯文本出错了`, error.message);
+      logger.error(`读取纯文本出错了`, error.message);
     }
   });
 
@@ -83,7 +92,7 @@ const logger = {
     file.write(JSON.stringify(snippets, null, 2));
     // console.log(`snippets`, snippets);
     file.end();
-    console.log(`language done`, language);
+    logger.debug(`language done`, language);
   });
 })();
 /**
