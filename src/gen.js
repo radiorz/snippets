@@ -71,12 +71,12 @@ const logger = {
       const file = filePath.split("/").at(-1);
       const [fileName, ext] = file.split(".");
       const type = EXTS_LANGUAGE_MAP[ext];
-      if (!fileName) throw new Error("没有文件名" + file);
-      if (!type) throw new Error("不支持这种类型" + file);
+      if (!fileName) throw new Error("没有文件名");
+      if (!type) throw new Error("不支持这种类型");
       setNewType(snippets, type);
       // 通过读取每行来转换成 snippets
       const body = fs.readFileSync(path.resolve(filePath), "utf8");
-      if (!body || !body.trim()) throw new Error("文件为空", file);
+      if (!body || !body.trim()) throw new Error("文件为空");
       snippets[type][`text_${fileName}`] = {
         body,
         description: "file",
@@ -86,7 +86,6 @@ const logger = {
       logger.error(`读取纯文本出错了`, filePath, error.message);
     }
   });
-  
 
   Object.entries(snippets).forEach(([language, snippets]) => {
     const file = fs.createWriteStream(`./build/${language}.json`);
