@@ -938,21 +938,28 @@
       "await $``"
     ]
   },
-  "function_capitalize": {
+  "text_capitalize": {
     "body": "function capitalize(str) {\n  const [first, ...rest] = str;\n  if (!first) return \"\";\n  return first.toUpperCase() + rest.join(\"\").toLowerCase();\n}\n",
     "description": "file",
     "prefix": [
       "!capitalize"
     ]
   },
-  "function_checkObjectValueEqualKey": {
+  "text_checkObjectValueEqualKey": {
     "body": "function checkObjectValueEqualKey(obj, value) {\n  const [key] = Array.prototype.find.call(\n    Object.entries(obj),\n    ([key, _value]) => {\n      if (_value === value) {\n        return true;\n      } else {\n        return false;\n      }\n    }\n  );\n  return key;\n}\n// 这个可能重复\n",
     "description": "file",
     "prefix": [
       "!checkObjectValueEqualKey"
     ]
   },
-  "function_nodejs_eventemitter": {
+  "text_logger": {
+    "body": "const logger = {\n  warn: (...args) => console.warn(\"[WARN]\", ...args),\n  debug: (...args) => console.debug(\"[DEBUG]\", ...args),\n  error: (...args) => console.error(\"[ERROR]\", ...args),\n  info: (...args) => console.info(\"[INFO]\", ...args),\n};\n",
+    "description": "file",
+    "prefix": [
+      "!logger"
+    ]
+  },
+  "text_nodejs_eventemitter": {
     "body": "// nodejs\nconst { EventEmitter } = require(\"events\");\nconst eventEmitter = new EventEmitter();\n\n// 监听\neventEmitter.on(\"my_event\", (...args) => {\n  console.log(\"data received successfully.\", ...args);\n});\n// 发送\neventEmitter.emit(\"my_event\", \"num1\", \"num2\");\n",
     "description": "file",
     "prefix": [

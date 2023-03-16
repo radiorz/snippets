@@ -63,9 +63,9 @@ const logger = {
   });
 
   // ****** 获取纯文本提示 ******
-  const functionFiles = glob.sync("./functions/*");
-  console.debug("functionFiles", functionFiles);
-  functionFiles.forEach((filePath) => {
+  const textSnippets = glob.sync("./snippetTexts/*");
+  console.debug("textSnippets", textSnippets);
+  textSnippets.forEach((filePath) => {
     try {
       // 通过后缀获取类型
       const file = filePath.split("/").at(-1);
@@ -77,15 +77,16 @@ const logger = {
       // 通过读取每行来转换成 snippets
       const body = fs.readFileSync(path.resolve(filePath), "utf8");
       if (!body || !body.trim()) throw new Error("文件为空", file);
-      snippets[type][`function_${fileName}`] = {
+      snippets[type][`text_${fileName}`] = {
         body,
         description: "file",
         prefix: [`!${fileName}`],
       };
     } catch (error) {
-      logger.error(`读取纯文本出错了`, error.message);
+      logger.error(`读取纯文本出错了`, filePath, error.message);
     }
   });
+  
 
   Object.entries(snippets).forEach(([language, snippets]) => {
     const file = fs.createWriteStream(`./build/${language}.json`);
