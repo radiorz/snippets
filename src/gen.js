@@ -67,7 +67,7 @@ const logger = {
       setNewType(snippets, type);
       // 通过读取每行来转换成 snippets
       const body = fs.readFileSync(path.resolve(filePath), "utf8");
-      if (!body) throw new Error("文件为空", file);
+      if (!body || !body.trim()) throw new Error("文件为空", file);
       snippets[type][`function_${fileName}`] = {
         body,
         description: "file",
