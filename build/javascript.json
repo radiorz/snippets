@@ -952,6 +952,20 @@
       "!checkObjectValueEqualKey"
     ]
   },
+  "text_getArrayKeyMap": {
+    "body": "/**\n * 将对象数组转化为以某个值为key的对象\n * 基础函数\n * @param {Array<Object>} array 数组\n * @param {string} key key值\n * @returns\n */\nexport function getArrayKeyMap(array = [], key = \"name\") {\n  const pinNameMap = {};\n  array.forEach((item = {}) => {\n    if (!item[key]) return;\n    pinNameMap[item[key]] = item;\n  });\n  return pinNameMap;\n}\n",
+    "description": "file",
+    "prefix": [
+      "!getArrayKeyMap"
+    ]
+  },
+  "text_isNewerVersion": {
+    "body": "/**\n * 判断版本新旧\n * @param {string} newVersion\n * @param {string} oldVersion\n * @returns {boolean}\n */\nfunction isNewerVersion(newVersion = \"\", oldVersion = \"\") {\n  // console.log(`version,oldVersion`, version, oldVersion);\n  const [oldF, oldS, oldPatch] = oldVersion\n    .split(\".\")\n    .map((v) => parseInt(v, 10));\n  const [newF, newS, newPatch] = newVersion\n    .split(\".\")\n    .map((v) => parseInt(v, 10));\n  if (newF > oldF) return true;\n  if (newF == oldF && newS > oldS) return true;\n  if (newF == oldF && newS == oldS && newPatch > oldPatch) return true;\n  return false;\n}\n",
+    "description": "file",
+    "prefix": [
+      "!isNewerVersion"
+    ]
+  },
   "text_logger": {
     "body": "const logger = {\n  warn: (...args) => console.warn(\"[WARN]\", ...args),\n  debug: (...args) => console.debug(\"[DEBUG]\", ...args),\n  error: (...args) => console.error(\"[ERROR]\", ...args),\n  info: (...args) => console.info(\"[INFO]\", ...args),\n};\n",
     "description": "file",
