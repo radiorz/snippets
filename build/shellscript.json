@@ -17,6 +17,73 @@
       "adb shell pm list packages"
     ]
   },
+  "shell_if_else_if": {
+    "prefix": [
+      "!ifif"
+    ],
+    "description": "\nif [ ${1:true} ]\nthen\n   echo \"true\"\nelif [ ${2:true} ]\nthen\n   echo \"second true\"\nelse\n   echo \"default\"\nfi\n",
+    "body": [
+      "if [ ${1:true} ]",
+      "then",
+      "   echo \"true\"",
+      "elif [ ${2:true} ]",
+      "then",
+      "   echo \"second true\"",
+      "else",
+      "   echo \"default\"",
+      "fi"
+    ]
+  },
+  "shell_if_else": {
+    "prefix": [
+      "!elseif",
+      "!ife"
+    ],
+    "description": "\nif ${1:true}; then\n   ${2:echo \"true\"}\nelse \n   ${2:echo \"false\"}\nfi\n",
+    "body": [
+      "if ${1:true}; then",
+      "   ${2:echo \"true\"}",
+      "else ",
+      "   ${2:echo \"false\"}",
+      "fi"
+    ]
+  },
+  "shell_if_expression": {
+    "prefix": [
+      "!if"
+    ],
+    "description": "\n# 判断\nif [ ${1:true} ]\nthen\n    ${2:echo \"123\"}\nfi\n",
+    "body": [
+      "# 判断",
+      "if [ ${1:true} ]",
+      "then",
+      "    ${2:echo \"123\"}",
+      "fi"
+    ]
+  },
+  "shell_if": {
+    "prefix": [
+      "!if"
+    ],
+    "description": "\n# 判断\nif ${1:true};\nthen\n    ${2:echo \"true\"}\nfi\n",
+    "body": [
+      "# 判断",
+      "if ${1:true};",
+      "then",
+      "    ${2:echo \"true\"}",
+      "fi"
+    ]
+  },
+  "shell_test_equal": {
+    "prefix": [
+      "!test",
+      "!equal"
+    ],
+    "description": "\nisEqual=\\$(test \\$((${1:\\$value})) -eq \\$((${2:\\$value2})))\n",
+    "body": [
+      "isEqual=\\$(test \\$((${1:\\$value})) -eq \\$((${2:\\$value2})))"
+    ]
+  },
   "shellscript_tar_out _from_gz": {
     "prefix": [
       "!tarout"
@@ -35,6 +102,34 @@
     "body": [
       "$now = ${1:$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND}",
       "tar -zcvf target.tar.gz ${2:./*}"
+    ]
+  },
+  "text_function": {
+    "body": "# 函数\ndemoFun() {\n  echo \"我是一个函数\"\n}\n# 执行\ndemoFun\n",
+    "description": "file",
+    "prefix": [
+      "!function"
+    ]
+  },
+  "text_log_split": {
+    "body": "echo \"---------------------------------------------------------------------\"\n",
+    "description": "file",
+    "prefix": [
+      "!log_split"
+    ]
+  },
+  "text_packageDescription": {
+    "body": "description=$(node -p \"require(\"./package.json\").description\")\n",
+    "description": "file",
+    "prefix": [
+      "!packageDescription"
+    ]
+  },
+  "text_packageVersion": {
+    "body": "version=$(node -p \"require(\"./package.json\").version\")\n",
+    "description": "file",
+    "prefix": [
+      "!packageVersion"
     ]
   }
 }
