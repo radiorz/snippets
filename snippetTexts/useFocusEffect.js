@@ -1,0 +1,8 @@
+useFocusEffect(
+  useCallback(() => {
+    //
+    return () => {
+      //
+    };
+  }, [])
+);
