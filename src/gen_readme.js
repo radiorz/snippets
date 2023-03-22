@@ -31,7 +31,7 @@ const isArray = (a) => Array.isArray(a);
     }
   });
   Object.entries(snippets).forEach(([language, snippets]) => {
-    const file = fs.createWriteStream(`./build/${language}.json`);
+    const file = fs.createWriteStream(`./.build${language}.json`);
     file.write(JSON.stringify(snippets, null, 2));
     file.end();
     console.log(`language done`, language);

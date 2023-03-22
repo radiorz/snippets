@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "*.conf": "yaml",
+    "helloworld.C": "cpp"
+  }
+}

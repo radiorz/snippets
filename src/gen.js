@@ -4,20 +4,7 @@ const fs = require("fs");
 const isString = (a) => typeof a === "string";
 const isArray = (a) => Array.isArray(a);
 const isObject = (a) => typeof a === "object" && a != null;
-const EXTS_LANGUAGE_MAP = {
-  js: "javascript",
-  ts: "typescript",
-  sh: "shellscript",
-  java: "java",
-  jsx: "javascriptreact",
-  tsx: "typescriptreact",
-  ps1: "powershell",
-  sass: "sass",
-  scss: "scss",
-  html: "html",
-  go: "go",
-  md: "markdown",
-};
+const { EXTS_LANGUAGE_MAP } = require("./utils");
 const logger = {
   warn: (...args) => console.warn("[WARN]", ...args),
   debug: (...args) => console.debug("[DEBUG]", ...args),
@@ -88,7 +75,7 @@ const logger = {
   });
 
   Object.entries(snippets).forEach(([language, snippets]) => {
-    const file = fs.createWriteStream(`./build/${language}.json`);
+    const file = fs.createWriteStream(`./..build${language}.json`);
     file.write(JSON.stringify(snippets, null, 2));
     // console.log(`snippets`, snippets);
     file.end();
