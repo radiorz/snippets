@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=eclipse
+Exec=/home/root/soft/eclipse/eclipse
+Icon=/home/root/soft/eclipse/icon.xpm
+Terminal=false
+Type=Application
+Categories=Development

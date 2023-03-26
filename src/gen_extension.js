@@ -9,8 +9,8 @@ const packageJsonPath = path.join(
 // 修改 package.json
 const packageJson = require(packageJsonPath);
 const glob = require("glob");
-const files = glob.sync("./.build**.json");
-
+const files = glob.sync("./.build/**.json");
+console.log(`files`,files)
 packageJson.contributes.snippets = [];
 files.forEach((file) => {
   const filename = path.basename(file, ".json");

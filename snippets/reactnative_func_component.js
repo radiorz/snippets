@@ -19,8 +19,8 @@ export default \${1:${fileName}}
 const description = "";
 
 module.exports = {
-  prefix: ["!rn","!reactNative"],
-  type: ["javascript"],
+  prefix: ["!rn", "!reactNative"],
+  type: ["javascript", "javascriptreact", "typescript", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };

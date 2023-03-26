@@ -75,7 +75,7 @@ const logger = {
   });
 
   Object.entries(snippets).forEach(([language, snippets]) => {
-    const file = fs.createWriteStream(`./..build${language}.json`);
+    const file = fs.createWriteStream(`./.build/${language}.json`);
     file.write(JSON.stringify(snippets, null, 2));
     // console.log(`snippets`, snippets);
     file.end();
