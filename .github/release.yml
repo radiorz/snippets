@@ -19,7 +19,7 @@ on:
       - name: 打包
         run: yarn build:vscode
       - name: 设置变量
-        run: ${{vars.version}} = node -p "require("./package.json").version
+        run: echo "RELEASE_VERSION=$(node -p "require("./package.json").version)" >> $GITHUB_ENV
       - name: release and upload release asset
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
@@ -30,4 +30,4 @@ on:
           draft: false
           prerelease: true
           files: |
-            ./vscode-extension/tikkhun-vscode-snippets-${{vars.version}}.vsix
+            ./vscode-extension/tikkhun-vscode-snippets-${{env.RELEASE_VERSION}}.vsix
