@@ -24,7 +24,7 @@ jobs:
       - name: 设置变量
         run: echo "RELEASE_VERSION=$(node -p "require("./package.json").version)" >> $GITHUB_ENV
       - name: release and upload release asset
-      - uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@v1
         with:
           body: New Release.
           draft: false
