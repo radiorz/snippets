@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 签出代码
-        uses: actions?checkout@master
+        uses: actions/checkout@master
       - name: 安装 nodejs
         uses: actions/setup-node@v2
         with:
