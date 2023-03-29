@@ -4,6 +4,9 @@ on:
   push:
     tags:
       - "v*"
+
+jobs:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: 签出代码
@@ -21,13 +24,9 @@ on:
       - name: 设置变量
         run: echo "RELEASE_VERSION=$(node -p "require("./package.json").version)" >> $GITHUB_ENV
       - name: release and upload release asset
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
+      - uses: ncipollo/release-action@v1
         with:
-          tag_name: ${{ github.ref }}
-          name: Release ${{ github.ref }}
-          body: TODO New Release.
+          body: New Release.
           draft: false
           prerelease: true
-          files: |
-            ./vscode-extension/tikkhun-vscode-snippets-${{env.RELEASE_VERSION}}.vsix
+          bodyFile: ./vscode-extension/tikkhun-vscode-snippets-${{env.RELEASE_VERSION}}.vsix
