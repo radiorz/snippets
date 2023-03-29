@@ -19,7 +19,7 @@ const description = "react 函数组件";
 
 module.exports = {
   prefix: ["!react"],
-  type: ["javascript","javascriptreact"],
+  type: ["javascript", "javascriptreact", "typescriptreact", "typescript"],
   description: description || body,
   body: body.trim(),
 };

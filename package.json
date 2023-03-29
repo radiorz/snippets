@@ -10,12 +10,12 @@
     ]
   },
   "scripts": {
-    "gen": "node ./src/gen.js",
-    "push": "powershell ./src/publish.ps1",
-    "install:local": "yarn gen && yarn push",
-    "build:vscode": "yarn gen:vscode && yarn workspace tikkhun-vscode-snippets build",
     "install:vscode": "yarn workspace tikkhun-vscode-snippets install",
-    "gen:vscode": "yarn gen  && node ./src/gen_extension.js"
+    "gen": "node ./src/gen.js",
+    "gen:vscode": "yarn gen  && node ./src/gen_extension.js",
+    "push:local": "powershell ./src/publish.ps1",
+    "release:local": "yarn gen && yarn push:local",
+    "build:vscode": "yarn gen:vscode && yarn workspace tikkhun-vscode-snippets build"
   },
   "repository": {
     "type": "git",
