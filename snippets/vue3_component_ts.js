@@ -19,17 +19,18 @@ const { origin: fileName } = require("./file_name");
 const vueHeader = require("./vue_header");
 const body = `
 ${vueHeader.origin}
-<script>
+<script lang="ts">
   export default {
     name: \"\${2:${fileName}}\"
   };
 </script>
-<script setup>
+<script setup lang="ts">
 
 </script>
 
 <template>
   <div class=\"$2\">
+    $2
   </div>
 </template>
 
@@ -40,7 +41,7 @@ ${vueHeader.origin}
 const description = "";
 
 module.exports = {
-  prefix: ["!vue3"],
+  prefix: ["!vue3t"],
   type: ["vue"],
   description: description || body,
   body: body.trim(),

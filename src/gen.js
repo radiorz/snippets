@@ -74,6 +74,10 @@ const logger = {
     }
   });
 
+  if (!fs.existsSync(".build")) {
+    console.log(`./build 不存在,创建一个`);
+    fs.mkdirSync(".build");
+  }
   Object.entries(snippets).forEach(([language, snippets]) => {
     const file = fs.createWriteStream(`./.build/${language}.json`);
     file.write(JSON.stringify(snippets, null, 2));
