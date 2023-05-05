@@ -1,13 +1,13 @@
 const body = `
 // import React, { memo } from 'react'
-const \$1 = memo(() => {
+const \${1:Comp} = memo(() => {
   return (
-    <div></div>
+    <></>
   )
 })
 
 `;
-const description = "";
+const description = "memo component";
 
 module.exports = {
   prefix: ["!react_memo_component", "!rmc"],
