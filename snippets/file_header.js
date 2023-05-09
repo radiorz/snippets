@@ -1,5 +1,5 @@
 /**
- * @desc
+ *  @desc
  *   说明
  *   @author 作者
  *   @file 文件全名
@@ -13,7 +13,6 @@
  *   @example
  */
 
-const dirname = "${TM_DIRECTORY/^(.*[\\\\|\\/])(.*)/$2/}";
 const { origin: filename } = require("./file_name");
 
 const body = `
@@ -25,7 +24,7 @@ const body = `
  * @from 
  * @desc $2
  * @todo
-
+ * 
  *
  * @done
  * @example
