@@ -1,6 +1,8 @@
 const body = `
+  // 实例
   instance = null;
-  getInstance(...args) {
+  // 静态方法
+  static getInstance(...args) {
     if (!this.instance) {
       this.instance = new \${1:TheClass}(...args);
     }
