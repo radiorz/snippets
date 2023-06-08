@@ -10,11 +10,11 @@ class \${1:MyWidget} extends StatefulWidget {
 class _\${1:MyWidget}State extends State<\${1:MyWidget}> {
   @override
   Widget build(BuildContext context) {
-    return const Container();
+    return Container();
   }
 }
 
-`
+`;
 const description = "";
 
 module.exports = {
