@@ -1,5 +1,4 @@
 const body = `
-import 'package:flutter/material.dart';
 
 class \${1:MyWidget} extends StatefulWidget {
   const \${1:MyWidget}({super.key});
@@ -11,7 +10,7 @@ class \${1:MyWidget} extends StatefulWidget {
 class _\${1:MyWidget}State extends State<\${1:MyWidget}> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Container();
   }
 }
 
@@ -19,8 +18,8 @@ class _\${1:MyWidget}State extends State<\${1:MyWidget}> {
 const description = "";
 
 module.exports = {
-  prefix: ["!statefulwidget"],
-  type: ["javascript"],
+  prefix: ["Statefulwidget"],
+  type: ["dart"],
   description: description || body,
   body: body.trim(),
 };
