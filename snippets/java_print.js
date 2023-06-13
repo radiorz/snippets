@@ -1,4 +1,4 @@
-const body = `System.out.println("$1"+$1);`;
+const body = `System.out.println("$1:"+$1);`;
 const description = "";
 
 module.exports = {
