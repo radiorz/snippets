@@ -5,19 +5,24 @@
 * [] ,  * @example,  * ,-->
 
 <script>
-  export default {
-    name: ""
-  };
+export default {
+  name: "",
+   watch:{
+    value: {
+      handler(newVal,oldVal) {
+        console.log(newVal);
+      },
+      // deep: true,
+      // immediate: true
+    }
+   }
+};
 </script>
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  <div class="">
-  </div>
+  <div class=""></div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>"
+<style lang="scss" scoped></style>
+"

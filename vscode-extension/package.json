@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2023.3.31",
+  "version": "2023.6.14",
   "engines": {
     "vscode": "^1.69.0"
   },
@@ -24,6 +24,10 @@
         "path": "./snippets/c.json"
       },
       {
+        "language": "dart",
+        "path": "./snippets/dart.json"
+      },
+      {
         "language": "go",
         "path": "./snippets/go.json"
       },
@@ -42,6 +46,10 @@
       {
         "language": "javascriptreact",
         "path": "./snippets/javascriptreact.json"
+      },
+      {
+        "language": "json",
+        "path": "./snippets/json.json"
       },
       {
         "language": "markdown",
