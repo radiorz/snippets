@@ -1,6 +1,6 @@
 # 这是 tikkhun 个人的 snippets 集合
 
-本人使用 js,vue,以及 rn 等进行开发,
+本人使用 js,vue,以及 ts, rn 等进行开发,
 还涉及了一些 java,flutter+dart 等的快捷操作
 本仓库就是包含了这些代码
 
