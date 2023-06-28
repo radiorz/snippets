@@ -12,7 +12,7 @@ class \${1:MyWidget} extends StatelessWidget {
 const description = "";
 
 module.exports = {
-  prefix: ["Statelesswidget"],
+  prefix: ["statelesswidget","!stateful"],
   type: ["dart"],
   description: description || body,
   body: body.trim(),
