@@ -18,7 +18,7 @@ class _\${1:MyWidget}State extends State<\${1:MyWidget}> {
 const description = "";
 
 module.exports = {
-  prefix: ["Statefulwidget"],
+  prefix: ["statefulwidget","!stateless"],
   type: ["dart"],
   description: description || body,
   body: body.trim(),
