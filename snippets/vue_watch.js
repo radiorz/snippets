@@ -5,7 +5,7 @@ const body = `
   },
   // deep: true,
   // immediate: true
-}
+},
 `;
 const description = "";
 
