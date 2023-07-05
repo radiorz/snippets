@@ -1,5 +1,5 @@
 const body = `
-\${1:value}: {
+"\${1:value}": {
   handler(newVal,oldVal) {
     console.log(newVal);
   },
