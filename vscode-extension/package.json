@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2023.6.14",
+  "version": "2023.7.5",
   "engines": {
     "vscode": "^1.69.0"
   },
@@ -22,6 +22,10 @@
       {
         "language": "c",
         "path": "./snippets/c.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./snippets/cpp.json"
       },
       {
         "language": "dart",
