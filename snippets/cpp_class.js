@@ -1,11 +1,15 @@
 const body = `
-#!/usr/bin/env node
+class \${1:ClassName}{
+private:
+public:
+  
+};
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["!node","!nb"],
-  type: ["javascript"],
+  prefix: ["class"],
+  type: ["cpp"],
   description: description || body,
   body: body.trim(),
 };
