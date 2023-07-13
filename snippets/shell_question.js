@@ -1,11 +1,12 @@
 const body = `
-#!/usr/bin/env zx 
-await \$\`\`
+echo -e "请输入: "
+read -r answer
 `;
 const description = "";
+
 module.exports = {
-  prefix: ["!zx", "#zx"],
-  type: ["javascript"],
+  prefix: ["!question"],
+  type: ["shellscript"],
   description: description || body,
   body: body.trim(),
 };

@@ -4,7 +4,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!bash"],
+  prefix: ["!bash","#"],
   type: ["shellscript"],
   description: description || body,
   body: body.trim(),

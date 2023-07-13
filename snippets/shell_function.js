@@ -1,11 +1,13 @@
 const body = `
-#!/usr/bin/env zx 
-await \$\`\`
+\${1:functionName}(){
+  \${2:echo -e "hello\\n"}
+}
 `;
 const description = "";
+
 module.exports = {
-  prefix: ["!zx", "#zx"],
-  type: ["javascript"],
+  prefix: ["!fun"],
+  type: ["shellscript"],
   description: description || body,
   body: body.trim(),
 };

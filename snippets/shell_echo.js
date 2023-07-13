@@ -1,11 +1,11 @@
 const body = `
-#!/usr/bin/env zx 
-await \$\`\`
+echo -e "$1\n";
 `;
 const description = "";
+
 module.exports = {
-  prefix: ["!zx", "#zx"],
-  type: ["javascript"],
+  prefix: ["!echo"],
+  type: ["shellscript"],
   description: description || body,
   body: body.trim(),
 };

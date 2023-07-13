@@ -4,7 +4,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!node"],
+  prefix: ["!node","#"],
   type: ["javascript"],
   description: description || body,
   body: body.trim(),
