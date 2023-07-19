@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2023.7.5",
+  "version": "2023.7.18",
   "engines": {
     "vscode": "^1.69.0"
   },
@@ -86,6 +86,10 @@
       {
         "language": "vue",
         "path": "./snippets/vue.json"
+      },
+      {
+        "language": "yaml",
+        "path": "./snippets/yaml.json"
       }
     ]
   },

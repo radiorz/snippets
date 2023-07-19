@@ -9,7 +9,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!service", "service"],
+  prefix: ["service", "!service"],
   type: ["yaml"],
   description: description || body,
   body: body,

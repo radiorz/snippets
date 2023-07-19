@@ -24,7 +24,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["```"],
+  prefix: ["```","!log"],
   type: ["javascript", "typescript"],
   description: description || body,
   body: body.trim(),

@@ -2,8 +2,8 @@ const body = `
 version:"3"
 services:
   # ——————————————————————————————————————————————————————————
-  $1:
-    container_name: $1
+  \${1:containerName}:
+    container_name: \${1:containerName}
     image: $2
     ports: 
       - "$3:$3"
@@ -11,7 +11,7 @@ services:
 const description = "";
 
 module.exports = {
-  prefix: ["!compose"],
+  prefix: ["compose", "!compose"],
   type: ["yaml"],
   description: description || body,
   body: body.trim(),
