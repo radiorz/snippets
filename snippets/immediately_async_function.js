@@ -6,7 +6,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!async", "iaf"],
+  prefix: ["!async", "ifa","iifa"],
   type: ["javascript"],
   description: description || body,
   body: body.trim(),
