@@ -6,7 +6,8 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!async", "ifa","iifa"],
+  // ()() 不显示..
+  prefix: ["!async", "ifa", "iifea"],
   type: ["javascript"],
   description: description || body,
   body: body.trim(),
