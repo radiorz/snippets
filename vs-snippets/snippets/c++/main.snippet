@@ -2,9 +2,9 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>clog</Title>
-      <Shortcut>clog</Shortcut>
-      <Description>打印日志</Description>
+      <Title>main</Title>
+      <Shortcut>main</Shortcut>
+      <Description>c++ 主入口</Description>
       <Author>tikkhun</Author>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
@@ -20,7 +20,12 @@
         </Literal>
       </Declarations>
       <Code Language="cpp">
-        <![CDATA[clog << "$value$" << $value$ << endl;]]>
+        <![CDATA[#include<iostream>  
+using namespace std;
+int main() {
+  $value$
+  return 0;
+}]]>
 			</Code>
     </Snippet>
   </CodeSnippet>
