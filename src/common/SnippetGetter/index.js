@@ -1,28 +1,18 @@
 const glob = require("glob");
 const path = require("path");
+const logger = require("../logger");
 
 const snippetsGlobPattern = "./snippets/*.js";
 const snippetTextsGlobPattern = "./snippetsTexts/*";
-
+const EXTS_LANGUAGE_MAP = require("../consts/extsLanguageMap");
+const { isObject } = require("../funcs");
 class SnippetGetter {
   constructor() {}
   static get() {
-    const optionSnippetFiles = glob.sync(snippetsGlobPattern);
     const textSnippetFiles = glob.sync(snippetTextsGlobPattern);
-    // 原始 snippet 配置
-
-    return {
-      optionSnippets: optionSnippetFiles
-        .map((filePath) => {
-          const snippetOptions = require(path.join(
-            __dirname,
-            "../../..",
-            filePath
-          ));
-          return { filePath, ...snippetOptions };
-        })
-        .filter((option) => option),
-      textSnippets: textSnippetFiles
+    const optionSnippetFiles = glob.sync(snippetsGlobPattern);
+    return [
+      ...textSnippetFiles
         .map((filePath) => {
           try {
             const file = filePath.split("/").at(-1);
@@ -34,18 +24,62 @@ class SnippetGetter {
             // 读取文件
             const body = fs.readFileSync(path.resolve(filePath), "utf8");
             if (!body || !body.trim()) throw new Error("文件为空");
-            return {
+            return SnippetGetter.tranTextSnippet({
               fileName,
               ext,
               body,
-            };
+            });
           } catch (error) {
             logger.error(`获取${filePath}text snippet出错`, error.message);
             return null;
           }
         })
         .filter((option) => option),
+      ...optionSnippetFiles
+        .map((filePath) => {
+          try {
+            const snippetOptions = require(path.join(
+              __dirname,
+              "../../..",
+              filePath
+            ));
+            return SnippetGetter.tranSnippet({ filePath, ...snippetOptions });
+          } catch (error) {
+            logger.error(`获取${filePath} snippet出错`, error.message);
+            return null;
+          }
+        })
+        .filter((option) => option),
+    ];
+  }
+  static tranTextSnippet({ fileName, ext, body } = {}) {
+    const type = EXTS_LANGUAGE_MAP[ext];
+    return {
+      type,
+      body,
+      key: `text_${fileName}`,
+      description: body,
+      prefix: [`!${fileName}`],
     };
+  }
+  static tranSnippet({ filePath, ...snippetOption } = {}) {
+    if (!snippetOption) {
+      throw new Error("snippet is nothing");
+    }
+    if (!isObject(snippetOption)) {
+      throw new Error(`snippet must be an object`);
+    }
+    if (!snippetOption.body) {
+      throw new Error(`snippet must be an object with body`);
+    }
+    if (snippetOption.disabled) {
+      throw new Error(`snippet disabled`);
+    }
+    let { key, body, ...rest } = snippetOption;
+    const snippet = { ...rest };
+    snippet.key = key || path.basename(filePath, ".js");
+    snippet.body = body.split("\n");
+    return snippet;
   }
 }
 module.exports = SnippetGetter;

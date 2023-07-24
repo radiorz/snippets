@@ -15,7 +15,6 @@ const path = require("path");
 const fs = require("fs");
 const { isString, isArray, isObject } = require("../common/funcs");
 const logger = require("../common/logger");
-const EXTS_LANGUAGE_MAP = require("../common/consts/extsLanguageMap");
 // 全局变量
 const SnippetGetter = require("../common/SnippetGetter");
 const snippetsDir = path.join(__dirname, "../../snippets");
@@ -28,25 +27,6 @@ class Adapter {
     this.genSnippets();
   }
   // 转换一个 snippets
-  tranSnippet({ filePath, ...snippetOption } = {}) {
-    if (!snippetOption) {
-      throw new Error("snippet is nothing");
-    }
-    if (!isObject(snippetOption)) {
-      throw new Error(`snippet must be an object`);
-    }
-    if (!snippetOption.body) {
-      throw new Error(`snippet must be an object with body`);
-    }
-    if (snippetOption.disabled) {
-      throw new Error(`snippet disabled`);
-    }
-    let { key, body, ...rest } = snippetOption;
-    const snippet = { ...rest };
-    snippet.key = key || path.basename(filePath, ".js");
-    snippet.body = body.split("\n");
-    return snippet;
-  }
   snippets = {};
   setSnippetType(type) {
     const types = isArray(type) ? type : [type];
@@ -71,46 +51,22 @@ class Adapter {
   }
   genSnippets() {
     logger.info("开始生成");
-    const { optionSnippets, textSnippets } = SnippetGetter.get();
+    const snippetOptions = SnippetGetter.get();
     // 获取选项
-    optionSnippets.forEach((snippetOption = {}) => {
+    snippetOptions.forEach((snippetOption = {}) => {
       try {
-        // 获取snippet 配置(稍作转换)
-        const snippet = this.tranSnippet(snippetOption);
+        const { filePath, ...snippet } = snippetOption;
         // 缓存起来
         this.setSnippetToSnippets(snippet);
       } catch (error) {
-        logger.error(
-          `选项文件(${snippetOption.filePath})添加错误`,
-          error.message
-        );
-      }
-    });
-    // 导出
-    textSnippets.forEach((fileOption = {}) => {
-      try {
-        // 获取snippet 配置
-        const snippet = this.tranTextSnippet(fileOption);
-        // 缓存起来
-        this.setSnippetToSnippets(snippet);
-      } catch (error) {
-        logger.error(`添加${filePath}文件错误`, error.message);
+        logger.error(`选项文件(${filePath})添加错误`, error.message);
       }
     });
     // 导出文件
     this.outputSnippets();
     logger.info("结束生成");
   }
-  tranTextSnippet({ fileName, ext, body } = {}) {
-    const type = EXTS_LANGUAGE_MAP[ext];
-    return {
-      type,
-      body,
-      key: `text_${fileName}`,
-      description: body,
-      prefix: [`!${fileName}`],
-    };
-  }
+
   outputSnippets() {
     if (!fs.existsSync(buildDir)) {
       fs.mkdirSync(buildDir);
