@@ -11,23 +11,24 @@
  * @done
  * @example
  */
-const glob = require("glob");
 const path = require("path");
 const fs = require("fs");
 const { isString, isArray, isObject } = require("../common/funcs");
 const logger = require("../common/logger");
 const EXTS_LANGUAGE_MAP = require("../common/consts/extsLanguageMap");
 // 全局变量
-const buildDir = path.join(__dirname, "../../.build");
+const SnippetGetter = require("../common/SnippetGetter");
 const snippetsDir = path.join(__dirname, "../../snippets");
-const snippetsGlobPattern = "./snippets/*.js";
-const snippetTextsGlobPattern = "./snippetsTexts/*";
+const buildDir = path.join(__dirname, "../../.build");
+
 console.log(`snippetsDir`, snippetsDir);
 class Adapter {
   constructor() {}
-
+  start() {
+    this.genSnippets();
+  }
   // 转换一个 snippets
-  tranSnippet(snippetOption = {}, file) {
+  tranSnippet({ filePath, ...snippetOption } = {}) {
     if (!snippetOption) {
       throw new Error("snippet is nothing");
     }
@@ -42,7 +43,7 @@ class Adapter {
     }
     let { key, body, ...rest } = snippetOption;
     const snippet = { ...rest };
-    snippet.key = key || path.basename(file, ".js");
+    snippet.key = key || path.basename(filePath, ".js");
     snippet.body = body.split("\n");
     return snippet;
   }
@@ -70,26 +71,26 @@ class Adapter {
   }
   genSnippets() {
     logger.info("开始生成");
+    const { optionSnippets, textSnippets } = SnippetGetter.get();
     // 获取选项
-    const optionFiles = glob.sync(snippetsGlobPattern);
-    optionFiles.forEach((filePath) => {
+    optionSnippets.forEach((snippetOption = {}) => {
       try {
-        // 原始 snippet 配置
-        const snippetOptions = require(path.join(__dirname, "../..", filePath));
         // 获取snippet 配置(稍作转换)
-        const snippet = this.tranSnippet(snippetOptions, filePath);
+        const snippet = this.tranSnippet(snippetOption);
         // 缓存起来
         this.setSnippetToSnippets(snippet);
       } catch (error) {
-        logger.error(`选项文件(${filePath})添加错误`, error.message);
+        logger.error(
+          `选项文件(${snippetOption.filePath})添加错误`,
+          error.message
+        );
       }
     });
     // 导出
-    const textSnippets = glob.sync(snippetTextsGlobPattern);
-    textSnippets.forEach((filePath) => {
+    textSnippets.forEach((fileOption = {}) => {
       try {
         // 获取snippet 配置
-        const snippet = this.getAndTranTextSnippet(filePath);
+        const snippet = this.tranTextSnippet(fileOption);
         // 缓存起来
         this.setSnippetToSnippets(snippet);
       } catch (error) {
@@ -100,15 +101,8 @@ class Adapter {
     this.outputSnippets();
     logger.info("结束生成");
   }
-  getAndTranTextSnippet(filePath = "") {
-    const file = filePath.split("/").at(-1);
-    const [fileName, ext] = file.split(".");
-    if (fileName) throw new Error("没有文件名");
-    if (file) throw new Error("不支持该类型");
+  tranTextSnippet({ fileName, ext, body } = {}) {
     const type = EXTS_LANGUAGE_MAP[ext];
-    // 读取文件
-    const body = fs.readFileSync(path.resolve(filePath), "utf8");
-    if (!body || !body.trim()) throw new Error("文件为空");
     return {
       type,
       body,
