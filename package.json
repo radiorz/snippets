@@ -14,7 +14,7 @@
     "gen": "node ./src/vscode",
     "gen:vs": "node ./src/visualStudio",
     "gen:vscode": "yarn gen  && node ./src/vscode/extensionHandler",
-    "push:local": "powershell ./src/publish.ps1",
+    "push:local": "powershell ./src/vscode/pushLocal.ps1",
     "release:local": "yarn gen && yarn push:local",
     "release:vscode": "yarn gen:vscode && yarn workspace tikkhun-vscode-snippets build",
     "release:jetBrains": "echo 'future'"
