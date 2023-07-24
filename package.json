@@ -11,8 +11,8 @@
   },
   "scripts": {
     "install:vscode": "yarn workspace tikkhun-vscode-snippets install",
-    "gen": "node ./src/gen.js",
-    "gen:vscode": "yarn gen  && node ./src/gen_extension.js",
+    "gen": "node ./src/vscode",
+    "gen:vscode": "yarn gen  && node ./src/vscode/extensionHandler",
     "push:local": "powershell ./src/publish.ps1",
     "release:local": "yarn gen && yarn push:local",
     "release:vscode": "yarn gen:vscode && yarn workspace tikkhun-vscode-snippets build",
@@ -34,7 +34,8 @@
   "homepage": "https://github.com/radiorz/snippets#readme",
   "dependencies": {
     "dayjs": "^1.11.3",
-    "glob": "^8.0.3"
+    "glob": "^8.0.3",
+    "xmlbuilder2": "^3.1.1"
   },
   "volta": {
     "node": "16.17.1"

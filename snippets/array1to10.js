@@ -1,5 +1,5 @@
 const body = `
-  [...new Array(10).keys()].map(i=>i+1)
+  [...new Array(10).keys()].map((i) => i + 1)
 `;
 const description = "";
 

@@ -1,4 +1,4 @@
-exports.EXTS_LANGUAGE_MAP = {
+const EXTS_LANGUAGE_MAP = {
   js: "javascript",
   ts: "typescript",
   sh: "shellscript",
@@ -12,5 +12,6 @@ exports.EXTS_LANGUAGE_MAP = {
   go: "go",
   md: "markdown",
   c: "c",
-  C:'c'
+  C: "c",
 };
+module.exports = EXTS_LANGUAGE_MAP;

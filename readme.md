@@ -68,3 +68,13 @@ console.log(`$1`,$1)
 ## TODO
 - 分语言打包snippets（有时候可能你不想打包全功能）
 - 自动化CI CD
+
+# 完成任务
+- [ ] 自动生成 ReadMe 文档?
+- [*]  自动打包生成 vscode snippets 格式
+- [*]  自动打包生成 vscode 依赖
+- [ ] 自动生成 vs 所需的xml 格式
+- [ ] 自动生成 vs 依赖
+- [ ] 自动生成 jetbrains 的格式
+- [ ] 自动生成 jetbrains 依赖
+
