@@ -1,25 +1,26 @@
+/** 语言类型 */
 const LANGUAGE_LABELS = [
-  "shellscript",
-  "javascript",
-  "typescript",
   "c",
   "cpp",
-  "typescriptreact",
-  "javascriptreact",
   "css",
-  "scss",
-  "sass",
   "go",
-  "yaml",
   "html",
   "java",
+  "javascript",
+  "javascriptreact",
   "json",
   "makefile",
   "markdown",
   "plaintext",
   "powershell",
-  "xml",
+  "sass",
+  "scss",
+  "shellscript",
+  "typescript",
+  "typescriptreact",
   "vue",
+  "xml",
+  "yaml",
 ];
 function genLanguageObj(labels = LANGUAGE_LABELS) {
   const obj = {};
@@ -28,4 +29,5 @@ function genLanguageObj(labels = LANGUAGE_LABELS) {
   }
   return obj;
 }
-module.exports = genLanguageObj();
+const TYPES = genLanguageObj();
+module.exports = TYPES;

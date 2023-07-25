@@ -1,3 +1,10 @@
+const variables = [
+  {
+    name: "",
+    title: '',
+    default: "",
+  },
+];
 const body = `
 #include<iostream>  
 using namespace std;

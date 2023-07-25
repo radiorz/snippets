@@ -9,4 +9,4 @@ csl -> console.log("",)
 
 更多的请查看以下具体仓库中每个 snippets 的定义
 
-仓库: https://github.com/radiorz/snippetsW
+仓库: https://github.com/radiorz/snippets

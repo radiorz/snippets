@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2023.7.24",
+  "version": "2023.7.25",
   "publisher": "tikkhun",
   "engines": {
     "vscode": "^1.69.0"
@@ -96,5 +96,6 @@
   },
   "devDependencies": {
     "vsce": "^2.15.0"
-  }
+  },
+  "icon": "tikkhun.png"
 }

@@ -4,10 +4,10 @@ $1
 EOF
 `;
 const description = "";
-const types = require("../utils/types");
+const TYPES = require("../src/common/consts/types");
 module.exports = {
-  prefix: ["##",'///'],
-  type: [types.shellscript],
+  prefix: ["##", "///"],
+  type: [TYPES.shellscript],
   description: description || body,
   body: body.trim(),
 };

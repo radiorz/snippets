@@ -88,17 +88,19 @@ class Adapter {
       .ele("SnippetType")
       .txt("SurroundsWith")
       .up();
+    // 替换 body中的 变量
+    let _body = body.join("\n");
     const snippet = create({
       version: "1.0",
       encoding: "123",
     })
       .ele("Snippet")
+      .ele("Code", { Language: type })
+      .dat(_body)
       .ele("Declarations")
       .ele("Literal")
       .up()
-      .up()
-      .ele("Code", { Language: type })
-      .dat(body.join("\n"));
+      .up();
 
     const total = root.import(header.root()).import(snippet.root());
     const xml = total.end({ prettyPrint: true });

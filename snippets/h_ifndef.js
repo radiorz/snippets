@@ -1,4 +1,4 @@
-const TYPES = require("../utils/types");
+const TYPES = require("../src/common/consts/types");
 const body = `
 #ifndef __\${1:HELLO_H}__
 #define __\${1:HELLO_H}__
