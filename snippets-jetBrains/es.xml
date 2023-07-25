@@ -1,0 +1,10 @@
+<templateSet group="tikkhun-es">
+  <template name="csl" value="console.log(`$message$`,$message$)" description="打印日志"
+    toReformat="true" toShortenFQNames="true">
+    <variable name="message" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+</templateSet>

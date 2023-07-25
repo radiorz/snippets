@@ -18,6 +18,7 @@
     "vscode:install": "yarn workspace tikkhun-vscode-snippets install",
     "vs:gen": "node ./src/visualStudio",
     "vs:release": "echo future",
+    "jetBrains:local": "powershell ./src/jetBrains/pushLocal.ps1",
     "jetBrains:release": "echo future"
   },
   "repository": {
