@@ -1,10 +1,10 @@
 const body = `
-  instance : null | \${1:TheClass}  = null;
-  getInstance():\${1:TheClass} {
-    if (!this.instance) {
-      this.instance = new \${1:TheClass}();
+  private static _instance : \${1:TheClass} | null  = null;
+  static getInstance(...args):\${1:TheClass} {
+    if (!this._instance) {
+      this.instance = new \${1:TheClass}(...args);
     }
-    return this.instance;
+    return this._instance;
   }
 `;
 const description = "";
