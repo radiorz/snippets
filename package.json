@@ -10,14 +10,15 @@
     ]
   },
   "scripts": {
-    "install:vscode": "yarn workspace tikkhun-vscode-snippets install",
-    "gen": "node ./src/vscode",
-    "gen:vs": "node ./src/visualStudio",
-    "gen:vscode": "yarn gen  && node ./src/vscode/extensionHandler",
-    "push:local": "powershell ./src/vscode/pushLocal.ps1",
-    "release:local": "yarn gen && yarn push:local",
-    "release:vscode": "yarn gen:vscode && yarn workspace tikkhun-vscode-snippets build",
-    "release:jetBrains": "echo 'future'"
+    "vscode:gen": "node ./src/vscode",
+    "vscode:genExtension": "yarn gen  && node ./src/vscode/extensionHandler",
+    "vscode:localPush": "powershell ./src/vscode/pushLocal.ps1",
+    "vscode:local": "yarn gen && yarn vscode:localPush",
+    "vscode:release": "vscode:genExtension && yarn workspace tikkhun-vscode-snippets build",
+    "vscode:install": "yarn workspace tikkhun-vscode-snippets install",
+    "vs:gen": "node ./src/visualStudio",
+    "vs:release": "echo future",
+    "jetBrains:release": "echo future"
   },
   "repository": {
     "type": "git",
