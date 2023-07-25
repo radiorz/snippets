@@ -16,7 +16,7 @@ const { create } = require("xmlbuilder2");
 const path = require("path");
 const { isArray } = require("../common/funcs");
 const logger = require("../common/logger");
-const snippetDir = path.join(__dirname, "../../vs-snippets");
+const snippetDir = path.join(__dirname, "../../.build-vs");
 const SnippetGetter = require("../common/SnippetGetter");
 const { languageFileMap } = require("./consts");
 function getRoot() {
@@ -50,7 +50,7 @@ class Adapter {
           return;
         }
         // 存储
-        const saveDir = path.join(__dirname, "../..", "vs-snippets", fileType);
+        const saveDir = path.join(snippetDir, fileType);
         console.log(`saveDir`, saveDir);
         if (!fs.existsSync(saveDir)) {
           fs.mkdirSync(saveDir);
