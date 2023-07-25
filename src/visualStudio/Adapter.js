@@ -17,6 +17,9 @@ const path = require("path");
 const { isArray } = require("../common/funcs");
 const logger = require("../common/logger");
 const snippetDir = path.join(__dirname, "../../.build-vs");
+if(!fs.existsSync(snippetDir)){
+  fs.mkdirSync(snippetDir);
+}
 const SnippetGetter = require("../common/SnippetGetter");
 const { languageFileMap } = require("./consts");
 function getRoot() {
