@@ -11,9 +11,9 @@
   },
   "scripts": {
     "vscode:gen": "node ./src/vscode",
-    "vscode:genExtension": "yarn gen  && node ./src/vscode/extensionHandler",
+    "vscode:genExtension": "yarn vscode:gen  && node ./src/vscode/extensionHandler",
     "vscode:localPush": "powershell ./src/vscode/pushLocal.ps1",
-    "vscode:local": "yarn gen && yarn vscode:localPush",
+    "vscode:local": "yarn vscode:gen && yarn vscode:localPush",
     "vscode:release": "vscode:genExtension && yarn workspace tikkhun-vscode-snippets build",
     "vscode:install": "yarn workspace tikkhun-vscode-snippets install",
     "vs:gen": "node ./src/visualStudio",
