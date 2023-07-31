@@ -1,12 +1,10 @@
 const body = `
-namespace \${1:demo} {
-
-} // namespace \$1
+#include <$1>
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["!namespace"],
+  prefix: ["!include"],
   type: ["cpp"],
   description: description || body,
   body: body.trim(),
