@@ -21,4 +21,5 @@ function test() {
     </View>
   );
 }
+
 export default memo(test);
