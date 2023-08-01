@@ -1,18 +1,12 @@
 const body = `
-#include <iostream>
-
-using namespace std;
-int main()
-{
-  $1
-  return 0;
+void wait(int second = 50){
+    std::this_thread::sleep_for(std::chrono::milliseconds(second));
 }
-
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["!main"],
+  prefix: ["!wait"],
   type: ["cpp"],
   description: description || body,
   body: body.trim(),
