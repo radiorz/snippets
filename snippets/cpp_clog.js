@@ -1,5 +1,5 @@
 const body = `
-clog << "$1"<< $1 << endl;
+std::clog << "$1 "<< \${1:0} << std::endl;
 `;
 const description = "";
 
