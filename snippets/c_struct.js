@@ -1,10 +1,12 @@
 const body = `
-printf("$1 \${2:%d}\\n",$1);
+struct $1 {
+  char *nothing;
+}
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["printf"],
+  prefix: ["!struct"],
   type: ["c"],
   description: description || body,
   body: body.trim(),
