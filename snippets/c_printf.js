@@ -1,5 +1,5 @@
 const body = `
-printf("$1 \${2:%d}\\n",$1);
+printf("$1 %\${2:d}\\n",$1);
 `;
 const description = "";
 
