@@ -1,11 +1,10 @@
 const body = `
-const timeout = \${1:1000}
-await new Promise((resolve) => setTimeout(resolve, timeout))
+  constructor(){}
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["wait","!wait", "delay"],
+  prefix: ["constructor", "!constructor"],
   type: ["javascript"],
   description: description || body,
   body: body.trim(),
