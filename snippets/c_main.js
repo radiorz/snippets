@@ -1,7 +1,7 @@
 const body = `
 #include <stdio.h>
 
-int main()
+int main(int argc, char **argv)
 { 
   $1
   return 0;
