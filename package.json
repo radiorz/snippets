@@ -14,12 +14,13 @@
     "vscode:genExtension": "yarn vscode:gen  && node ./src/vscode/extensionHandler",
     "vscode:localPush": "powershell ./src/vscode/pushLocal.ps1",
     "vscode:local": "yarn vscode:gen && yarn vscode:localPush",
-    "vscode:release": "vscode:genExtension && yarn workspace tikkhun-vscode-snippets build",
+    "vscode:release": "yarn vscode:genExtension && yarn workspace tikkhun-vscode-snippets build",
     "vscode:install": "yarn workspace tikkhun-vscode-snippets install",
     "vs:gen": "node ./src/visualStudio",
     "vs:release": "echo future",
     "jetBrains:local": "powershell ./src/jetBrains/pushLocal.ps1",
-    "jetBrains:release": "echo future"
+    "jetBrains:release": "echo future",
+    "docs:gen": "node ./src/docsGenerator"
   },
   "repository": {
     "type": "git",

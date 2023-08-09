@@ -13,7 +13,7 @@
  */
 const path = require("path");
 const fs = require("fs");
-const { isString, isArray, isObject } = require("../common/funcs");
+const { isString, isArray } = require("../common/funcs");
 const logger = require("../common/logger");
 // 全局变量
 const SnippetGetter = require("../common/SnippetGetter");
