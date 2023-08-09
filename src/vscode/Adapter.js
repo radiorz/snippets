@@ -54,11 +54,12 @@ class Adapter {
     const snippetOptions = SnippetGetter.get();
     // 获取选项
     snippetOptions.forEach((snippetOption = {}) => {
+      const { filePath, ...snippet } = snippetOption;
       try {
-        const { filePath, ...snippet } = snippetOption;
         // 缓存起来
         this.setSnippetToSnippets(snippet);
       } catch (error) {
+        // console.log(`snippetOption`, snippetOption);
         logger.error(`选项文件(${filePath})添加错误`, error.message);
       }
     });

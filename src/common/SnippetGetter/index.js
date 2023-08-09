@@ -29,29 +29,30 @@ class SnippetGetter {
           body,
         });
       } catch (error) {
-        logger.error(`获取${filePath}text snippet出错`, error.message);
+        logger.error(`获取${filePath} text snippet出错`, error.message);
         return null;
       }
     });
-    return [
-      ...textSnippets,
-      ...optionSnippetFiles.map((filePath) => {
-        try {
-          const snippetOptions = require(path.join(
-            __dirname,
-            "../../..",
-            filePath
-          ));
-          return SnippetGetter.tranSnippet({ filePath, ...snippetOptions });
-        } catch (error) {
-          logger.error(`获取${filePath} snippet出错`, error.message);
-          return null;
-        }
-      }),
-    ].filter((option) => option);
+    const optionSnippets = optionSnippetFiles.map((filePath) => {
+      try {
+        const snippetOptions = require(path.join(
+          __dirname,
+          "../../..",
+          filePath
+        ));
+        return SnippetGetter.tranSnippet({ filePath, ...snippetOptions });
+      } catch (error) {
+        logger.error(`获取${filePath} snippet出错`, error.message);
+        return null;
+      }
+    });
+    return [...textSnippets, ...optionSnippets].filter((option) => option);
   }
   static tranTextSnippet({ fileName, ext, body } = {}) {
     const type = EXTS_LANGUAGE_MAP[ext];
+    if (!type) {
+      throw new Error(`暂不支持此类型后缀:${ext}`);
+    }
     return {
       type,
       body,
