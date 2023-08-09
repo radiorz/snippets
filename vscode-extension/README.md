@@ -13,4 +13,4 @@ csl -> console.log("",)
 仓库: https://github.com/radiorz/snippets
 
 # 更多详见
-[readme.md](https://github.com/radiorz/snippets/src/docsGenerator/readme.md)
+[readme.md](https://github.com/radiorz/snippets/blob/main/src/docsGenerator/readme.md)
