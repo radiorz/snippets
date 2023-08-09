@@ -33,7 +33,6 @@ class SnippetGetter {
         return null;
       }
     });
-    console.log(`textSnippets`, textSnippets);
     return [
       ...textSnippets,
       ...optionSnippetFiles.map((filePath) => {
