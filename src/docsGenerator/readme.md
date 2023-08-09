@@ -1,162 +1,2246 @@
-| 序号 | 快捷键 | 支持语言 | 更多介绍 |
-|---|---|---|---|
-|0| ["!capitalize"] | "javascript" | "function capitalize(str) {\r\n  const [first, ...rest] = str;\r\n  if (!first) return \"\";\r\n  return first.toUpperCase() + rest.join(\"\").toLowerCase();\r\n}\r\n" |
-|1| ["!checkObjectValueEqualKey"] | "javascript" | "function checkObjectValueEqualKey(obj, value) {\r\n  const [key] = Array.prototype.find.call(\r\n    Object.entries(obj),\r\n    ([key, _value]) => {\r\n      if (_value === value) {\r\n        return true;\r\n      } else {\r\n        return false;\r\n      }\r\n    }\r\n  );\r\n  return key;\r\n}\r\n// 这个可能重复\r\n" |
-|2| ["!compose"] | "javascript" | "// 函数组合\nconst compose =\n  (...fns) =>\n  (arg) =>\n    fns.reduceRight((acc, fn) => fn(acc), arg);\n" |
-|3| ["!function"] | "shellscript" | "# 函数\r\ndemoFun() {\r\n  echo \"我是一个函数\"\r\n}\r\n# 执行\r\ndemoFun\r\n" |
-|4| ["!getArrayKeyMap"] | "javascript" | "/**\r\n * 将对象数组转化为以某个值为key的对象\r\n * 基础函数\r\n * @param {Array<Object>} array 数组\r\n * @param {string} key key值\r\n * @returns\r\n */\r\nexport function getArrayKeyMap(array = [], key = \"name\") {\r\n  const pinNameMap = {};\r\n  array.forEach((item = {}) => {\r\n    if (!item[key]) return;\r\n    pinNameMap[item[key]] = item;\r\n  });\r\n  return pinNameMap;\r\n}\r\n" |
-|5| ["!head"] | "javascript" | "#!/usr/bin/env node\n" |
-|6| ["!head"] | "shellscript" | "#!/bin/sh\n" |
-|7| ["!helloworld"] | "c" | "#include <stdio.h>\r\n\r\nint main()\r\n{\r\n  /* 我的第一个 C 程序 */\r\n  printf(\"Hello, World! \\n\");\r\n\r\n  return 0;\r\n}\r\n" |
-|8| ["!helloworld"] | "javascript" | "console.log(\"hello world\");\r\n" |
-|9| ["!isEven"] | "javascript" | "/**\n * @method 是奇数\n * @param {}\n * @returns {}\n * @desc\n * @example\n */\nfunction isOdd(value) {\n  return !(value & 1);\n}\n" |
-|10| ["!isNewerVersion"] | "javascript" | "/**\r\n * 判断版本新旧\r\n * @param {string} newVersion\r\n * @param {string} oldVersion\r\n * @returns {boolean}\r\n */\r\nfunction isNewerVersion(newVersion = \"\", oldVersion = \"\") {\r\n  // console.log(`version,oldVersion`, version, oldVersion);\r\n  const [oldF, oldS, oldPatch] = oldVersion\r\n    .split(\".\")\r\n    .map((v) => parseInt(v, 10));\r\n  const [newF, newS, newPatch] = newVersion\r\n    .split(\".\")\r\n    .map((v) => parseInt(v, 10));\r\n  if (newF > oldF) return true;\r\n  if (newF == oldF && newS > oldS) return true;\r\n  if (newF == oldF && newS == oldS && newPatch > oldPatch) return true;\r\n  return false;\r\n}\r\n" |
-|11| ["!isOdd"] | "javascript" | "/**\n * @method 是奇数\n * @param {}\n * @returns {}\n * @desc\n * @example\n */\nfunction isOdd(value) {\n  return !(value & 0);\n}\n" |
-|12| ["!log_split"] | "shellscript" | "echo \"---------------------------------------------------------------------\"\r\n" |
-|13| ["!logger"] | "javascript" | "const logger = {\r\n  warn: (...args) => console.warn(\"[WARN]\", ...args),\r\n  debug: (...args) => console.debug(\"[DEBUG]\", ...args),\r\n  error: (...args) => console.error(\"[ERROR]\", ...args),\r\n  info: (...args) => console.info(\"[INFO]\", ...args),\r\n};\r\n" |
-|14| ["!nodejs_eventemitter"] | "javascript" | "// nodejs\r\nconst { EventEmitter } = require(\"events\");\r\nconst eventEmitter = new EventEmitter();\r\n\r\n// 监听\r\neventEmitter.on(\"my_event\", (...args) => {\r\n  console.log(\"data received successfully.\", ...args);\r\n});\r\n// 发送\r\neventEmitter.emit(\"my_event\", \"num1\", \"num2\");\r\n" |
-|15| ["!packageDescription"] | "shellscript" | "description=$(node -p \"require(\"./package.json\").description\")\r\n" |
-|16| ["!packageVersion"] | "shellscript" | "version=$(node -p \"require(\"./package.json\").version\")\r\n" |
-|17| ["!random"] | "javascript" | "const randomStr = () => Math.random().toString(20).slice(2);\n" |
-|18| ["!react_withPersistentData"] | "javascript" | "import React, { Component } from \"react\";\r\nexport default function withPersistentData(WrappedComponent) {\r\n  return class extends Component {\r\n    componentWillMount() {\r\n      let data = localStorage.getItem(\"data\");\r\n      this.setState({ data });\r\n    }\r\n\r\n    render() {\r\n      // 通过{...this.props} 把传递给当前组件的属性继续传递给被包装的组件WrappedComponent\r\n      return <WrappedComponent data={this.state.data} {...this.props} />;\r\n    }\r\n  };\r\n}\r\n" |
-|19| ["!react_withTiming"] | "javascript" | "import React, { Component } from \"react\";\r\nfunction withTiming(WrappedComponent) {\r\n  return class extends WrappedComponent {\r\n    constructor(props) {\r\n      super(props);\r\n      this.start = 0;\r\n      this.end = 0;\r\n    }\r\n    componentWillMount() {\r\n      super.componentWillMount && super.componentWillMount();\r\n      this.start = Date.now();\r\n    }\r\n    componentDidMount() {\r\n      super.componentDidMount && super.componentDidMount();\r\n      this.end = Date.now();\r\n      console.log(\r\n        `${WrappedComponent.name} 组件渲染时间为 ${this.end - this.start} ms`\r\n      );\r\n    }\r\n    render() {\r\n      return super.render();\r\n    }\r\n  };\r\n}\r\n\r\nexport default withTiming;\r\n" |
-|20| ["!rgbToHex"] | "javascript" | "const rgbToHex = (r, g, b) =>\n  \"#\" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);\n" |
-|21| ["!switchTwoValue"] | "javascript" | "/**\n * 切换两个值\n */\nfunction switchTwoValue(a, b) {\n  [a, b] = [b, a];\n}\n" |
-|22| ["!to_singleton"] | "javascript" | "export default function ToSingleton(Builder) {\n  let instance;\n  // 代理函数仅作管控单例\n  return function (...args) {\n    if (!instance) {\n      instance = new Builder(...args);\n    }\n    return instance;\n  };\n}\n" |
-|23| ["!uniqueArray"] | "javascript" | "/**\n * 数组去重\n * @param {Array} arr\n */\nfunction uniqueArray(arr = []) {\n  return Array.from(new Set(arr));\n}\n" |
-|24| ["!useFocusEffect"] | "javascript" | "useFocusEffect(\n  useCallback(() => {\n    //\n    return () => {\n      //\n    };\n  }, [])\n);\n" |
-|25| ["astop"] | ["shellscript","powershell"] | "终止某个应用" |
-|26| ["apacakges"] | ["shellscript","powershell"] | "adb 查看包名" |
-|27| ["aer","item_remove_from_array_end_mutable"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\nconst ${2:last} = ${1:arr}.pop()\n" |
-|28| ["afri","!rest","item_remove_from_array_first_immutable"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\nconst [first,...${2:rest}] = ${1:arr}\n" |
-|29| ["afr","item_remove_from_array_first_mutable"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\nconst ${2:first} = ${1:arr}.shift()\n" |
-|30| ["ari","item_remove_from_array_immutable"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\n  ${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})\n" |
-|31| ["arm","item_remove_from_array_mutable"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\n  const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})\n  if(index > -1){\n    ${1:arr}.splice(index, 1)\n  }\n" |
-|32| ["!ten"] | ["javascript","typescript"] | "\n  [...new Array(10).keys()].map((i) => i + 1)\n" |
-|33| ["afn"] | ["javascript","typescript","vue","javascriptreact","typescriptreact"] | "箭头函数" |
-|34| ["anfn"] | ["javascript","typescript","vue"] | "箭头函数" |
-|35| ["!axios"] | ["javascript"] | "axios 实例" |
-|36| ["!bash","#"] | ["shellscript"] | "\n#!/bin/bash\n" |
-|37| ["!node","#"] | ["javascript"] | "\n#!/usr/bin/env node\n" |
-|38| ["!zx","#zx"] | ["javascript"] | "\n#!/usr/bin/env zx \nawait $``\n" |
-|39| ["!main"] | ["c"] | "\n#include <stdio.h>\n\nint main(int argc, char **argv)\n{ \n  $1\n  return 0;\n}\n\n" |
-|40| ["printf"] | ["c"] | "\nprintf(\"$1 %${2:d}\\n\",$1);\n" |
-|41| ["!struct"] | ["c"] | "\nstruct $1 {\n  char *nothing;\n}\n" |
-|42| ["!wait","!delay"] | ["c"] | "这个是使用原生时间循环进行的delay,大部分时候应该使用线程的sleep方法可能会常用一些" |
-|43| ["Capitalize"] | ["javascript"] | "\nfunction capitalize(str){\n  const [first,...rest] = str\n  if(!first) return ''\n  return first.toUpperCase()+ rest.join('').toLowerCase()\n}\n" |
-|44| ["!enum"] | ["javascript"] | "\nclass $1 {\n  // Create new instances of the same class as static attributes\n  static $2 = new $1(\"$2\")\n  static $3= new $1(\"$3\")\n\n  constructor(name) {\n    this.name = name\n  }\n}\n" |
-|45| ["!class"] | ["javascript","typescript"] | "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n\nexport default class ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}} {\n  constructor(options) {\n    ${3:Object.assign(this, options)};\n  }\n}\n" |
-|46| ["exe"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "使用 nodejs 执行exe文件" |
-|47| ["exec"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "使用 nodejs 执行某个命令" |
-|48| ["spawnexe"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "使用 nodejs spawn 执行命令" |
-|49| ["csl","logg"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "console.log(*)" |
-|50| ["constructor","!constructor"] | ["javascript"] | "\n  constructor(){}\n" |
-|51| ["class"] | ["cpp"] | "\nclass ${1:ClassName}{\nprivate:\npublic:\n  \n};\n" |
-|52| ["clog","log","csl"] | ["cpp"] | "\nstd::clog << \"$1 \"<< ${1:0} << std::endl;\n" |
-|53| ["!include","#include"] | ["cpp","c"] | "\n#include <$1>\n" |
-|54| ["!main"] | ["cpp"] | "\n#include <iostream>\n\nusing namespace std;\nint main()\n{\n  $1\n  return 0;\n}\n\n" |
-|55| ["!namespace"] | ["cpp"] | "\nnamespace ${1:demo} {\n\n} // namespace $1\n" |
-|56| ["!wait"] | ["cpp"] | "\nvoid wait(int milliseconds = 50){\n    std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));\n}\n" |
-|57| ["!now"] | ["dart"] | "\nint now = new DateTime.now().millisecondsSinceEpoch;\n" |
-|58| ["csl","!print","pr"] | ["dart"] | "\nprint(\"$1 ${$1}\");\n" |
-|59| ["!tv"] | ["javascript","typescript","java","vue"] | "今天日期" |
-|60| ["debounce"] | ["javascript"] | "\nconst debounce = (fn, delay, immediate)=> {\n  let timer\n  let result\n  return function(...args) {\n    if (timer) clearTimeout(timer)\n\n    if (immediate) {\n      // 如果timer存在，说明第二次调用的时候还没到delay时间，因为如果超过delay时间\n      // timer会被赋值为null，所以这个时候我们不应该执行fn，应该重新设置一个定时器\n      // 但如果是一次的时候，因为还没有设过定时器，所以这里timer会是undefined\n      if (timer) {\n        timer = setTimeout(() => timer = null, delay)\n      } else {\n        result = fn.apply(this, args)\n        return result\n      }\n    } else {\n      timer = setTimeout(() => fn.apply(this, args), delay)\n    }\n  }\n}\n\n" |
-|61| ["```","!log"] | ["javascript","typescript"] | "\n`$1`,$1\n" |
-|62| ["wait","!wait","delay"] | ["javascript"] | "\nconst timeout = ${1:1000}\nawait new Promise((resolve) => setTimeout(resolve, timeout))\n" |
-|63| ["service","!service"] | ["yaml"] | "\n  # ——————————————————————————————————————————————————————————\n  $1:\n    container_name: $1\n    image: $2\n    ports: \n      - \"$3:$3\"\n" |
-|64| ["compose","!compose"] | ["yaml"] | "\nversion:\"3\"\nservices:\n  # ——————————————————————————————————————————————————————————\n  ${1:containerName}:\n    container_name: ${1:containerName}\n    image: $2\n    ports: \n      - \"$3:$3\"\n" |
-|65| ["!dirname"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "import { fileURLToPath } from 'url';\nimport { dirname } from 'path';\nconst __filename = fileURLToPath(import.meta.url);\nconst __dirname = dirname(__filename);" |
-|66| ["!filename"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "import { fileURLToPath } from 'url';\nimport { dirname } from 'path';\nconst __filename = fileURLToPath(import.meta.url);" |
-|67| ["expect","//-"] | ["javascript"] | "\n// -> $1\n" |
-|68| ["tomp4"] | ["javascript"] | "\n  ffmpeg -acodec aac -filter_complex amix=inputs=2:duration=longest -vcodec copy -movflags faststart+frag_keyframe+separate_moof+omit_tfhd_offset+empty_moov\n" |
-|69| ["!fh"] | ["javascript","typescript","java"] | "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n" |
-|70| ["!file_name_camel"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}" |
-|71| ["!file_name"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}" |
-|72| ["statefulwidget","!stateless"] | ["dart"] | "\n\nclass ${1:MyWidget} extends StatefulWidget {\n  const ${1:MyWidget}({super.key});\n\n  @override\n  State<${1:MyWidget}> createState() => _${1:MyWidget}State();\n}\n\nclass _${1:MyWidget}State extends State<${1:MyWidget}> {\n  @override\n  Widget build(BuildContext context) {\n    return Container();\n  }\n}\n\n" |
-|73| ["statelesswidget","!stateful"] | ["dart"] | "\n\nclass ${1:MyWidget} extends StatelessWidget {\n  const ${1:MyWidget}({Key? key}) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Container();\n  }\n}\n" |
-|74| ["!fw","!widget"] | ["dart"] | "\n\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n\nimport 'package:flutter/material.dart';\n\nclass ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}} extends StatelessWidget {\n  const ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}({super.key});\n  @override\n  Widget build(BuildContext context) {\n    return (const Text('${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}'));\n  }\n}\n\n" |
-|75| ["!for"] | ["javascript","typescript","c","cpp"] | "\nfor(;;){\n  $1\n}\n" |
-|76| ["!fswrite"] | ["javascript"] | "\nconst fs = require('fs');\nconst path = \"$1\";\nconst str = \"$2\";\nconst writeStream = fs.createWriteStream(path);\nwriteStream.write(str);\n" |
-|77| ["gnow"] | ["javascript","typescript"] | "function getNow() {\n  return dayjs().format(\"YYYY-MM-DD dddd HH:mm:ss\");\n}" |
-|78| ["!date"] | ["go"] | "\nDateTime   = \"2006-01-02 15:04:05\"\nDateOnly   = \"2006-01-02\"\nTimeOnly   = \"15:04:05\"\n" |
-|79| ["!ifndef"] | ["c","cpp"] | "\n#ifndef __${1:HELLO_H}__\n#define __${1:HELLO_H}__\n\n$2\n\n#endif\n" |
-|80| ["!handlerLifeCycle"] | ["javascript","typescript"] | "\n  // ****** parsing 获取并转换成handler所需字段 ******\n  // ****** verify 排除不允许等错误 ******\n  // ****** handle 处理逻辑并生成result ******\n  // ****** result 结果的进一步处理,加密等 ******\n  " |
-|81| ["rrr"] | ["vue-html","html"] | "<pre style=\"color:red\"> {{${1:`注意了`}}} </pre>" |
-|82| ["!span"] | ["vue-html","html"] | "\n<span style=\"color:red\"> $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 [${2} {{${1}}}]</span>\n" |
-|83| ["!async","ifa","iifea"] | ["javascript"] | "\n(${2:async} () => {\n  $1\n})();\n" |
-|84| ["!if","if","iif"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\n(() => {\n  $1\n})();\n" |
-|85| ["!import"] | ["javascript"] | "\nimport $1 from '$1'\n" |
-|86| ["!class"] | ["java"] | "\npublic class ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}{\n  public static void main(String[] args){\n    System.out.println(\"${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\");\n  }\n}\n" |
-|87| ["csl","system","logg","sop"] | ["java"] | "System.out.println(\"$1\" + \" \" + $1);" |
-|88| ["print"] | ["java"] | "System.out.println(\"$1:\"+$1);" |
-|89| ["time"] | ["java"] | "\nSystem.currentTimeMillis();\n" |
-|90| ["!","!line"] | ["json"] | "\n\"$1\": \"$2\"\n" |
-|91| ["!debug"] | ["javascript","typescript"] | "\nlogger.debug(`$1`,$1);\n" |
-|92| ["!table"] | ["markdown"] | "\n|   |   |   |\n|---|---|---|\n|   |   |   |\n|   |   |   |\n|   |   |   |\n|   |   |   |\n|   |   |   |\n  " |
-|93| ["!mh","!funh"] | ["javascript","typescript","java"] | "\n/**\n * @method $1\n * @param {} \n * @returns {}\n * @desc $2\n * @example\n */\n" |
-|94| ["!mobxclass"] | ["javascript"] | "\nimport { action, observable } from 'mobx';\n\nclass Store {\n    @observable\n    count = 1;\n    \n    @action\n    setCount = () => {\n        this.count++;\n    }\n}\nexport const store = new Store();\n\n" |
-|95| ["!mobx"] | ["javascript"] | "\nimport {observable, action} from 'mobx';\nconst store = observable(\n  {\n    value: 0,\n    setValue(value) {\n      this.value = value;\n    },\n  },\n  {\n    setValue:action\n  }\n);\n\nexport default store;\n\n" |
-|96| ["!nohoist"] | ["json"] | "\n  \"private\": \"true\",\n  \"workspaces\": {\n    \"nohoist\": [\n      \"**\"\n    ]\n  },\n" |
-|97| ["now"] | ["javascript","typescript","java","vue"] | "当前时间" |
-|98| ["oef"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "Object.entries(options).forEach(([key,value])=>{\n$1\n}" |
-|99| ["lg","ogpl"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\nimport {get} from 'lodash-es'\nget(obj, path,defaultValue)\n" |
-|100| ["mergeRight"] | ["javascript"] | "\n  function mergeRight(obj, theOtherObj){\n    return \n  }\n" |
-|101| ["ls","ospl"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\nimport {set} from 'lodash-es'\nset(obj, path, value)\n" |
-|102| ["//","ccc"] | ["javascript","typescript","java"] | "/** ******  ****** */" |
-|103| ["///"] | ["javascript","typescript","java"] | "\n${LINE_COMMENT} ****** $1 ******\n" |
-|104| ["!pinia"] | ["javascript","typescript"] | "\n\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n\nimport { defineStore } from 'pinia'\n\nconst use${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}Store = defineStore('${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}',{\n  state:()=>({\n    value: 0\n  }),\n  // getters:{},\n  actions: {\n    setValue(){\n    \n    }\n  }\n})\nexport default use${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}Store\n" |
-|105| ["ss"] | ["powershell"] | "过滤字符串" |
-|106| ["!promise"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\nnew Promise((resolve,reject)=>{\n  $1\n})\n" |
-|107| ["color"] | ["javascript","typescript"] | "\nconst color = `#${(~~(Math.random() * (1 << 24))).toString(16)}`\n" |
-|108| ["!react_memo_component","!rmc"] | ["javascript","javascriptreact"] | "memo component" |
-|109| ["!react"] | ["javascript","javascriptreact","typescriptreact","typescript"] | "react 函数组件" |
-|110| ["!hoc"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\n\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n\nimport React from \"react\";\nimport PropTypes from \"prop-types\";\n\nexport default function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}(WrappedComponent) => {\n  const hocComponent = ({ ...props }) => {\n    // $2\n    return <WrappedComponent {...props} />;\n  };\n\n  hocComponent.propTypes = {};\n\n  return hocComponent;\n};\n" |
-|111| ["!hook"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n\nimport { useState, useEffect } from \"react\";\n// import { useDispatch } from \"react-redux\";\n\nexport default function ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {\n  const [$2] = useState(null);\n  return {$2};\n}\n\n" |
-|112| ["ireact"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\nimport React from 'react';\n" |
-|113| ["!useFocus"] | ["javascript"] | "\n\nuseEffect(()=>{\n  console.log(`${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/} useEffect 进来了 `,)\n  return ()=>{\n    console.log(`${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/} useEffect 退出了`,)\n  }\n})\n// import { useFocusEffect } from '@react-navigation/native';\nuseFocusEffect(()=>{\n  console.log(`${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/} useFocusEffect 进来了 `,)\n  return ()=>{\n    console.log(`${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/} useFocusEffect 退出了`,)\n  }\n})\n" |
-|114| ["!prern"] | ["javascript","javascriptreact","typescriptreact","typescript"] | "<Text style={{backgroundColor:'red'}}>{$1}</Text>" |
-|115| ["!view"] | ["javascript","javascriptreact","typescript","typescriptreact"] | "引入view 做一些小事情经常会做" |
-|116| ["!flatlist"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "react_flat_list" |
-|117| ["!rn","!reactNative"] | ["javascript","javascriptreact","typescript","typescriptreact"] | "\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n\nimport React, { useState, useEffect, memo } from 'react'\nimport { View, Text } from 'react-native'\n\nfunction ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}() {\n  return (\n    <View>\n      <Text>${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}</Text>\n    </View>\n  )\n}\n\nexport default ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}\n\n" |
-|118| ["!sectionlist"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "react native sectionlist" |
-|119| ["!readable"] | ["javascript"] | "\nconst { Readable } = require(\"stream\");\n\nconst readableStream = new Readable({\n  // highWaterMark: \n  read: (size) => {},\n});\n// readableStream.push(\"test\");\n" |
-|120| ["!persistSlice"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\n\n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n\n\nimport autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';\nimport AsyncStorage from '@react-native-async-storage/async-storage';\nimport { persistReducer } from 'redux-persist';\nimport { createSlice } from \"@reduxjs/toolkit\";\n\n// ****** init ******\nconst name = \"${2:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}\"\n\n// ****** initialState ******\nconst initialState = {\n  value,\n};\n// ****** async ******\n\n// ****** slice ******\nexport const ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}} = createSlice({\n  name,\n  initialState,\n  reducers: {\n    ${3:setValue}(state,{payload}) {\n      \n    }\n  },\n});\n\n// ****** actions ******\nexport const {\n  ${3:setValue}\n} = ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}.actions;\n\n// ****** reducer persist ******\nconst persistedReducer = persistReducer(\n  {\n    key: [name],\n    storage: AsyncStorage,\n    stateReconciler: autoMergeLevel2,\n    // 黑名单 不缓存的\n    // blacklist: ['page404'],\n  },\n  ${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}.reducer,\n);\nexport default persistedReducer\n" |
-|121| ["!slice"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\nimport { createSlice } from \"@reduxjs/toolkit\";\n\n/**\n * 初始state\n */\nconst initialState = {\n  value,\n};\n\nexport const ${1:name}Slice = createSlice({\n  name: \"${1:name}\",\n  initialState,\n  reducers: {\n    setValue(state,{payload}) {\n      \n    }\n  },\n});\n// Action creators are generated for each case reducer function\nexport const {\n  setValue\n} = ${1:name}Slice.actions;\n\nexport default ${1:name}Slice.reducer;\n" |
-|122| ["!reduxStore"] | ["javascript"] | "\nimport { configureStore } from '@reduxjs/toolkit';\n\nimport ${2:name}Reducer from './${2:name}Slice';\n\n\nexport const store = configureStore({\n  reducer: {\n    ${2:name}: ${2:name}Reducer,\n  },\n});\n\nglobalThis.$store = store;\n\n" |
-|123| ["!rtkAsync"] | ["javascript"] | "\nexport const ${1:getSomething}Async = createAsyncThunk('${2:name}/${1:getSomething}Async',async(payload, {getState}={})=>{\n  return \n})\n" |
-|124| ["!require"] | ["javascript"] | "\nconst $1 = require('$1');\n" |
-|125| ["!bz"] | ["scss"] | "\n/**\n  * 功能:\n  * TODO: \n  * [] \n  * 注释: \n  * - \n  */\n" |
-|126| ["!case"] | ["shellscript"] | "\ncase $${1:value} in\n $2) echo \"\"\n ;;\n $3) echo \"\"\n ;;\n *) echo \"\"\n ;;\nesac\n" |
-|127| ["##","///"] | ["shellscript"] | "\n:<<EOF\n$1\nEOF\n" |
-|128| ["!currentDir"] | ["shellscript"] | "\n# sh文件所在路径\nCURRENT_DIR=$(dirname \"\\$0\")\n" |
-|129| ["!echo"] | ["shellscript"] | "\necho -e \"$1\n\";\n" |
-|130| ["!fun"] | ["shellscript"] | "\n${1:functionName}(){\n  ${2:echo -e \"hello\\n\"}\n}\n" |
-|131| ["!ifif"] | ["shellscript"] | "\nif [ ${1:true} ]\nthen\n   echo \"true\"\nelif [ ${2:true} ]\nthen\n   echo \"second true\"\nelse\n   echo \"default\"\nfi\n" |
-|132| ["!elseif","!ife"] | ["shellscript"] | "\nif ${1:true}; then\n   ${2:echo \"true\"}\nelse \n   ${2:echo \"false\"}\nfi\n" |
-|133| ["!if"] | ["shellscript"] | "\n# 判断\nif [ ${1:true} ]\nthen\n    ${2:echo \"123\"}\nfi\n" |
-|134| ["!if"] | ["shellscript"] | "\n# 判断\nif ${1:true};\nthen\n    ${2:echo \"true\"}\nfi\n" |
-|135| ["//"] | ["shellscript"] | "# $1" |
-|136| ["!question"] | ["shellscript"] | "\necho -e \"请输入: \"\nread -r answer\n" |
-|137| ["!test","!equal"] | ["shellscript"] | "\nisEqual=\\$(test \\$((${1:\\$value})) -eq \\$((${2:\\$value2})))\n" |
-|138| ["!tarout"] | ["shellscript"] | "\n此为解压\n\n-f <filename>  后加 filename\n-z 压缩 采用 gz\n-j 压缩 采用 bz2\n-c: 建立压缩档案（.tar)\n-v 显示所有过程\n\n-x 解压\n-O 解开到标准输出\n\n" |
-|139| ["!tar","!gz"] | ["shellscript"] | "此为压缩\n\n-f <filename>  后加 filename\n-z 压缩 采用 gz\n-j 压缩 采用 bz2\n-c: 建立压缩档案（.tar)\n-v 显示所有过程\n\n-x 解压\n-O 解开到标准输出\n" |
-|140| ["!single_pattern","!single"] | ["typescript"] | "\n  private static _instance : ${1:TheClass} | null  = null;\n  static getInstance(...args):${1:TheClass} {\n    if (!this._instance) {\n      this.instance = new ${1:TheClass}(...args);\n    }\n    return this._instance;\n  }\n" |
-|141| ["!single_pattern","!single"] | ["javascript"] | "\n  // 实例\n  _instance = null;\n  // 静态方法\n  static getInstance(...args) {\n    if (!this.instance) {\n      this._instance = new ${1:TheClass}(...args);\n    }\n    return this._instance;\n  }\n" |
-|142| ["!snippet"] | ["javascript"] | "\nconst body = ``\nconst description = \"\";\n\nmodule.exports = {\n  prefix: [\"!${1:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}\"],\n  type: [\"javascript\"],\n  description: description || body,\n  body: body.trim(),\n};\n" |
-|143| ["state"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\n(state, { payload }) => {\n  if (!payload) {\n    return;\n  }\n  state.${1:value} = payload;\n}\n\n" |
-|144| [".thencatch"] | ["javascript"] | "\n.then(()=>{\n\n})\n.catch(()=>{})\n" |
-|145| ["throttle"] | ["javascript"] | "debounce 实现，虽然已经有 lodash 库 但是有时候不用 lodash" |
-|146| ["trycc"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "try{\n  $1\n}catch(err){\n  $2\n}" |
-|147| ["typeOf"] | ["javascript"] | "检验数据类型" |
-|148| ["!vh"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "\n/**\n * @var $1  \n * @desc $变量定义\n * @property {string} $2 $变量名\n * \n */\n" |
-|149| ["!vh"] | ["vue"] | "\n<!--\n \n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n\n-->\n" |
-|150| ["!watch"] | ["javascript"] | "\n\"${1:value}\": {\n  handler(newVal,oldVal) {\n    console.log(newVal);\n  },\n  // deep: true,\n  // immediate: true\n},\n" |
-|151| ["vfor"] | ["vue-html","html"] | "vfor has a key" |
-|152| ["!vue2"] | ["vue"] | "vue2" |
-|153| ["oef"] | ["javascript","typescript","javascriptreact","typescriptreact"] | "export default {\n  // 组件名\n  components: {},\n  // filters:{},\n  // mixins:[],\n  // props: {},\n  // data(){\n  //   return{\n  //     \n  //   }\n  // },\n  // 组件方法\n  // computed:{},\n  // watch:{},\n  // mounted(){},\n  methods: {},\n}" |
-|154| ["!vue3t"] | ["vue"] | "\n\n<!--\n \n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n\n-->\n\n<script lang=\"ts\">\n  export default {\n    name: \"${2:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}\"\n  };\n</script>\n<script setup lang=\"ts\">\n\n</script>\n\n<template>\n  <div class=\"$2\">\n    $2\n  </div>\n</template>\n\n<style lang=\"scss\" scoped>\n\n</style>\n" |
-|155| ["!vue3"] | ["vue"] | "\n\n<!--\n \n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n\n-->\n\n<script>\n  export default {\n    name: \"${2:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}\"\n  };\n</script>\n<script setup>\n\n</script>\n\n<template>\n  <div class=\"$2\">\n  </div>\n</template>\n\n<style lang=\"scss\" scoped>\n\n</style>\n" |
-|156| ["!vueo"] | ["vue"] | "\n\n<!--\n \n/**\n * @author\n * @file $TM_FILENAME\n * @fileBase ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}\n * @path $RELATIVE_FILEPATH\n * @from \n * @desc $2\n * @todo\n * \n *\n * @done\n * @example\n */\n\n-->\n\n<script>\nimport { defineComponent } from 'vue'\nexport default defineComponent({\n  name: '${2:${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}}',\n  // components: {},\n  props: {},\n  // 从组件触发 emits 事件\n  // emits:{},\n  // 暴露\n  // expose: {},\n  data() {\n    return {}\n  }\n  // computed:{},\n  // watch:{},\n  // create(){},\n  // methods:{}\n})\n</script>\n\n<template>\n  <div class=\"${3}\">\n  </div>\n</template>\n\n<style lang=\"scss\" scoped></style>\"\n" |
-|157| ["!directive"] | ["javascript"] | "\nconst ${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/} = {\n   // 在绑定元素的 attribute 前\n  // 或事件监听器应用前调用\n  created(el, binding, vnode, prevVnode) {\n    // 下面会介绍各个参数的细节\n  },\n  // 在元素被插入到 DOM 前调用\n  beforeMount(el, binding, vnode, prevVnode) {},\n  // 在绑定元素的父组件\n  // 及他自己的所有子节点都挂载完成后调用\n  mounted(el, binding, vnode, prevVnode) {},\n  // 绑定元素的父组件更新前调用\n  beforeUpdate(el, binding, vnode, prevVnode) {},\n  // 在绑定元素的父组件\n  // 及他自己的所有子节点都更新后调用\n  updated(el, binding, vnode, prevVnode) {},\n  // 绑定元素的父组件卸载前调用\n  beforeUnmount(el, binding, vnode, prevVnode) {},\n  // 绑定元素的父组件卸载后调用\n  unmounted(el, binding, vnode, prevVnode) {}\n}\n" |
-|158| ["!writable"] | ["javascript"] | "\nconst { Writable } = require(\"stream\");\n\n\nconst writableStream = new Writable({\n  write(chunk, encoding, callback) {\n    callback();\n  },\n});\n\n\n" |
-|159| ["!zxs"] | ["javascript"] | "\nawait $``\n" |
+ 
+<table>  
+    <thead>
+      <tr>
+        <th>序号</th>,<th>快捷键</th>,<th>支持语言</th>,<th>更多介绍</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+<tr>
+      <td>0</td>
+      <td>["!capitalize"]</td>
+      <td>"javascript" </td>
+      <td><pre>function capitalize(str) {
+  const [first, ...rest] = str;
+  if (!first) return "";
+  return first.toUpperCase() + rest.join("").toLowerCase();
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>1</td>
+      <td>["!checkObjectValueEqualKey"]</td>
+      <td>"javascript" </td>
+      <td><pre>function checkObjectValueEqualKey(obj, value) {
+  const [key] = Array.prototype.find.call(
+    Object.entries(obj),
+    ([key, _value]) => {
+      if (_value === value) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  );
+  return key;
+}
+// 这个可能重复
+</pre></td>
+</tr>
+
+<tr>
+      <td>2</td>
+      <td>["!compose"]</td>
+      <td>"javascript" </td>
+      <td><pre>// 函数组合
+const compose =
+  (...fns) =>
+  (arg) =>
+    fns.reduceRight((acc, fn) => fn(acc), arg);
+</pre></td>
+</tr>
+
+<tr>
+      <td>3</td>
+      <td>["!function"]</td>
+      <td>"shellscript" </td>
+      <td><pre># 函数
+demoFun() {
+  echo "我是一个函数"
+}
+# 执行
+demoFun
+</pre></td>
+</tr>
+
+<tr>
+      <td>4</td>
+      <td>["!getArrayKeyMap"]</td>
+      <td>"javascript" </td>
+      <td><pre>/**
+ * 将对象数组转化为以某个值为key的对象
+ * 基础函数
+ * @param {Array<Object>} array 数组
+ * @param {string} key key值
+ * @returns
+ */
+export function getArrayKeyMap(array = [], key = "name") {
+  const pinNameMap = {};
+  array.forEach((item = {}) => {
+    if (!item[key]) return;
+    pinNameMap[item[key]] = item;
+  });
+  return pinNameMap;
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>5</td>
+      <td>["!head"]</td>
+      <td>"javascript" </td>
+      <td><pre>#!/usr/bin/env node
+</pre></td>
+</tr>
+
+<tr>
+      <td>6</td>
+      <td>["!head"]</td>
+      <td>"shellscript" </td>
+      <td><pre>#!/bin/sh
+</pre></td>
+</tr>
+
+<tr>
+      <td>7</td>
+      <td>["!helloworld"]</td>
+      <td>"c" </td>
+      <td><pre>#include <stdio.h>
+
+int main()
+{
+  /* 我的第一个 C 程序 */
+  printf("Hello, World! \n");
+
+  return 0;
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>8</td>
+      <td>["!helloworld"]</td>
+      <td>"javascript" </td>
+      <td><pre>console.log("hello world");
+</pre></td>
+</tr>
+
+<tr>
+      <td>9</td>
+      <td>["!isEven"]</td>
+      <td>"javascript" </td>
+      <td><pre>/**
+ * @method 是奇数
+ * @param {}
+ * @returns {}
+ * @desc
+ * @example
+ */
+function isOdd(value) {
+  return !(value & 1);
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>10</td>
+      <td>["!isNewerVersion"]</td>
+      <td>"javascript" </td>
+      <td><pre>/**
+ * 判断版本新旧
+ * @param {string} newVersion
+ * @param {string} oldVersion
+ * @returns {boolean}
+ */
+function isNewerVersion(newVersion = "", oldVersion = "") {
+  // console.log(`version,oldVersion`, version, oldVersion);
+  const [oldF, oldS, oldPatch] = oldVersion
+    .split(".")
+    .map((v) => parseInt(v, 10));
+  const [newF, newS, newPatch] = newVersion
+    .split(".")
+    .map((v) => parseInt(v, 10));
+  if (newF > oldF) return true;
+  if (newF == oldF && newS > oldS) return true;
+  if (newF == oldF && newS == oldS && newPatch > oldPatch) return true;
+  return false;
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>11</td>
+      <td>["!isOdd"]</td>
+      <td>"javascript" </td>
+      <td><pre>/**
+ * @method 是奇数
+ * @param {}
+ * @returns {}
+ * @desc
+ * @example
+ */
+function isOdd(value) {
+  return !(value & 0);
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>12</td>
+      <td>["!log_split"]</td>
+      <td>"shellscript" </td>
+      <td><pre>echo "---------------------------------------------------------------------"
+</pre></td>
+</tr>
+
+<tr>
+      <td>13</td>
+      <td>["!logger"]</td>
+      <td>"javascript" </td>
+      <td><pre>const logger = {
+  warn: (...args) => console.warn("[WARN]", ...args),
+  debug: (...args) => console.debug("[DEBUG]", ...args),
+  error: (...args) => console.error("[ERROR]", ...args),
+  info: (...args) => console.info("[INFO]", ...args),
+};
+</pre></td>
+</tr>
+
+<tr>
+      <td>14</td>
+      <td>["!nodejs_eventemitter"]</td>
+      <td>"javascript" </td>
+      <td><pre>// nodejs
+const { EventEmitter } = require("events");
+const eventEmitter = new EventEmitter();
+
+// 监听
+eventEmitter.on("my_event", (...args) => {
+  console.log("data received successfully.", ...args);
+});
+// 发送
+eventEmitter.emit("my_event", "num1", "num2");
+</pre></td>
+</tr>
+
+<tr>
+      <td>15</td>
+      <td>["!packageDescription"]</td>
+      <td>"shellscript" </td>
+      <td><pre>description=$(node -p "require("./package.json").description")
+</pre></td>
+</tr>
+
+<tr>
+      <td>16</td>
+      <td>["!packageVersion"]</td>
+      <td>"shellscript" </td>
+      <td><pre>version=$(node -p "require("./package.json").version")
+</pre></td>
+</tr>
+
+<tr>
+      <td>17</td>
+      <td>["!random"]</td>
+      <td>"javascript" </td>
+      <td><pre>const randomStr = () => Math.random().toString(20).slice(2);
+</pre></td>
+</tr>
+
+<tr>
+      <td>18</td>
+      <td>["!react_withPersistentData"]</td>
+      <td>"javascript" </td>
+      <td><pre>import React, { Component } from "react";
+export default function withPersistentData(WrappedComponent) {
+  return class extends Component {
+    componentWillMount() {
+      let data = localStorage.getItem("data");
+      this.setState({ data });
+    }
+
+    render() {
+      // 通过{...this.props} 把传递给当前组件的属性继续传递给被包装的组件WrappedComponent
+      return <WrappedComponent data={this.state.data} {...this.props} />;
+    }
+  };
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>19</td>
+      <td>["!react_withTiming"]</td>
+      <td>"javascript" </td>
+      <td><pre>import React, { Component } from "react";
+function withTiming(WrappedComponent) {
+  return class extends WrappedComponent {
+    constructor(props) {
+      super(props);
+      this.start = 0;
+      this.end = 0;
+    }
+    componentWillMount() {
+      super.componentWillMount && super.componentWillMount();
+      this.start = Date.now();
+    }
+    componentDidMount() {
+      super.componentDidMount && super.componentDidMount();
+      this.end = Date.now();
+      console.log(
+        `${WrappedComponent.name} 组件渲染时间为 ${this.end - this.start} ms`
+      );
+    }
+    render() {
+      return super.render();
+    }
+  };
+}
+
+export default withTiming;
+</pre></td>
+</tr>
+
+<tr>
+      <td>20</td>
+      <td>["!rgbToHex"]</td>
+      <td>"javascript" </td>
+      <td><pre>const rgbToHex = (r, g, b) =>
+  "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+</pre></td>
+</tr>
+
+<tr>
+      <td>21</td>
+      <td>["!switchTwoValue"]</td>
+      <td>"javascript" </td>
+      <td><pre>/**
+ * 切换两个值
+ */
+function switchTwoValue(a, b) {
+  [a, b] = [b, a];
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>22</td>
+      <td>["!to_singleton"]</td>
+      <td>"javascript" </td>
+      <td><pre>export default function ToSingleton(Builder) {
+  let instance;
+  // 代理函数仅作管控单例
+  return function (...args) {
+    if (!instance) {
+      instance = new Builder(...args);
+    }
+    return instance;
+  };
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>23</td>
+      <td>["!uniqueArray"]</td>
+      <td>"javascript" </td>
+      <td><pre>/**
+ * 数组去重
+ * @param {Array} arr
+ */
+function uniqueArray(arr = []) {
+  return Array.from(new Set(arr));
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>24</td>
+      <td>["!useFocusEffect"]</td>
+      <td>"javascript" </td>
+      <td><pre>useFocusEffect(
+  useCallback(() => {
+    //
+    return () => {
+      //
+    };
+  }, [])
+);
+</pre></td>
+</tr>
+
+<tr>
+      <td>25</td>
+      <td>["astop"]</td>
+      <td>["shellscript","powershell"] </td>
+      <td><pre>终止某个应用</pre></td>
+</tr>
+
+<tr>
+      <td>26</td>
+      <td>["apacakges"]</td>
+      <td>["shellscript","powershell"] </td>
+      <td><pre>adb 查看包名</pre></td>
+</tr>
+
+<tr>
+      <td>27</td>
+      <td>["aer","item_remove_from_array_end_mutable"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+const ${2:last} = ${1:arr}.pop()
+</pre></td>
+</tr>
+
+<tr>
+      <td>28</td>
+      <td>["afri","!rest","item_remove_from_array_first_immutable"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+const [first,...${2:rest}] = ${1:arr}
+</pre></td>
+</tr>
+
+<tr>
+      <td>29</td>
+      <td>["afr","item_remove_from_array_first_mutable"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+const ${2:first} = ${1:arr}.shift()
+</pre></td>
+</tr>
+
+<tr>
+      <td>30</td>
+      <td>["ari","item_remove_from_array_immutable"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+  ${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})
+</pre></td>
+</tr>
+
+<tr>
+      <td>31</td>
+      <td>["arm","item_remove_from_array_mutable"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+  const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})
+  if(index > -1){
+    ${1:arr}.splice(index, 1)
+  }
+</pre></td>
+</tr>
+
+<tr>
+      <td>32</td>
+      <td>["!ten"]</td>
+      <td>["javascript","typescript"] </td>
+      <td><pre>
+  [...new Array(10).keys()].map((i) => i + 1)
+</pre></td>
+</tr>
+
+<tr>
+      <td>33</td>
+      <td>["afn"]</td>
+      <td>["javascript","typescript","vue","javascriptreact","typescriptreact"] </td>
+      <td><pre>箭头函数</pre></td>
+</tr>
+
+<tr>
+      <td>34</td>
+      <td>["anfn"]</td>
+      <td>["javascript","typescript","vue"] </td>
+      <td><pre>箭头函数</pre></td>
+</tr>
+
+<tr>
+      <td>35</td>
+      <td>["!axios"]</td>
+      <td>["javascript"] </td>
+      <td><pre>axios 实例</pre></td>
+</tr>
+
+<tr>
+      <td>36</td>
+      <td>["!bash","#"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+#!/bin/bash
+</pre></td>
+</tr>
+
+<tr>
+      <td>37</td>
+      <td>["!node","#"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+#!/usr/bin/env node
+</pre></td>
+</tr>
+
+<tr>
+      <td>38</td>
+      <td>["!zx","#zx"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+#!/usr/bin/env zx 
+await $``
+</pre></td>
+</tr>
+
+<tr>
+      <td>39</td>
+      <td>["!main"]</td>
+      <td>["c"] </td>
+      <td><pre>
+#include <stdio.h>
+
+int main(int argc, char **argv)
+{ 
+  $1
+  return 0;
+}
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>40</td>
+      <td>["printf"]</td>
+      <td>["c"] </td>
+      <td><pre>
+printf("$1 %${2:d}\n",$1);
+</pre></td>
+</tr>
+
+<tr>
+      <td>41</td>
+      <td>["!struct"]</td>
+      <td>["c"] </td>
+      <td><pre>
+struct $1 {
+  char *nothing;
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>42</td>
+      <td>["!wait","!delay"]</td>
+      <td>["c"] </td>
+      <td><pre>这个是使用原生时间循环进行的delay,大部分时候应该使用线程的sleep方法可能会常用一些</pre></td>
+</tr>
+
+<tr>
+      <td>43</td>
+      <td>["Capitalize"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+function capitalize(str){
+  const [first,...rest] = str
+  if(!first) return ''
+  return first.toUpperCase()+ rest.join('').toLowerCase()
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>44</td>
+      <td>["!enum"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+class $1 {
+  // Create new instances of the same class as static attributes
+  static $2 = new $1("$2")
+  static $3= new $1("$3")
+
+  constructor(name) {
+    this.name = name
+  }
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>45</td>
+      <td>["!class"]</td>
+      <td>["javascript","typescript"] </td>
+      <td><pre>
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+
+export default class ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}} {
+  constructor(options) {
+    ${3:Object.assign(this, options)};
+  }
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>46</td>
+      <td>["exe"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>使用 nodejs 执行exe文件</pre></td>
+</tr>
+
+<tr>
+      <td>47</td>
+      <td>["exec"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>使用 nodejs 执行某个命令</pre></td>
+</tr>
+
+<tr>
+      <td>48</td>
+      <td>["spawnexe"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>使用 nodejs spawn 执行命令</pre></td>
+</tr>
+
+<tr>
+      <td>49</td>
+      <td>["csl","logg"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>console.log(*)</pre></td>
+</tr>
+
+<tr>
+      <td>50</td>
+      <td>["constructor","!constructor"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+  constructor(){}
+</pre></td>
+</tr>
+
+<tr>
+      <td>51</td>
+      <td>["class"]</td>
+      <td>["cpp"] </td>
+      <td><pre>
+class ${1:ClassName}{
+private:
+public:
+  
+};
+</pre></td>
+</tr>
+
+<tr>
+      <td>52</td>
+      <td>["clog","log","csl"]</td>
+      <td>["cpp"] </td>
+      <td><pre>
+std::clog << "$1 "<< ${1:0} << std::endl;
+</pre></td>
+</tr>
+
+<tr>
+      <td>53</td>
+      <td>["!include","#include"]</td>
+      <td>["cpp","c"] </td>
+      <td><pre>
+#include <$1>
+</pre></td>
+</tr>
+
+<tr>
+      <td>54</td>
+      <td>["!main"]</td>
+      <td>["cpp"] </td>
+      <td><pre>
+#include <iostream>
+
+using namespace std;
+int main()
+{
+  $1
+  return 0;
+}
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>55</td>
+      <td>["!namespace"]</td>
+      <td>["cpp"] </td>
+      <td><pre>
+namespace ${1:demo} {
+
+} // namespace $1
+</pre></td>
+</tr>
+
+<tr>
+      <td>56</td>
+      <td>["!wait"]</td>
+      <td>["cpp"] </td>
+      <td><pre>
+void wait(int milliseconds = 50){
+    std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>57</td>
+      <td>["!now"]</td>
+      <td>["dart"] </td>
+      <td><pre>
+int now = new DateTime.now().millisecondsSinceEpoch;
+</pre></td>
+</tr>
+
+<tr>
+      <td>58</td>
+      <td>["csl","!print","pr"]</td>
+      <td>["dart"] </td>
+      <td><pre>
+print("$1 ${$1}");
+</pre></td>
+</tr>
+
+<tr>
+      <td>59</td>
+      <td>["!tv"]</td>
+      <td>["javascript","typescript","java","vue"] </td>
+      <td><pre>今天日期</pre></td>
+</tr>
+
+<tr>
+      <td>60</td>
+      <td>["debounce"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+const debounce = (fn, delay, immediate)=> {
+  let timer
+  let result
+  return function(...args) {
+    if (timer) clearTimeout(timer)
+
+    if (immediate) {
+      // 如果timer存在，说明第二次调用的时候还没到delay时间，因为如果超过delay时间
+      // timer会被赋值为null，所以这个时候我们不应该执行fn，应该重新设置一个定时器
+      // 但如果是一次的时候，因为还没有设过定时器，所以这里timer会是undefined
+      if (timer) {
+        timer = setTimeout(() => timer = null, delay)
+      } else {
+        result = fn.apply(this, args)
+        return result
+      }
+    } else {
+      timer = setTimeout(() => fn.apply(this, args), delay)
+    }
+  }
+}
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>61</td>
+      <td>["```","!log"]</td>
+      <td>["javascript","typescript"] </td>
+      <td><pre>
+`$1`,$1
+</pre></td>
+</tr>
+
+<tr>
+      <td>62</td>
+      <td>["wait","!wait","delay"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+const timeout = ${1:1000}
+await new Promise((resolve) => setTimeout(resolve, timeout))
+</pre></td>
+</tr>
+
+<tr>
+      <td>63</td>
+      <td>["service","!service"]</td>
+      <td>["yaml"] </td>
+      <td><pre>
+  # ——————————————————————————————————————————————————————————
+  $1:
+    container_name: $1
+    image: $2
+    ports: 
+      - "$3:$3"
+</pre></td>
+</tr>
+
+<tr>
+      <td>64</td>
+      <td>["compose","!compose"]</td>
+      <td>["yaml"] </td>
+      <td><pre>
+version:"3"
+services:
+  # ——————————————————————————————————————————————————————————
+  ${1:containerName}:
+    container_name: ${1:containerName}
+    image: $2
+    ports: 
+      - "$3:$3"
+</pre></td>
+</tr>
+
+<tr>
+      <td>65</td>
+      <td>["!dirname"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);</pre></td>
+</tr>
+
+<tr>
+      <td>66</td>
+      <td>["!filename"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+const __filename = fileURLToPath(import.meta.url);</pre></td>
+</tr>
+
+<tr>
+      <td>67</td>
+      <td>["expect","//-"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+// -> $1
+</pre></td>
+</tr>
+
+<tr>
+      <td>68</td>
+      <td>["tomp4"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+  ffmpeg -acodec aac -filter_complex amix=inputs=2:duration=longest -vcodec copy -movflags faststart+frag_keyframe+separate_moof+omit_tfhd_offset+empty_moov
+</pre></td>
+</tr>
+
+<tr>
+      <td>69</td>
+      <td>["!fh"]</td>
+      <td>["javascript","typescript","java"] </td>
+      <td><pre>
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+</pre></td>
+</tr>
+
+<tr>
+      <td>70</td>
+      <td>["!file_name_camel"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}</pre></td>
+</tr>
+
+<tr>
+      <td>71</td>
+      <td>["!file_name"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}</pre></td>
+</tr>
+
+<tr>
+      <td>72</td>
+      <td>["statefulwidget","!stateless"]</td>
+      <td>["dart"] </td>
+      <td><pre>
+
+class ${1:MyWidget} extends StatefulWidget {
+  const ${1:MyWidget}({super.key});
+
+  @override
+  State<${1:MyWidget}> createState() => _${1:MyWidget}State();
+}
+
+class _${1:MyWidget}State extends State<${1:MyWidget}> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>73</td>
+      <td>["statelesswidget","!stateful"]</td>
+      <td>["dart"] </td>
+      <td><pre>
+
+class ${1:MyWidget} extends StatelessWidget {
+  const ${1:MyWidget}({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>74</td>
+      <td>["!fw","!widget"]</td>
+      <td>["dart"] </td>
+      <td><pre>
+
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+
+import 'package:flutter/material.dart';
+
+class ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}} extends StatelessWidget {
+  const ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return (const Text('${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}'));
+  }
+}
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>75</td>
+      <td>["!for"]</td>
+      <td>["javascript","typescript","c","cpp"] </td>
+      <td><pre>
+for(;;){
+  $1
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>76</td>
+      <td>["!fswrite"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+const fs = require('fs');
+const path = "$1";
+const str = "$2";
+const writeStream = fs.createWriteStream(path);
+writeStream.write(str);
+</pre></td>
+</tr>
+
+<tr>
+      <td>77</td>
+      <td>["gnow"]</td>
+      <td>["javascript","typescript"] </td>
+      <td><pre>function getNow() {
+  return dayjs().format("YYYY-MM-DD dddd HH:mm:ss");
+}</pre></td>
+</tr>
+
+<tr>
+      <td>78</td>
+      <td>["!date"]</td>
+      <td>["go"] </td>
+      <td><pre>
+DateTime   = "2006-01-02 15:04:05"
+DateOnly   = "2006-01-02"
+TimeOnly   = "15:04:05"
+</pre></td>
+</tr>
+
+<tr>
+      <td>79</td>
+      <td>["!ifndef"]</td>
+      <td>["c","cpp"] </td>
+      <td><pre>
+#ifndef __${1:HELLO_H}__
+#define __${1:HELLO_H}__
+
+$2
+
+#endif
+</pre></td>
+</tr>
+
+<tr>
+      <td>80</td>
+      <td>["!handlerLifeCycle"]</td>
+      <td>["javascript","typescript"] </td>
+      <td><pre>
+  // ****** parsing 获取并转换成handler所需字段 ******
+  // ****** verify 排除不允许等错误 ******
+  // ****** handle 处理逻辑并生成result ******
+  // ****** result 结果的进一步处理,加密等 ******
+  </pre></td>
+</tr>
+
+<tr>
+      <td>81</td>
+      <td>["rrr"]</td>
+      <td>["vue-html","html"] </td>
+      <td><pre><pre style="color:red"> {{${1:`注意了`}}} </pre></pre></td>
+</tr>
+
+<tr>
+      <td>82</td>
+      <td>["!span"]</td>
+      <td>["vue-html","html"] </td>
+      <td><pre>
+<span style="color:red"> $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 [${2} {{${1}}}]</span>
+</pre></td>
+</tr>
+
+<tr>
+      <td>83</td>
+      <td>["!async","ifa","iifea"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+(${2:async} () => {
+  $1
+})();
+</pre></td>
+</tr>
+
+<tr>
+      <td>84</td>
+      <td>["!if","if","iif"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+(() => {
+  $1
+})();
+</pre></td>
+</tr>
+
+<tr>
+      <td>85</td>
+      <td>["!import"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+import $1 from '$1'
+</pre></td>
+</tr>
+
+<tr>
+      <td>86</td>
+      <td>["!class"]</td>
+      <td>["java"] </td>
+      <td><pre>
+public class ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}{
+  public static void main(String[] args){
+    System.out.println("${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}");
+  }
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>87</td>
+      <td>["csl","system","logg","sop"]</td>
+      <td>["java"] </td>
+      <td><pre>System.out.println("$1" + " " + $1);</pre></td>
+</tr>
+
+<tr>
+      <td>88</td>
+      <td>["print"]</td>
+      <td>["java"] </td>
+      <td><pre>System.out.println("$1:"+$1);</pre></td>
+</tr>
+
+<tr>
+      <td>89</td>
+      <td>["time"]</td>
+      <td>["java"] </td>
+      <td><pre>
+System.currentTimeMillis();
+</pre></td>
+</tr>
+
+<tr>
+      <td>90</td>
+      <td>["!","!line"]</td>
+      <td>["json"] </td>
+      <td><pre>
+"$1": "$2"
+</pre></td>
+</tr>
+
+<tr>
+      <td>91</td>
+      <td>["!debug"]</td>
+      <td>["javascript","typescript"] </td>
+      <td><pre>
+logger.debug(`$1`,$1);
+</pre></td>
+</tr>
+
+<tr>
+      <td>92</td>
+      <td>["!table"]</td>
+      <td>["markdown"] </td>
+      <td><pre>
+|   |   |   |
+|---|---|---|
+|   |   |   |
+|   |   |   |
+|   |   |   |
+|   |   |   |
+|   |   |   |
+  </pre></td>
+</tr>
+
+<tr>
+      <td>93</td>
+      <td>["!mh","!funh"]</td>
+      <td>["javascript","typescript","java"] </td>
+      <td><pre>
+/**
+ * @method $1
+ * @param {} 
+ * @returns {}
+ * @desc $2
+ * @example
+ */
+</pre></td>
+</tr>
+
+<tr>
+      <td>94</td>
+      <td>["!mobxclass"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+import { action, observable } from 'mobx';
+
+class Store {
+    @observable
+    count = 1;
+    
+    @action
+    setCount = () => {
+        this.count++;
+    }
+}
+export const store = new Store();
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>95</td>
+      <td>["!mobx"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+import {observable, action} from 'mobx';
+const store = observable(
+  {
+    value: 0,
+    setValue(value) {
+      this.value = value;
+    },
+  },
+  {
+    setValue:action
+  }
+);
+
+export default store;
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>96</td>
+      <td>["!nohoist"]</td>
+      <td>["json"] </td>
+      <td><pre>
+  "private": "true",
+  "workspaces": {
+    "nohoist": [
+      "**"
+    ]
+  },
+</pre></td>
+</tr>
+
+<tr>
+      <td>97</td>
+      <td>["now"]</td>
+      <td>["javascript","typescript","java","vue"] </td>
+      <td><pre>当前时间</pre></td>
+</tr>
+
+<tr>
+      <td>98</td>
+      <td>["oef"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>Object.entries(options).forEach(([key,value])=>{
+$1
+}</pre></td>
+</tr>
+
+<tr>
+      <td>99</td>
+      <td>["lg","ogpl"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+import {get} from 'lodash-es'
+get(obj, path,defaultValue)
+</pre></td>
+</tr>
+
+<tr>
+      <td>100</td>
+      <td>["mergeRight"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+  function mergeRight(obj, theOtherObj){
+    return 
+  }
+</pre></td>
+</tr>
+
+<tr>
+      <td>101</td>
+      <td>["ls","ospl"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+import {set} from 'lodash-es'
+set(obj, path, value)
+</pre></td>
+</tr>
+
+<tr>
+      <td>102</td>
+      <td>["//","ccc"]</td>
+      <td>["javascript","typescript","java"] </td>
+      <td><pre>/** ******  ****** */</pre></td>
+</tr>
+
+<tr>
+      <td>103</td>
+      <td>["///"]</td>
+      <td>["javascript","typescript","java"] </td>
+      <td><pre>
+${LINE_COMMENT} ****** $1 ******
+</pre></td>
+</tr>
+
+<tr>
+      <td>104</td>
+      <td>["!pinia"]</td>
+      <td>["javascript","typescript"] </td>
+      <td><pre>
+
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+
+import { defineStore } from 'pinia'
+
+const use${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}Store = defineStore('${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}',{
+  state:()=>({
+    value: 0
+  }),
+  // getters:{},
+  actions: {
+    setValue(){
+    
+    }
+  }
+})
+export default use${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}Store
+</pre></td>
+</tr>
+
+<tr>
+      <td>105</td>
+      <td>["ss"]</td>
+      <td>["powershell"] </td>
+      <td><pre>过滤字符串</pre></td>
+</tr>
+
+<tr>
+      <td>106</td>
+      <td>["!promise"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+new Promise((resolve,reject)=>{
+  $1
+})
+</pre></td>
+</tr>
+
+<tr>
+      <td>107</td>
+      <td>["color"]</td>
+      <td>["javascript","typescript"] </td>
+      <td><pre>
+const color = `#${(~~(Math.random() * (1 << 24))).toString(16)}`
+</pre></td>
+</tr>
+
+<tr>
+      <td>108</td>
+      <td>["!react_memo_component","!rmc"]</td>
+      <td>["javascript","javascriptreact"] </td>
+      <td><pre>memo component</pre></td>
+</tr>
+
+<tr>
+      <td>109</td>
+      <td>["!react"]</td>
+      <td>["javascript","javascriptreact","typescriptreact","typescript"] </td>
+      <td><pre>react 函数组件</pre></td>
+</tr>
+
+<tr>
+      <td>110</td>
+      <td>["!hoc"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+
+import React from "react";
+import PropTypes from "prop-types";
+
+export default function ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}(WrappedComponent) => {
+  const hocComponent = ({ ...props }) => {
+    // $2
+    return <WrappedComponent {...props} />;
+  };
+
+  hocComponent.propTypes = {};
+
+  return hocComponent;
+};
+</pre></td>
+</tr>
+
+<tr>
+      <td>111</td>
+      <td>["!hook"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+
+import { useState, useEffect } from "react";
+// import { useDispatch } from "react-redux";
+
+export default function ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}() {
+  const [$2] = useState(null);
+  return {$2};
+}
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>112</td>
+      <td>["ireact"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+import React from 'react';
+</pre></td>
+</tr>
+
+<tr>
+      <td>113</td>
+      <td>["!useFocus"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+
+useEffect(()=>{
+  console.log(`${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/} useEffect 进来了 `,)
+  return ()=>{
+    console.log(`${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/} useEffect 退出了`,)
+  }
+})
+// import { useFocusEffect } from '@react-navigation/native';
+useFocusEffect(()=>{
+  console.log(`${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/} useFocusEffect 进来了 `,)
+  return ()=>{
+    console.log(`${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/} useFocusEffect 退出了`,)
+  }
+})
+</pre></td>
+</tr>
+
+<tr>
+      <td>114</td>
+      <td>["!prern"]</td>
+      <td>["javascript","javascriptreact","typescriptreact","typescript"] </td>
+      <td><pre><Text style={{backgroundColor:'red'}}>{$1}</Text></pre></td>
+</tr>
+
+<tr>
+      <td>115</td>
+      <td>["!view"]</td>
+      <td>["javascript","javascriptreact","typescript","typescriptreact"] </td>
+      <td><pre>引入view 做一些小事情经常会做</pre></td>
+</tr>
+
+<tr>
+      <td>116</td>
+      <td>["!flatlist"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>react_flat_list</pre></td>
+</tr>
+
+<tr>
+      <td>117</td>
+      <td>["!rn","!reactNative"]</td>
+      <td>["javascript","javascriptreact","typescript","typescriptreact"] </td>
+      <td><pre>
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+
+import React, { useState, useEffect, memo } from 'react'
+import { View, Text } from 'react-native'
+
+function ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}() {
+  return (
+    <View>
+      <Text>${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}</Text>
+    </View>
+  )
+}
+
+export default ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>118</td>
+      <td>["!sectionlist"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>react native sectionlist</pre></td>
+</tr>
+
+<tr>
+      <td>119</td>
+      <td>["!readable"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+const { Readable } = require("stream");
+
+const readableStream = new Readable({
+  // highWaterMark: 
+  read: (size) => {},
+});
+// readableStream.push("test");
+</pre></td>
+</tr>
+
+<tr>
+      <td>120</td>
+      <td>["!persistSlice"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+
+
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { persistReducer } from 'redux-persist';
+import { createSlice } from "@reduxjs/toolkit";
+
+// ****** init ******
+const name = "${2:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}"
+
+// ****** initialState ******
+const initialState = {
+  value,
+};
+// ****** async ******
+
+// ****** slice ******
+export const ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}} = createSlice({
+  name,
+  initialState,
+  reducers: {
+    ${3:setValue}(state,{payload}) {
+      
+    }
+  },
+});
+
+// ****** actions ******
+export const {
+  ${3:setValue}
+} = ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}.actions;
+
+// ****** reducer persist ******
+const persistedReducer = persistReducer(
+  {
+    key: [name],
+    storage: AsyncStorage,
+    stateReconciler: autoMergeLevel2,
+    // 黑名单 不缓存的
+    // blacklist: ['page404'],
+  },
+  ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}.reducer,
+);
+export default persistedReducer
+</pre></td>
+</tr>
+
+<tr>
+      <td>121</td>
+      <td>["!slice"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+import { createSlice } from "@reduxjs/toolkit";
+
+/**
+ * 初始state
+ */
+const initialState = {
+  value,
+};
+
+export const ${1:name}Slice = createSlice({
+  name: "${1:name}",
+  initialState,
+  reducers: {
+    setValue(state,{payload}) {
+      
+    }
+  },
+});
+// Action creators are generated for each case reducer function
+export const {
+  setValue
+} = ${1:name}Slice.actions;
+
+export default ${1:name}Slice.reducer;
+</pre></td>
+</tr>
+
+<tr>
+      <td>122</td>
+      <td>["!reduxStore"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+import { configureStore } from '@reduxjs/toolkit';
+
+import ${2:name}Reducer from './${2:name}Slice';
+
+
+export const store = configureStore({
+  reducer: {
+    ${2:name}: ${2:name}Reducer,
+  },
+});
+
+globalThis.$store = store;
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>123</td>
+      <td>["!rtkAsync"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+export const ${1:getSomething}Async = createAsyncThunk('${2:name}/${1:getSomething}Async',async(payload, {getState}={})=>{
+  return 
+})
+</pre></td>
+</tr>
+
+<tr>
+      <td>124</td>
+      <td>["!require"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+const $1 = require('$1');
+</pre></td>
+</tr>
+
+<tr>
+      <td>125</td>
+      <td>["!bz"]</td>
+      <td>["scss"] </td>
+      <td><pre>
+/**
+  * 功能:
+  * TODO: 
+  * [] 
+  * 注释: 
+  * - 
+  */
+</pre></td>
+</tr>
+
+<tr>
+      <td>126</td>
+      <td>["!case"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+case $${1:value} in
+ $2) echo ""
+ ;;
+ $3) echo ""
+ ;;
+ *) echo ""
+ ;;
+esac
+</pre></td>
+</tr>
+
+<tr>
+      <td>127</td>
+      <td>["##","///"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+:<<EOF
+$1
+EOF
+</pre></td>
+</tr>
+
+<tr>
+      <td>128</td>
+      <td>["!currentDir"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+# sh文件所在路径
+CURRENT_DIR=$(dirname "\$0")
+</pre></td>
+</tr>
+
+<tr>
+      <td>129</td>
+      <td>["!echo"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+echo -e "$1
+";
+</pre></td>
+</tr>
+
+<tr>
+      <td>130</td>
+      <td>["!fun"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+${1:functionName}(){
+  ${2:echo -e "hello\n"}
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>131</td>
+      <td>["!ifif"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+if [ ${1:true} ]
+then
+   echo "true"
+elif [ ${2:true} ]
+then
+   echo "second true"
+else
+   echo "default"
+fi
+</pre></td>
+</tr>
+
+<tr>
+      <td>132</td>
+      <td>["!elseif","!ife"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+if ${1:true}; then
+   ${2:echo "true"}
+else 
+   ${2:echo "false"}
+fi
+</pre></td>
+</tr>
+
+<tr>
+      <td>133</td>
+      <td>["!if"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+# 判断
+if [ ${1:true} ]
+then
+    ${2:echo "123"}
+fi
+</pre></td>
+</tr>
+
+<tr>
+      <td>134</td>
+      <td>["!if"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+# 判断
+if ${1:true};
+then
+    ${2:echo "true"}
+fi
+</pre></td>
+</tr>
+
+<tr>
+      <td>135</td>
+      <td>["//"]</td>
+      <td>["shellscript"] </td>
+      <td><pre># $1</pre></td>
+</tr>
+
+<tr>
+      <td>136</td>
+      <td>["!question"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+echo -e "请输入: "
+read -r answer
+</pre></td>
+</tr>
+
+<tr>
+      <td>137</td>
+      <td>["!test","!equal"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+isEqual=\$(test \$((${1:\$value})) -eq \$((${2:\$value2})))
+</pre></td>
+</tr>
+
+<tr>
+      <td>138</td>
+      <td>["!tarout"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>
+此为解压
+
+-f <filename>  后加 filename
+-z 压缩 采用 gz
+-j 压缩 采用 bz2
+-c: 建立压缩档案（.tar)
+-v 显示所有过程
+
+-x 解压
+-O 解开到标准输出
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>139</td>
+      <td>["!tar","!gz"]</td>
+      <td>["shellscript"] </td>
+      <td><pre>此为压缩
+
+-f <filename>  后加 filename
+-z 压缩 采用 gz
+-j 压缩 采用 bz2
+-c: 建立压缩档案（.tar)
+-v 显示所有过程
+
+-x 解压
+-O 解开到标准输出
+</pre></td>
+</tr>
+
+<tr>
+      <td>140</td>
+      <td>["!single_pattern","!single"]</td>
+      <td>["typescript"] </td>
+      <td><pre>
+  private static _instance : ${1:TheClass} | null  = null;
+  static getInstance(...args):${1:TheClass} {
+    if (!this._instance) {
+      this.instance = new ${1:TheClass}(...args);
+    }
+    return this._instance;
+  }
+</pre></td>
+</tr>
+
+<tr>
+      <td>141</td>
+      <td>["!single_pattern","!single"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+  // 实例
+  _instance = null;
+  // 静态方法
+  static getInstance(...args) {
+    if (!this.instance) {
+      this._instance = new ${1:TheClass}(...args);
+    }
+    return this._instance;
+  }
+</pre></td>
+</tr>
+
+<tr>
+      <td>142</td>
+      <td>["!snippet"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+const body = ``
+const description = "";
+
+module.exports = {
+  prefix: ["!${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}"],
+  type: ["javascript"],
+  description: description || body,
+  body: body.trim(),
+};
+</pre></td>
+</tr>
+
+<tr>
+      <td>143</td>
+      <td>["state"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+(state, { payload }) => {
+  if (!payload) {
+    return;
+  }
+  state.${1:value} = payload;
+}
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>144</td>
+      <td>[".thencatch"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+.then(()=>{
+
+})
+.catch(()=>{})
+</pre></td>
+</tr>
+
+<tr>
+      <td>145</td>
+      <td>["throttle"]</td>
+      <td>["javascript"] </td>
+      <td><pre>debounce 实现，虽然已经有 lodash 库 但是有时候不用 lodash</pre></td>
+</tr>
+
+<tr>
+      <td>146</td>
+      <td>["trycc"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>try{
+  $1
+}catch(err){
+  $2
+}</pre></td>
+</tr>
+
+<tr>
+      <td>147</td>
+      <td>["typeOf"]</td>
+      <td>["javascript"] </td>
+      <td><pre>检验数据类型</pre></td>
+</tr>
+
+<tr>
+      <td>148</td>
+      <td>["!vh"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>
+/**
+ * @var $1  
+ * @desc $变量定义
+ * @property {string} $2 $变量名
+ * 
+ */
+</pre></td>
+</tr>
+
+<tr>
+      <td>149</td>
+      <td>["!vh"]</td>
+      <td>["vue"] </td>
+      <td><pre>
+<!--
+ 
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+
+-->
+</pre></td>
+</tr>
+
+<tr>
+      <td>150</td>
+      <td>["!watch"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+"${1:value}": {
+  handler(newVal,oldVal) {
+    console.log(newVal);
+  },
+  // deep: true,
+  // immediate: true
+},
+</pre></td>
+</tr>
+
+<tr>
+      <td>151</td>
+      <td>["vfor"]</td>
+      <td>["vue-html","html"] </td>
+      <td><pre>vfor has a key</pre></td>
+</tr>
+
+<tr>
+      <td>152</td>
+      <td>["!vue2"]</td>
+      <td>["vue"] </td>
+      <td><pre>vue2</pre></td>
+</tr>
+
+<tr>
+      <td>153</td>
+      <td>["oef"]</td>
+      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+      <td><pre>export default {
+  // 组件名
+  components: {},
+  // filters:{},
+  // mixins:[],
+  // props: {},
+  // data(){
+  //   return{
+  //     
+  //   }
+  // },
+  // 组件方法
+  // computed:{},
+  // watch:{},
+  // mounted(){},
+  methods: {},
+}</pre></td>
+</tr>
+
+<tr>
+      <td>154</td>
+      <td>["!vue3t"]</td>
+      <td>["vue"] </td>
+      <td><pre>
+
+<!--
+ 
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+
+-->
+
+<script lang="ts">
+  export default {
+    name: "${2:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}"
+  };
+</script>
+<script setup lang="ts">
+
+</script>
+
+<template>
+  <div class="$2">
+    $2
+  </div>
+</template>
+
+<style lang="scss" scoped>
+
+</style>
+</pre></td>
+</tr>
+
+<tr>
+      <td>155</td>
+      <td>["!vue3"]</td>
+      <td>["vue"] </td>
+      <td><pre>
+
+<!--
+ 
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+
+-->
+
+<script>
+  export default {
+    name: "${2:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}"
+  };
+</script>
+<script setup>
+
+</script>
+
+<template>
+  <div class="$2">
+  </div>
+</template>
+
+<style lang="scss" scoped>
+
+</style>
+</pre></td>
+</tr>
+
+<tr>
+      <td>156</td>
+      <td>["!vueo"]</td>
+      <td>["vue"] </td>
+      <td><pre>
+
+<!--
+ 
+/**
+ * @author
+ * @file $TM_FILENAME
+ * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+ * @path $RELATIVE_FILEPATH
+ * @from 
+ * @desc $2
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
+
+-->
+
+<script>
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: '${2:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}',
+  // components: {},
+  props: {},
+  // 从组件触发 emits 事件
+  // emits:{},
+  // 暴露
+  // expose: {},
+  data() {
+    return {}
+  }
+  // computed:{},
+  // watch:{},
+  // create(){},
+  // methods:{}
+})
+</script>
+
+<template>
+  <div class="${3}">
+  </div>
+</template>
+
+<style lang="scss" scoped></style>"
+</pre></td>
+</tr>
+
+<tr>
+      <td>157</td>
+      <td>["!directive"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+const ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/} = {
+   // 在绑定元素的 attribute 前
+  // 或事件监听器应用前调用
+  created(el, binding, vnode, prevVnode) {
+    // 下面会介绍各个参数的细节
+  },
+  // 在元素被插入到 DOM 前调用
+  beforeMount(el, binding, vnode, prevVnode) {},
+  // 在绑定元素的父组件
+  // 及他自己的所有子节点都挂载完成后调用
+  mounted(el, binding, vnode, prevVnode) {},
+  // 绑定元素的父组件更新前调用
+  beforeUpdate(el, binding, vnode, prevVnode) {},
+  // 在绑定元素的父组件
+  // 及他自己的所有子节点都更新后调用
+  updated(el, binding, vnode, prevVnode) {},
+  // 绑定元素的父组件卸载前调用
+  beforeUnmount(el, binding, vnode, prevVnode) {},
+  // 绑定元素的父组件卸载后调用
+  unmounted(el, binding, vnode, prevVnode) {}
+}
+</pre></td>
+</tr>
+
+<tr>
+      <td>158</td>
+      <td>["!writable"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+const { Writable } = require("stream");
+
+
+const writableStream = new Writable({
+  write(chunk, encoding, callback) {
+    callback();
+  },
+});
+
+
+</pre></td>
+</tr>
+
+<tr>
+      <td>159</td>
+      <td>["!zxs"]</td>
+      <td>["javascript"] </td>
+      <td><pre>
+await $``
+</pre></td>
+</tr>
+
+    </tbody>    
+</table>
