@@ -1,29 +1,32 @@
- 
+
+<!DOCTYPE html>
 <table>  
-    <thead>
-      <tr>
-        <th>序号</th>,<th>快捷键</th>,<th>支持语言</th>,<th>更多介绍</th>
-      </tr>
-    </thead>
-    <tbody>
-    
-<tr>
+  <thead>
+    <tr>
+        <th>序号</th>    
+<th>快捷键</th>    
+<th>支持语言</th>    
+<th>更多介绍</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
       <td>0</td>
       <td>["!capitalize"]</td>
       <td>"javascript" </td>
-      <td><pre>function capitalize(str) {
+      <td><pre><code>function capitalize(str) {
   const [first, ...rest] = str;
   if (!first) return "";
   return first.toUpperCase() + rest.join("").toLowerCase();
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>1</td>
       <td>["!checkObjectValueEqualKey"]</td>
       <td>"javascript" </td>
-      <td><pre>function checkObjectValueEqualKey(obj, value) {
+      <td><pre><code>function checkObjectValueEqualKey(obj, value) {
   const [key] = Array.prototype.find.call(
     Object.entries(obj),
     ([key, _value]) => {
@@ -37,101 +40,75 @@
   return key;
 }
 // 这个可能重复
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>2</td>
       <td>["!compose"]</td>
       <td>"javascript" </td>
-      <td><pre>// 函数组合
+      <td><pre><code>// 函数组合
 const compose =
   (...fns) =>
   (arg) =>
     fns.reduceRight((acc, fn) => fn(acc), arg);
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>3</td>
       <td>["!function"]</td>
       <td>"shellscript" </td>
-      <td><pre># 函数
+      <td><pre><code># 函数
 demoFun() {
   echo "我是一个函数"
 }
 # 执行
 demoFun
-</pre></td>
-</tr>
 
-<tr>
-      <td>4</td>
-      <td>["!getArrayKeyMap"]</td>
-      <td>"javascript" </td>
-      <td><pre>/**
- * 将对象数组转化为以某个值为key的对象
- * 基础函数
- * @param {Array<Object>} array 数组
- * @param {string} key key值
- * @returns
- */
-export function getArrayKeyMap(array = [], key = "name") {
-  const pinNameMap = {};
-  array.forEach((item = {}) => {
-    if (!item[key]) return;
-    pinNameMap[item[key]] = item;
-  });
-  return pinNameMap;
-}
-</pre></td>
-</tr>
-
-<tr>
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>4</td>
+        <td>["!getArrayKeyMap"]</td>
+        <td>"javascript" </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>5</td>
       <td>["!head"]</td>
       <td>"javascript" </td>
-      <td><pre>#!/usr/bin/env node
-</pre></td>
-</tr>
+      <td><pre><code>#!/usr/bin/env node
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>6</td>
       <td>["!head"]</td>
       <td>"shellscript" </td>
-      <td><pre>#!/bin/sh
-</pre></td>
-</tr>
+      <td><pre><code>#!/bin/sh
 
-<tr>
-      <td>7</td>
-      <td>["!helloworld"]</td>
-      <td>"c" </td>
-      <td><pre>#include <stdio.h>
-
-int main()
-{
-  /* 我的第一个 C 程序 */
-  printf("Hello, World! \n");
-
-  return 0;
-}
-</pre></td>
-</tr>
-
-<tr>
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>7</td>
+        <td>["!helloworld"]</td>
+        <td>"c" </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>8</td>
       <td>["!helloworld"]</td>
       <td>"javascript" </td>
-      <td><pre>console.log("hello world");
-</pre></td>
-</tr>
+      <td><pre><code>console.log("hello world");
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>9</td>
       <td>["!isEven"]</td>
       <td>"javascript" </td>
-      <td><pre>/**
+      <td><pre><code>/**
  * @method 是奇数
  * @param {}
  * @returns {}
@@ -141,14 +118,14 @@ int main()
 function isOdd(value) {
   return !(value & 1);
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>10</td>
       <td>["!isNewerVersion"]</td>
       <td>"javascript" </td>
-      <td><pre>/**
+      <td><pre><code>/**
  * 判断版本新旧
  * @param {string} newVersion
  * @param {string} oldVersion
@@ -167,14 +144,14 @@ function isNewerVersion(newVersion = "", oldVersion = "") {
   if (newF == oldF && newS == oldS && newPatch > oldPatch) return true;
   return false;
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>11</td>
       <td>["!isOdd"]</td>
       <td>"javascript" </td>
-      <td><pre>/**
+      <td><pre><code>/**
  * @method 是奇数
  * @param {}
  * @returns {}
@@ -184,35 +161,35 @@ function isNewerVersion(newVersion = "", oldVersion = "") {
 function isOdd(value) {
   return !(value & 0);
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>12</td>
       <td>["!log_split"]</td>
       <td>"shellscript" </td>
-      <td><pre>echo "---------------------------------------------------------------------"
-</pre></td>
-</tr>
+      <td><pre><code>echo "---------------------------------------------------------------------"
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>13</td>
       <td>["!logger"]</td>
       <td>"javascript" </td>
-      <td><pre>const logger = {
+      <td><pre><code>const logger = {
   warn: (...args) => console.warn("[WARN]", ...args),
   debug: (...args) => console.debug("[DEBUG]", ...args),
   error: (...args) => console.error("[ERROR]", ...args),
   info: (...args) => console.info("[INFO]", ...args),
 };
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>14</td>
       <td>["!nodejs_eventemitter"]</td>
       <td>"javascript" </td>
-      <td><pre>// nodejs
+      <td><pre><code>// nodejs
 const { EventEmitter } = require("events");
 const eventEmitter = new EventEmitter();
 
@@ -222,59 +199,44 @@ eventEmitter.on("my_event", (...args) => {
 });
 // 发送
 eventEmitter.emit("my_event", "num1", "num2");
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>15</td>
       <td>["!packageDescription"]</td>
       <td>"shellscript" </td>
-      <td><pre>description=$(node -p "require("./package.json").description")
-</pre></td>
-</tr>
+      <td><pre><code>description=$(node -p "require("./package.json").description")
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>16</td>
       <td>["!packageVersion"]</td>
       <td>"shellscript" </td>
-      <td><pre>version=$(node -p "require("./package.json").version")
-</pre></td>
-</tr>
+      <td><pre><code>version=$(node -p "require("./package.json").version")
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>17</td>
       <td>["!random"]</td>
       <td>"javascript" </td>
-      <td><pre>const randomStr = () => Math.random().toString(20).slice(2);
-</pre></td>
-</tr>
+      <td><pre><code>const randomStr = () => Math.random().toString(20).slice(2);
 
-<tr>
-      <td>18</td>
-      <td>["!react_withPersistentData"]</td>
-      <td>"javascript" </td>
-      <td><pre>import React, { Component } from "react";
-export default function withPersistentData(WrappedComponent) {
-  return class extends Component {
-    componentWillMount() {
-      let data = localStorage.getItem("data");
-      this.setState({ data });
-    }
-
-    render() {
-      // 通过{...this.props} 把传递给当前组件的属性继续传递给被包装的组件WrappedComponent
-      return <WrappedComponent data={this.state.data} {...this.props} />;
-    }
-  };
-}
-</pre></td>
-</tr>
-
-<tr>
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>18</td>
+        <td>["!react_withPersistentData"]</td>
+        <td>"javascript" </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>19</td>
       <td>["!react_withTiming"]</td>
       <td>"javascript" </td>
-      <td><pre>import React, { Component } from "react";
+      <td><pre><code>import React, { Component } from "react";
 function withTiming(WrappedComponent) {
   return class extends WrappedComponent {
     constructor(props) {
@@ -300,36 +262,33 @@ function withTiming(WrappedComponent) {
 }
 
 export default withTiming;
-</pre></td>
-</tr>
 
-<tr>
-      <td>20</td>
-      <td>["!rgbToHex"]</td>
-      <td>"javascript" </td>
-      <td><pre>const rgbToHex = (r, g, b) =>
-  "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-</pre></td>
-</tr>
-
-<tr>
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>20</td>
+        <td>["!rgbToHex"]</td>
+        <td>"javascript" </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>21</td>
       <td>["!switchTwoValue"]</td>
       <td>"javascript" </td>
-      <td><pre>/**
+      <td><pre><code>/**
  * 切换两个值
  */
 function switchTwoValue(a, b) {
   [a, b] = [b, a];
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>22</td>
       <td>["!to_singleton"]</td>
       <td>"javascript" </td>
-      <td><pre>export default function ToSingleton(Builder) {
+      <td><pre><code>export default function ToSingleton(Builder) {
   let instance;
   // 代理函数仅作管控单例
   return function (...args) {
@@ -339,28 +298,28 @@ function switchTwoValue(a, b) {
     return instance;
   };
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>23</td>
       <td>["!uniqueArray"]</td>
       <td>"javascript" </td>
-      <td><pre>/**
+      <td><pre><code>/**
  * 数组去重
  * @param {Array} arr
  */
 function uniqueArray(arr = []) {
   return Array.from(new Set(arr));
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>24</td>
       <td>["!useFocusEffect"]</td>
       <td>"javascript" </td>
-      <td><pre>useFocusEffect(
+      <td><pre><code>useFocusEffect(
   useCallback(() => {
     //
     return () => {
@@ -368,190 +327,180 @@ function uniqueArray(arr = []) {
     };
   }, [])
 );
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>25</td>
       <td>["astop"]</td>
       <td>["shellscript","powershell"] </td>
-      <td><pre>终止某个应用</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>终止某个应用
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>26</td>
       <td>["apacakges"]</td>
       <td>["shellscript","powershell"] </td>
-      <td><pre>adb 查看包名</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>adb 查看包名
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>27</td>
       <td>["aer","item_remove_from_array_end_mutable"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 const ${2:last} = ${1:arr}.pop()
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>28</td>
       <td>["afri","!rest","item_remove_from_array_first_immutable"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 const [first,...${2:rest}] = ${1:arr}
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>29</td>
       <td>["afr","item_remove_from_array_first_mutable"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 const ${2:first} = ${1:arr}.shift()
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>30</td>
       <td>["ari","item_remove_from_array_immutable"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
   ${1:arr} = ${1:arr}.filter((item)=>${2:item.id === id})
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>31</td>
       <td>["arm","item_remove_from_array_mutable"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
   const index = ${1:arr}.findIndex((item)=>{item.${2:id}===${2:id}})
   if(index > -1){
     ${1:arr}.splice(index, 1)
   }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>32</td>
       <td>["!ten"]</td>
       <td>["javascript","typescript"] </td>
-      <td><pre>
+      <td><pre><code>
   [...new Array(10).keys()].map((i) => i + 1)
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>33</td>
       <td>["afn"]</td>
       <td>["javascript","typescript","vue","javascriptreact","typescriptreact"] </td>
-      <td><pre>箭头函数</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>箭头函数
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>34</td>
       <td>["anfn"]</td>
       <td>["javascript","typescript","vue"] </td>
-      <td><pre>箭头函数</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>箭头函数
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>35</td>
       <td>["!axios"]</td>
       <td>["javascript"] </td>
-      <td><pre>axios 实例</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>axios 实例
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>36</td>
       <td>["!bash","#"]</td>
       <td>["shellscript"] </td>
-      <td><pre>
+      <td><pre><code>
 #!/bin/bash
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>37</td>
       <td>["!node","#"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 #!/usr/bin/env node
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>38</td>
       <td>["!zx","#zx"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 #!/usr/bin/env zx 
 await $``
-</pre></td>
-</tr>
 
-<tr>
-      <td>39</td>
-      <td>["!main"]</td>
-      <td>["c"] </td>
-      <td><pre>
-#include <stdio.h>
-
-int main(int argc, char **argv)
-{ 
-  $1
-  return 0;
-}
-
-</pre></td>
-</tr>
-
-<tr>
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>39</td>
+        <td>["!main"]</td>
+        <td>["c"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>40</td>
       <td>["printf"]</td>
       <td>["c"] </td>
-      <td><pre>
+      <td><pre><code>
 printf("$1 %${2:d}\n",$1);
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>41</td>
       <td>["!struct"]</td>
       <td>["c"] </td>
-      <td><pre>
+      <td><pre><code>
 struct $1 {
   char *nothing;
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>42</td>
       <td>["!wait","!delay"]</td>
       <td>["c"] </td>
-      <td><pre>这个是使用原生时间循环进行的delay,大部分时候应该使用线程的sleep方法可能会常用一些</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>这个是使用原生时间循环进行的delay,大部分时候应该使用线程的sleep方法可能会常用一些
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>43</td>
       <td>["Capitalize"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 function capitalize(str){
   const [first,...rest] = str
   if(!first) return ''
   return first.toUpperCase()+ rest.join('').toLowerCase()
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>44</td>
       <td>["!enum"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 class $1 {
   // Create new instances of the same class as static attributes
   static $2 = new $1("$2")
@@ -561,14 +510,14 @@ class $1 {
     this.name = name
   }
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>45</td>
       <td>["!class"]</td>
       <td>["javascript","typescript"] </td>
-      <td><pre>
+      <td><pre><code>
 /**
  * @author
  * @file $TM_FILENAME
@@ -588,146 +537,129 @@ export default class ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\
     ${3:Object.assign(this, options)};
   }
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>46</td>
       <td>["exe"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>使用 nodejs 执行exe文件</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>使用 nodejs 执行exe文件
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>47</td>
       <td>["exec"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>使用 nodejs 执行某个命令</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>使用 nodejs 执行某个命令
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>48</td>
       <td>["spawnexe"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>使用 nodejs spawn 执行命令</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>使用 nodejs spawn 执行命令
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>49</td>
       <td>["csl","logg"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>console.log(*)</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>console.log(*)
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>50</td>
       <td>["constructor","!constructor"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
   constructor(){}
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>51</td>
       <td>["class"]</td>
       <td>["cpp"] </td>
-      <td><pre>
+      <td><pre><code>
 class ${1:ClassName}{
 private:
 public:
   
 };
-</pre></td>
-</tr>
 
-<tr>
-      <td>52</td>
-      <td>["clog","log","csl"]</td>
-      <td>["cpp"] </td>
-      <td><pre>
-std::clog << "$1 "<< ${1:0} << std::endl;
-</pre></td>
-</tr>
-
-<tr>
-      <td>53</td>
-      <td>["!include","#include"]</td>
-      <td>["cpp","c"] </td>
-      <td><pre>
-#include <$1>
-</pre></td>
-</tr>
-
-<tr>
-      <td>54</td>
-      <td>["!main"]</td>
-      <td>["cpp"] </td>
-      <td><pre>
-#include <iostream>
-
-using namespace std;
-int main()
-{
-  $1
-  return 0;
-}
-
-</pre></td>
-</tr>
-
-<tr>
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>52</td>
+        <td>["clog","log","csl"]</td>
+        <td>["cpp"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+        <tr>
+        <td>53</td>
+        <td>["!include","#include"]</td>
+        <td>["cpp","c"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+        <tr>
+        <td>54</td>
+        <td>["!main"]</td>
+        <td>["cpp"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>55</td>
       <td>["!namespace"]</td>
       <td>["cpp"] </td>
-      <td><pre>
+      <td><pre><code>
 namespace ${1:demo} {
 
 } // namespace $1
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>56</td>
       <td>["!wait"]</td>
       <td>["cpp"] </td>
-      <td><pre>
+      <td><pre><code>
 void wait(int milliseconds = 50){
     std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>57</td>
       <td>["!now"]</td>
       <td>["dart"] </td>
-      <td><pre>
+      <td><pre><code>
 int now = new DateTime.now().millisecondsSinceEpoch;
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>58</td>
       <td>["csl","!print","pr"]</td>
       <td>["dart"] </td>
-      <td><pre>
+      <td><pre><code>
 print("$1 ${$1}");
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>59</td>
       <td>["!tv"]</td>
       <td>["javascript","typescript","java","vue"] </td>
-      <td><pre>今天日期</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>今天日期
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>60</td>
       <td>["debounce"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 const debounce = (fn, delay, immediate)=> {
   let timer
   let result
@@ -750,47 +682,47 @@ const debounce = (fn, delay, immediate)=> {
   }
 }
 
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>61</td>
       <td>["```","!log"]</td>
       <td>["javascript","typescript"] </td>
-      <td><pre>
+      <td><pre><code>
 `$1`,$1
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>62</td>
       <td>["wait","!wait","delay"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 const timeout = ${1:1000}
 await new Promise((resolve) => setTimeout(resolve, timeout))
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>63</td>
       <td>["service","!service"]</td>
       <td>["yaml"] </td>
-      <td><pre>
+      <td><pre><code>
   # ——————————————————————————————————————————————————————————
   $1:
     container_name: $1
     image: $2
     ports: 
       - "$3:$3"
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>64</td>
       <td>["compose","!compose"]</td>
       <td>["yaml"] </td>
-      <td><pre>
+      <td><pre><code>
 version:"3"
 services:
   # ——————————————————————————————————————————————————————————
@@ -799,51 +731,51 @@ services:
     image: $2
     ports: 
       - "$3:$3"
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>65</td>
       <td>["!dirname"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>import { fileURLToPath } from 'url';
+      <td><pre><code>import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);</pre></td>
-</tr>
-
-<tr>
+const __dirname = dirname(__filename);
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>66</td>
       <td>["!filename"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>import { fileURLToPath } from 'url';
+      <td><pre><code>import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-const __filename = fileURLToPath(import.meta.url);</pre></td>
-</tr>
-
-<tr>
+const __filename = fileURLToPath(import.meta.url);
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>67</td>
       <td>["expect","//-"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 // -> $1
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>68</td>
       <td>["tomp4"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
   ffmpeg -acodec aac -filter_complex amix=inputs=2:duration=longest -vcodec copy -movflags faststart+frag_keyframe+separate_moof+omit_tfhd_offset+empty_moov
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>69</td>
       <td>["!fh"]</td>
       <td>["javascript","typescript","java"] </td>
-      <td><pre>
+      <td><pre><code>
 /**
  * @author
  * @file $TM_FILENAME
@@ -857,51 +789,34 @@ const __filename = fileURLToPath(import.meta.url);</pre></td>
  * @done
  * @example
  */
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>70</td>
       <td>["!file_name_camel"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>71</td>
       <td>["!file_name"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}</pre></td>
-</tr>
-
-<tr>
-      <td>72</td>
-      <td>["statefulwidget","!stateless"]</td>
-      <td>["dart"] </td>
-      <td><pre>
-
-class ${1:MyWidget} extends StatefulWidget {
-  const ${1:MyWidget}({super.key});
-
-  @override
-  State<${1:MyWidget}> createState() => _${1:MyWidget}State();
-}
-
-class _${1:MyWidget}State extends State<${1:MyWidget}> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
-}
-
-</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>72</td>
+        <td>["statefulwidget","!stateless"]</td>
+        <td>["dart"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>73</td>
       <td>["statelesswidget","!stateful"]</td>
       <td>["dart"] </td>
-      <td><pre>
+      <td><pre><code>
 
 class ${1:MyWidget} extends StatelessWidget {
   const ${1:MyWidget}({Key? key}) : super(key: key);
@@ -911,14 +826,14 @@ class ${1:MyWidget} extends StatelessWidget {
     return Container();
   }
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>74</td>
       <td>["!fw","!widget"]</td>
       <td>["dart"] </td>
-      <td><pre>
+      <td><pre><code>
 
 /**
  * @author
@@ -944,185 +859,181 @@ class ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.
   }
 }
 
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>75</td>
       <td>["!for"]</td>
       <td>["javascript","typescript","c","cpp"] </td>
-      <td><pre>
+      <td><pre><code>
 for(;;){
   $1
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>76</td>
       <td>["!fswrite"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 const fs = require('fs');
 const path = "$1";
 const str = "$2";
 const writeStream = fs.createWriteStream(path);
 writeStream.write(str);
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>77</td>
       <td>["gnow"]</td>
       <td>["javascript","typescript"] </td>
-      <td><pre>function getNow() {
+      <td><pre><code>function getNow() {
   return dayjs().format("YYYY-MM-DD dddd HH:mm:ss");
-}</pre></td>
-</tr>
-
-<tr>
+}
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>78</td>
       <td>["!date"]</td>
       <td>["go"] </td>
-      <td><pre>
+      <td><pre><code>
 DateTime   = "2006-01-02 15:04:05"
 DateOnly   = "2006-01-02"
 TimeOnly   = "15:04:05"
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>79</td>
       <td>["!ifndef"]</td>
       <td>["c","cpp"] </td>
-      <td><pre>
+      <td><pre><code>
 #ifndef __${1:HELLO_H}__
 #define __${1:HELLO_H}__
 
 $2
 
 #endif
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>80</td>
       <td>["!handlerLifeCycle"]</td>
       <td>["javascript","typescript"] </td>
-      <td><pre>
+      <td><pre><code>
   // ****** parsing 获取并转换成handler所需字段 ******
   // ****** verify 排除不允许等错误 ******
   // ****** handle 处理逻辑并生成result ******
   // ****** result 结果的进一步处理,加密等 ******
-  </pre></td>
-</tr>
-
-<tr>
-      <td>81</td>
-      <td>["rrr"]</td>
-      <td>["vue-html","html"] </td>
-      <td><pre><pre style="color:red"> {{${1:`注意了`}}} </pre></pre></td>
-</tr>
-
-<tr>
-      <td>82</td>
-      <td>["!span"]</td>
-      <td>["vue-html","html"] </td>
-      <td><pre>
-<span style="color:red"> $CURRENT_YEAR年$CURRENT_MONTH月$CURRENT_DATE日 [${2} {{${1}}}]</span>
-</pre></td>
-</tr>
-
-<tr>
+  
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>81</td>
+        <td>["rrr"]</td>
+        <td>["vue-html","html"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+        <tr>
+        <td>82</td>
+        <td>["!span"]</td>
+        <td>["vue-html","html"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>83</td>
       <td>["!async","ifa","iifea"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 (${2:async} () => {
   $1
 })();
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>84</td>
       <td>["!if","if","iif"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 (() => {
   $1
 })();
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>85</td>
       <td>["!import"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 import $1 from '$1'
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>86</td>
       <td>["!class"]</td>
       <td>["java"] </td>
-      <td><pre>
+      <td><pre><code>
 public class ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}{
   public static void main(String[] args){
     System.out.println("${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}");
   }
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>87</td>
       <td>["csl","system","logg","sop"]</td>
       <td>["java"] </td>
-      <td><pre>System.out.println("$1" + " " + $1);</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>System.out.println("$1" + " " + $1);
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>88</td>
       <td>["print"]</td>
       <td>["java"] </td>
-      <td><pre>System.out.println("$1:"+$1);</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>System.out.println("$1:"+$1);
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>89</td>
       <td>["time"]</td>
       <td>["java"] </td>
-      <td><pre>
+      <td><pre><code>
 System.currentTimeMillis();
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>90</td>
       <td>["!","!line"]</td>
       <td>["json"] </td>
-      <td><pre>
+      <td><pre><code>
 "$1": "$2"
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>91</td>
       <td>["!debug"]</td>
       <td>["javascript","typescript"] </td>
-      <td><pre>
+      <td><pre><code>
 logger.debug(`$1`,$1);
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>92</td>
       <td>["!table"]</td>
       <td>["markdown"] </td>
-      <td><pre>
+      <td><pre><code>
 |   |   |   |
 |---|---|---|
 |   |   |   |
@@ -1130,14 +1041,14 @@ logger.debug(`$1`,$1);
 |   |   |   |
 |   |   |   |
 |   |   |   |
-  </pre></td>
-</tr>
-
-<tr>
+  
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>93</td>
       <td>["!mh","!funh"]</td>
       <td>["javascript","typescript","java"] </td>
-      <td><pre>
+      <td><pre><code>
 /**
  * @method $1
  * @param {} 
@@ -1145,14 +1056,14 @@ logger.debug(`$1`,$1);
  * @desc $2
  * @example
  */
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>94</td>
       <td>["!mobxclass"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 import { action, observable } from 'mobx';
 
 class Store {
@@ -1166,14 +1077,14 @@ class Store {
 }
 export const store = new Store();
 
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>95</td>
       <td>["!mobx"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 import {observable, action} from 'mobx';
 const store = observable(
   {
@@ -1189,91 +1100,91 @@ const store = observable(
 
 export default store;
 
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>96</td>
       <td>["!nohoist"]</td>
       <td>["json"] </td>
-      <td><pre>
+      <td><pre><code>
   "private": "true",
   "workspaces": {
     "nohoist": [
       "**"
     ]
   },
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>97</td>
       <td>["now"]</td>
       <td>["javascript","typescript","java","vue"] </td>
-      <td><pre>当前时间</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>当前时间
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>98</td>
       <td>["oef"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>Object.entries(options).forEach(([key,value])=>{
+      <td><pre><code>Object.entries(options).forEach(([key,value])=>{
 $1
-}</pre></td>
-</tr>
-
-<tr>
+}
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>99</td>
       <td>["lg","ogpl"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 import {get} from 'lodash-es'
 get(obj, path,defaultValue)
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>100</td>
       <td>["mergeRight"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
   function mergeRight(obj, theOtherObj){
     return 
   }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>101</td>
       <td>["ls","ospl"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 import {set} from 'lodash-es'
 set(obj, path, value)
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>102</td>
       <td>["//","ccc"]</td>
       <td>["javascript","typescript","java"] </td>
-      <td><pre>/** ******  ****** */</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>/** ******  ****** */
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>103</td>
       <td>["///"]</td>
       <td>["javascript","typescript","java"] </td>
-      <td><pre>
+      <td><pre><code>
 ${LINE_COMMENT} ****** $1 ******
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>104</td>
       <td>["!pinia"]</td>
       <td>["javascript","typescript"] </td>
-      <td><pre>
+      <td><pre><code>
 
 /**
  * @author
@@ -1303,91 +1214,58 @@ const use${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*
   }
 })
 export default use${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}Store
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>105</td>
       <td>["ss"]</td>
       <td>["powershell"] </td>
-      <td><pre>过滤字符串</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>过滤字符串
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>106</td>
       <td>["!promise"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 new Promise((resolve,reject)=>{
   $1
 })
-</pre></td>
-</tr>
 
-<tr>
-      <td>107</td>
-      <td>["color"]</td>
-      <td>["javascript","typescript"] </td>
-      <td><pre>
-const color = `#${(~~(Math.random() * (1 << 24))).toString(16)}`
-</pre></td>
-</tr>
-
-<tr>
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>107</td>
+        <td>["color"]</td>
+        <td>["javascript","typescript"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>108</td>
       <td>["!react_memo_component","!rmc"]</td>
       <td>["javascript","javascriptreact"] </td>
-      <td><pre>memo component</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>memo component
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>109</td>
       <td>["!react"]</td>
       <td>["javascript","javascriptreact","typescriptreact","typescript"] </td>
-      <td><pre>react 函数组件</pre></td>
-</tr>
-
-<tr>
-      <td>110</td>
-      <td>["!hoc"]</td>
-      <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
-
-/**
- * @author
- * @file $TM_FILENAME
- * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
- * @path $RELATIVE_FILEPATH
- * @from 
- * @desc $2
- * @todo
- * 
- *
- * @done
- * @example
- */
-
-import React from "react";
-import PropTypes from "prop-types";
-
-export default function ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}(WrappedComponent) => {
-  const hocComponent = ({ ...props }) => {
-    // $2
-    return <WrappedComponent {...props} />;
-  };
-
-  hocComponent.propTypes = {};
-
-  return hocComponent;
-};
-</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>react 函数组件
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>110</td>
+        <td>["!hoc"]</td>
+        <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>111</td>
       <td>["!hook"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 /**
  * @author
  * @file $TM_FILENAME
@@ -1410,23 +1288,23 @@ export default function ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*
   return {$2};
 }
 
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>112</td>
       <td>["ireact"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 import React from 'react';
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>113</td>
       <td>["!useFocus"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 
 useEffect(()=>{
   console.log(`${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/} useEffect 进来了 `,)
@@ -1441,77 +1319,47 @@ useFocusEffect(()=>{
     console.log(`${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/} useFocusEffect 退出了`,)
   }
 })
-</pre></td>
-</tr>
 
-<tr>
-      <td>114</td>
-      <td>["!prern"]</td>
-      <td>["javascript","javascriptreact","typescriptreact","typescript"] </td>
-      <td><pre><Text style={{backgroundColor:'red'}}>{$1}</Text></pre></td>
-</tr>
-
-<tr>
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>114</td>
+        <td>["!prern"]</td>
+        <td>["javascript","javascriptreact","typescriptreact","typescript"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>115</td>
       <td>["!view"]</td>
       <td>["javascript","javascriptreact","typescript","typescriptreact"] </td>
-      <td><pre>引入view 做一些小事情经常会做</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>引入view 做一些小事情经常会做
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>116</td>
       <td>["!flatlist"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>react_flat_list</pre></td>
-</tr>
-
-<tr>
-      <td>117</td>
-      <td>["!rn","!reactNative"]</td>
-      <td>["javascript","javascriptreact","typescript","typescriptreact"] </td>
-      <td><pre>
-/**
- * @author
- * @file $TM_FILENAME
- * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
- * @path $RELATIVE_FILEPATH
- * @from 
- * @desc $2
- * @todo
- * 
- *
- * @done
- * @example
- */
-
-import React, { useState, useEffect, memo } from 'react'
-import { View, Text } from 'react-native'
-
-function ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}() {
-  return (
-    <View>
-      <Text>${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}</Text>
-    </View>
-  )
-}
-
-export default ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}
-
-</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>react_flat_list
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>117</td>
+        <td>["!rn","!reactNative"]</td>
+        <td>["javascript","javascriptreact","typescript","typescriptreact"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>118</td>
       <td>["!sectionlist"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>react native sectionlist</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>react native sectionlist
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>119</td>
       <td>["!readable"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 const { Readable } = require("stream");
 
 const readableStream = new Readable({
@@ -1519,14 +1367,14 @@ const readableStream = new Readable({
   read: (size) => {},
 });
 // readableStream.push("test");
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>120</td>
       <td>["!persistSlice"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 
 /**
  * @author
@@ -1585,14 +1433,14 @@ const persistedReducer = persistReducer(
   ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}.reducer,
 );
 export default persistedReducer
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>121</td>
       <td>["!slice"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 import { createSlice } from "@reduxjs/toolkit";
 
 /**
@@ -1617,14 +1465,14 @@ export const {
 } = ${1:name}Slice.actions;
 
 export default ${1:name}Slice.reducer;
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>122</td>
       <td>["!reduxStore"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 import { configureStore } from '@reduxjs/toolkit';
 
 import ${2:name}Reducer from './${2:name}Slice';
@@ -1638,34 +1486,34 @@ export const store = configureStore({
 
 globalThis.$store = store;
 
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>123</td>
       <td>["!rtkAsync"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 export const ${1:getSomething}Async = createAsyncThunk('${2:name}/${1:getSomething}Async',async(payload, {getState}={})=>{
   return 
 })
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>124</td>
       <td>["!require"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 const $1 = require('$1');
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>125</td>
       <td>["!bz"]</td>
       <td>["scss"] </td>
-      <td><pre>
+      <td><pre><code>
 /**
   * 功能:
   * TODO: 
@@ -1673,14 +1521,14 @@ const $1 = require('$1');
   * 注释: 
   * - 
   */
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>126</td>
       <td>["!case"]</td>
       <td>["shellscript"] </td>
-      <td><pre>
+      <td><pre><code>
 case $${1:value} in
  $2) echo ""
  ;;
@@ -1689,56 +1537,51 @@ case $${1:value} in
  *) echo ""
  ;;
 esac
-</pre></td>
-</tr>
 
-<tr>
-      <td>127</td>
-      <td>["##","///"]</td>
-      <td>["shellscript"] </td>
-      <td><pre>
-:<<EOF
-$1
-EOF
-</pre></td>
-</tr>
-
-<tr>
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>127</td>
+        <td>["##","///"]</td>
+        <td>["shellscript"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>128</td>
       <td>["!currentDir"]</td>
       <td>["shellscript"] </td>
-      <td><pre>
+      <td><pre><code>
 # sh文件所在路径
 CURRENT_DIR=$(dirname "\$0")
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>129</td>
       <td>["!echo"]</td>
       <td>["shellscript"] </td>
-      <td><pre>
+      <td><pre><code>
 echo -e "$1
 ";
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>130</td>
       <td>["!fun"]</td>
       <td>["shellscript"] </td>
-      <td><pre>
+      <td><pre><code>
 ${1:functionName}(){
   ${2:echo -e "hello\n"}
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>131</td>
       <td>["!ifif"]</td>
       <td>["shellscript"] </td>
-      <td><pre>
+      <td><pre><code>
 if [ ${1:true} ]
 then
    echo "true"
@@ -1748,115 +1591,91 @@ then
 else
    echo "default"
 fi
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>132</td>
       <td>["!elseif","!ife"]</td>
       <td>["shellscript"] </td>
-      <td><pre>
+      <td><pre><code>
 if ${1:true}; then
    ${2:echo "true"}
 else 
    ${2:echo "false"}
 fi
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>133</td>
       <td>["!if"]</td>
       <td>["shellscript"] </td>
-      <td><pre>
+      <td><pre><code>
 # 判断
 if [ ${1:true} ]
 then
     ${2:echo "123"}
 fi
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>134</td>
       <td>["!if"]</td>
       <td>["shellscript"] </td>
-      <td><pre>
+      <td><pre><code>
 # 判断
 if ${1:true};
 then
     ${2:echo "true"}
 fi
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>135</td>
       <td>["//"]</td>
       <td>["shellscript"] </td>
-      <td><pre># $1</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code># $1
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>136</td>
       <td>["!question"]</td>
       <td>["shellscript"] </td>
-      <td><pre>
+      <td><pre><code>
 echo -e "请输入: "
 read -r answer
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>137</td>
       <td>["!test","!equal"]</td>
       <td>["shellscript"] </td>
-      <td><pre>
+      <td><pre><code>
 isEqual=\$(test \$((${1:\$value})) -eq \$((${2:\$value2})))
-</pre></td>
-</tr>
 
-<tr>
-      <td>138</td>
-      <td>["!tarout"]</td>
-      <td>["shellscript"] </td>
-      <td><pre>
-此为解压
-
--f <filename>  后加 filename
--z 压缩 采用 gz
--j 压缩 采用 bz2
--c: 建立压缩档案（.tar)
--v 显示所有过程
-
--x 解压
--O 解开到标准输出
-
-</pre></td>
-</tr>
-
-<tr>
-      <td>139</td>
-      <td>["!tar","!gz"]</td>
-      <td>["shellscript"] </td>
-      <td><pre>此为压缩
-
--f <filename>  后加 filename
--z 压缩 采用 gz
--j 压缩 采用 bz2
--c: 建立压缩档案（.tar)
--v 显示所有过程
-
--x 解压
--O 解开到标准输出
-</pre></td>
-</tr>
-
-<tr>
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>138</td>
+        <td>["!tarout"]</td>
+        <td>["shellscript"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+        <tr>
+        <td>139</td>
+        <td>["!tar","!gz"]</td>
+        <td>["shellscript"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>140</td>
       <td>["!single_pattern","!single"]</td>
       <td>["typescript"] </td>
-      <td><pre>
+      <td><pre><code>
   private static _instance : ${1:TheClass} | null  = null;
   static getInstance(...args):${1:TheClass} {
     if (!this._instance) {
@@ -1864,14 +1683,14 @@ isEqual=\$(test \$((${1:\$value})) -eq \$((${2:\$value2})))
     }
     return this._instance;
   }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>141</td>
       <td>["!single_pattern","!single"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
   // 实例
   _instance = null;
   // 静态方法
@@ -1881,14 +1700,14 @@ isEqual=\$(test \$((${1:\$value})) -eq \$((${2:\$value2})))
     }
     return this._instance;
   }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>142</td>
       <td>["!snippet"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 const body = ``
 const description = "";
 
@@ -1898,14 +1717,14 @@ module.exports = {
   description: description || body,
   body: body.trim(),
 };
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>143</td>
       <td>["state"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 (state, { payload }) => {
   if (!payload) {
     return;
@@ -1913,90 +1732,71 @@ module.exports = {
   state.${1:value} = payload;
 }
 
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>144</td>
       <td>[".thencatch"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 .then(()=>{
 
 })
 .catch(()=>{})
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>145</td>
       <td>["throttle"]</td>
       <td>["javascript"] </td>
-      <td><pre>debounce 实现，虽然已经有 lodash 库 但是有时候不用 lodash</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>debounce 实现，虽然已经有 lodash 库 但是有时候不用 lodash
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>146</td>
       <td>["trycc"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>try{
+      <td><pre><code>try{
   $1
 }catch(err){
   $2
-}</pre></td>
-</tr>
-
-<tr>
+}
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>147</td>
       <td>["typeOf"]</td>
       <td>["javascript"] </td>
-      <td><pre>检验数据类型</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>检验数据类型
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>148</td>
       <td>["!vh"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>
+      <td><pre><code>
 /**
  * @var $1  
  * @desc $变量定义
  * @property {string} $2 $变量名
  * 
  */
-</pre></td>
-</tr>
 
-<tr>
-      <td>149</td>
-      <td>["!vh"]</td>
-      <td>["vue"] </td>
-      <td><pre>
-<!--
- 
-/**
- * @author
- * @file $TM_FILENAME
- * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
- * @path $RELATIVE_FILEPATH
- * @from 
- * @desc $2
- * @todo
- * 
- *
- * @done
- * @example
- */
-
--->
-</pre></td>
-</tr>
-
-<tr>
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>149</td>
+        <td>["!vh"]</td>
+        <td>["vue"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>150</td>
       <td>["!watch"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 "${1:value}": {
   handler(newVal,oldVal) {
     console.log(newVal);
@@ -2004,28 +1804,28 @@ module.exports = {
   // deep: true,
   // immediate: true
 },
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>151</td>
       <td>["vfor"]</td>
       <td>["vue-html","html"] </td>
-      <td><pre>vfor has a key</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>vfor has a key
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>152</td>
       <td>["!vue2"]</td>
       <td>["vue"] </td>
-      <td><pre>vue2</pre></td>
-</tr>
-
-<tr>
+      <td><pre><code>vue2
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>153</td>
       <td>["oef"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
-      <td><pre>export default {
+      <td><pre><code>export default {
   // 组件名
   components: {},
   // filters:{},
@@ -2041,156 +1841,32 @@ module.exports = {
   // watch:{},
   // mounted(){},
   methods: {},
-}</pre></td>
-</tr>
-
-<tr>
-      <td>154</td>
-      <td>["!vue3t"]</td>
-      <td>["vue"] </td>
-      <td><pre>
-
-<!--
- 
-/**
- * @author
- * @file $TM_FILENAME
- * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
- * @path $RELATIVE_FILEPATH
- * @from 
- * @desc $2
- * @todo
- * 
- *
- * @done
- * @example
- */
-
--->
-
-<script lang="ts">
-  export default {
-    name: "${2:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}"
-  };
-</script>
-<script setup lang="ts">
-
-</script>
-
-<template>
-  <div class="$2">
-    $2
-  </div>
-</template>
-
-<style lang="scss" scoped>
-
-</style>
-</pre></td>
-</tr>
-
-<tr>
-      <td>155</td>
-      <td>["!vue3"]</td>
-      <td>["vue"] </td>
-      <td><pre>
-
-<!--
- 
-/**
- * @author
- * @file $TM_FILENAME
- * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
- * @path $RELATIVE_FILEPATH
- * @from 
- * @desc $2
- * @todo
- * 
- *
- * @done
- * @example
- */
-
--->
-
-<script>
-  export default {
-    name: "${2:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}"
-  };
-</script>
-<script setup>
-
-</script>
-
-<template>
-  <div class="$2">
-  </div>
-</template>
-
-<style lang="scss" scoped>
-
-</style>
-</pre></td>
-</tr>
-
-<tr>
-      <td>156</td>
-      <td>["!vueo"]</td>
-      <td>["vue"] </td>
-      <td><pre>
-
-<!--
- 
-/**
- * @author
- * @file $TM_FILENAME
- * @fileBase ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}
- * @path $RELATIVE_FILEPATH
- * @from 
- * @desc $2
- * @todo
- * 
- *
- * @done
- * @example
- */
-
--->
-
-<script>
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: '${2:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/}}',
-  // components: {},
-  props: {},
-  // 从组件触发 emits 事件
-  // emits:{},
-  // 暴露
-  // expose: {},
-  data() {
-    return {}
-  }
-  // computed:{},
-  // watch:{},
-  // create(){},
-  // methods:{}
-})
-</script>
-
-<template>
-  <div class="${3}">
-  </div>
-</template>
-
-<style lang="scss" scoped></style>"
-</pre></td>
-</tr>
-
-<tr>
+}
+      </code></pre></td>
+    </tr>
+        <tr>
+        <td>154</td>
+        <td>["!vue3t"]</td>
+        <td>["vue"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+        <tr>
+        <td>155</td>
+        <td>["!vue3"]</td>
+        <td>["vue"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+        <tr>
+        <td>156</td>
+        <td>["!vueo"]</td>
+        <td>["vue"] </td>
+        <td>带<的代码不能用html显示,详见 undefined</td>
+        </tr>
+    <tr>
       <td>157</td>
       <td>["!directive"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 const ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\..*/$1$2$3/} = {
    // 在绑定元素的 attribute 前
   // 或事件监听器应用前调用
@@ -2212,14 +1888,14 @@ const ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\.
   // 绑定元素的父组件卸载后调用
   unmounted(el, binding, vnode, prevVnode) {}
 }
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>158</td>
       <td>["!writable"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 const { Writable } = require("stream");
 
 
@@ -2230,17 +1906,17 @@ const writableStream = new Writable({
 });
 
 
-</pre></td>
-</tr>
 
-<tr>
+      </code></pre></td>
+    </tr>
+    <tr>
       <td>159</td>
       <td>["!zxs"]</td>
       <td>["javascript"] </td>
-      <td><pre>
+      <td><pre><code>
 await $``
-</pre></td>
-</tr>
 
-    </tbody>    
+      </code></pre></td>
+    </tr>
+     </tbody>
 </table>
