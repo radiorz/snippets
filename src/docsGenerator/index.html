@@ -1013,15 +1013,22 @@ System.currentTimeMillis();
     </tr>
     <tr>
       <td>90</td>
-      <td>["!","!line"]</td>
-      <td>["json"] </td>
+      <td>["!","!line","ll"]</td>
+      <td>["json","jsonc"] </td>
       <td><pre><code>
-"$1": "$2"
+"$1": "$2",
 
       </code></pre></td>
     </tr>
     <tr>
       <td>91</td>
+      <td>["!{","kk"]</td>
+      <td>["jsonc","json"] </td>
+      <td><pre><code>{"$1":"$2"},
+      </code></pre></td>
+    </tr>
+    <tr>
+      <td>92</td>
       <td>["!debug"]</td>
       <td>["javascript","typescript"] </td>
       <td><pre><code>
@@ -1030,7 +1037,7 @@ logger.debug(`$1`,$1);
       </code></pre></td>
     </tr>
     <tr>
-      <td>92</td>
+      <td>93</td>
       <td>["!table"]</td>
       <td>["markdown"] </td>
       <td><pre><code>
@@ -1045,7 +1052,7 @@ logger.debug(`$1`,$1);
       </code></pre></td>
     </tr>
     <tr>
-      <td>93</td>
+      <td>94</td>
       <td>["!mh","!funh"]</td>
       <td>["javascript","typescript","java"] </td>
       <td><pre><code>
@@ -1060,7 +1067,7 @@ logger.debug(`$1`,$1);
       </code></pre></td>
     </tr>
     <tr>
-      <td>94</td>
+      <td>95</td>
       <td>["!mobxclass"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1081,7 +1088,7 @@ export const store = new Store();
       </code></pre></td>
     </tr>
     <tr>
-      <td>95</td>
+      <td>96</td>
       <td>["!mobx"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1104,7 +1111,7 @@ export default store;
       </code></pre></td>
     </tr>
     <tr>
-      <td>96</td>
+      <td>97</td>
       <td>["!nohoist"]</td>
       <td>["json"] </td>
       <td><pre><code>
@@ -1118,14 +1125,14 @@ export default store;
       </code></pre></td>
     </tr>
     <tr>
-      <td>97</td>
+      <td>98</td>
       <td>["now"]</td>
       <td>["javascript","typescript","java","vue"] </td>
       <td><pre><code>当前时间
       </code></pre></td>
     </tr>
     <tr>
-      <td>98</td>
+      <td>99</td>
       <td>["oef"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>Object.entries(options).forEach(([key,value])=>{
@@ -1134,7 +1141,7 @@ $1
       </code></pre></td>
     </tr>
     <tr>
-      <td>99</td>
+      <td>100</td>
       <td>["lg","ogpl"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>
@@ -1144,7 +1151,7 @@ get(obj, path,defaultValue)
       </code></pre></td>
     </tr>
     <tr>
-      <td>100</td>
+      <td>101</td>
       <td>["mergeRight"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1155,7 +1162,7 @@ get(obj, path,defaultValue)
       </code></pre></td>
     </tr>
     <tr>
-      <td>101</td>
+      <td>102</td>
       <td>["ls","ospl"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>
@@ -1165,14 +1172,14 @@ set(obj, path, value)
       </code></pre></td>
     </tr>
     <tr>
-      <td>102</td>
+      <td>103</td>
       <td>["//","ccc"]</td>
       <td>["javascript","typescript","java"] </td>
       <td><pre><code>/** ******  ****** */
       </code></pre></td>
     </tr>
     <tr>
-      <td>103</td>
+      <td>104</td>
       <td>["///"]</td>
       <td>["javascript","typescript","java"] </td>
       <td><pre><code>
@@ -1181,7 +1188,7 @@ ${LINE_COMMENT} ****** $1 ******
       </code></pre></td>
     </tr>
     <tr>
-      <td>104</td>
+      <td>105</td>
       <td>["!pinia"]</td>
       <td>["javascript","typescript"] </td>
       <td><pre><code>
@@ -1218,14 +1225,14 @@ export default use${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/
       </code></pre></td>
     </tr>
     <tr>
-      <td>105</td>
+      <td>106</td>
       <td>["ss"]</td>
       <td>["powershell"] </td>
       <td><pre><code>过滤字符串
       </code></pre></td>
     </tr>
     <tr>
-      <td>106</td>
+      <td>107</td>
       <td>["!promise"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>
@@ -1236,33 +1243,33 @@ new Promise((resolve,reject)=>{
       </code></pre></td>
     </tr>
         <tr>
-        <td>107</td>
+        <td>108</td>
         <td>["color"]</td>
         <td>["javascript","typescript"] </td>
         <td>带<的代码不能用html显示,详见 undefined</td>
         </tr>
     <tr>
-      <td>108</td>
+      <td>109</td>
       <td>["!react_memo_component","!rmc"]</td>
       <td>["javascript","javascriptreact"] </td>
       <td><pre><code>memo component
       </code></pre></td>
     </tr>
     <tr>
-      <td>109</td>
+      <td>110</td>
       <td>["!react"]</td>
       <td>["javascript","javascriptreact","typescriptreact","typescript"] </td>
       <td><pre><code>react 函数组件
       </code></pre></td>
     </tr>
         <tr>
-        <td>110</td>
+        <td>111</td>
         <td>["!hoc"]</td>
         <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
         <td>带<的代码不能用html显示,详见 undefined</td>
         </tr>
     <tr>
-      <td>111</td>
+      <td>112</td>
       <td>["!hook"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>
@@ -1292,7 +1299,7 @@ export default function ${1:${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*
       </code></pre></td>
     </tr>
     <tr>
-      <td>112</td>
+      <td>113</td>
       <td>["ireact"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>
@@ -1301,7 +1308,7 @@ import React from 'react';
       </code></pre></td>
     </tr>
     <tr>
-      <td>113</td>
+      <td>114</td>
       <td>["!useFocus"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1323,40 +1330,40 @@ useFocusEffect(()=>{
       </code></pre></td>
     </tr>
         <tr>
-        <td>114</td>
+        <td>115</td>
         <td>["!prern"]</td>
         <td>["javascript","javascriptreact","typescriptreact","typescript"] </td>
         <td>带<的代码不能用html显示,详见 undefined</td>
         </tr>
     <tr>
-      <td>115</td>
+      <td>116</td>
       <td>["!view"]</td>
       <td>["javascript","javascriptreact","typescript","typescriptreact"] </td>
       <td><pre><code>引入view 做一些小事情经常会做
       </code></pre></td>
     </tr>
     <tr>
-      <td>116</td>
+      <td>117</td>
       <td>["!flatlist"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>react_flat_list
       </code></pre></td>
     </tr>
         <tr>
-        <td>117</td>
+        <td>118</td>
         <td>["!rn","!reactNative"]</td>
         <td>["javascript","javascriptreact","typescript","typescriptreact"] </td>
         <td>带<的代码不能用html显示,详见 undefined</td>
         </tr>
     <tr>
-      <td>118</td>
+      <td>119</td>
       <td>["!sectionlist"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>react native sectionlist
       </code></pre></td>
     </tr>
     <tr>
-      <td>119</td>
+      <td>120</td>
       <td>["!readable"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1371,7 +1378,7 @@ const readableStream = new Readable({
       </code></pre></td>
     </tr>
     <tr>
-      <td>120</td>
+      <td>121</td>
       <td>["!persistSlice"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>
@@ -1437,7 +1444,7 @@ export default persistedReducer
       </code></pre></td>
     </tr>
     <tr>
-      <td>121</td>
+      <td>122</td>
       <td>["!slice"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>
@@ -1469,7 +1476,7 @@ export default ${1:name}Slice.reducer;
       </code></pre></td>
     </tr>
     <tr>
-      <td>122</td>
+      <td>123</td>
       <td>["!reduxStore"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1490,7 +1497,7 @@ globalThis.$store = store;
       </code></pre></td>
     </tr>
     <tr>
-      <td>123</td>
+      <td>124</td>
       <td>["!rtkAsync"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1501,7 +1508,7 @@ export const ${1:getSomething}Async = createAsyncThunk('${2:name}/${1:getSomethi
       </code></pre></td>
     </tr>
     <tr>
-      <td>124</td>
+      <td>125</td>
       <td>["!require"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1510,7 +1517,7 @@ const $1 = require('$1');
       </code></pre></td>
     </tr>
     <tr>
-      <td>125</td>
+      <td>126</td>
       <td>["!bz"]</td>
       <td>["scss"] </td>
       <td><pre><code>
@@ -1525,7 +1532,7 @@ const $1 = require('$1');
       </code></pre></td>
     </tr>
     <tr>
-      <td>126</td>
+      <td>127</td>
       <td>["!case"]</td>
       <td>["shellscript"] </td>
       <td><pre><code>
@@ -1541,13 +1548,13 @@ esac
       </code></pre></td>
     </tr>
         <tr>
-        <td>127</td>
+        <td>128</td>
         <td>["##","///"]</td>
         <td>["shellscript"] </td>
         <td>带<的代码不能用html显示,详见 undefined</td>
         </tr>
     <tr>
-      <td>128</td>
+      <td>129</td>
       <td>["!currentDir"]</td>
       <td>["shellscript"] </td>
       <td><pre><code>
@@ -1557,7 +1564,7 @@ CURRENT_DIR=$(dirname "\$0")
       </code></pre></td>
     </tr>
     <tr>
-      <td>129</td>
+      <td>130</td>
       <td>["!echo"]</td>
       <td>["shellscript"] </td>
       <td><pre><code>
@@ -1567,7 +1574,7 @@ echo -e "$1
       </code></pre></td>
     </tr>
     <tr>
-      <td>130</td>
+      <td>131</td>
       <td>["!fun"]</td>
       <td>["shellscript"] </td>
       <td><pre><code>
@@ -1578,7 +1585,7 @@ ${1:functionName}(){
       </code></pre></td>
     </tr>
     <tr>
-      <td>131</td>
+      <td>132</td>
       <td>["!ifif"]</td>
       <td>["shellscript"] </td>
       <td><pre><code>
@@ -1595,7 +1602,7 @@ fi
       </code></pre></td>
     </tr>
     <tr>
-      <td>132</td>
+      <td>133</td>
       <td>["!elseif","!ife"]</td>
       <td>["shellscript"] </td>
       <td><pre><code>
@@ -1608,7 +1615,7 @@ fi
       </code></pre></td>
     </tr>
     <tr>
-      <td>133</td>
+      <td>134</td>
       <td>["!if"]</td>
       <td>["shellscript"] </td>
       <td><pre><code>
@@ -1621,7 +1628,7 @@ fi
       </code></pre></td>
     </tr>
     <tr>
-      <td>134</td>
+      <td>135</td>
       <td>["!if"]</td>
       <td>["shellscript"] </td>
       <td><pre><code>
@@ -1634,14 +1641,14 @@ fi
       </code></pre></td>
     </tr>
     <tr>
-      <td>135</td>
+      <td>136</td>
       <td>["//"]</td>
       <td>["shellscript"] </td>
       <td><pre><code># $1
       </code></pre></td>
     </tr>
     <tr>
-      <td>136</td>
+      <td>137</td>
       <td>["!question"]</td>
       <td>["shellscript"] </td>
       <td><pre><code>
@@ -1651,7 +1658,7 @@ read -r answer
       </code></pre></td>
     </tr>
     <tr>
-      <td>137</td>
+      <td>138</td>
       <td>["!test","!equal"]</td>
       <td>["shellscript"] </td>
       <td><pre><code>
@@ -1660,19 +1667,19 @@ isEqual=\$(test \$((${1:\$value})) -eq \$((${2:\$value2})))
       </code></pre></td>
     </tr>
         <tr>
-        <td>138</td>
+        <td>139</td>
         <td>["!tarout"]</td>
         <td>["shellscript"] </td>
         <td>带<的代码不能用html显示,详见 undefined</td>
         </tr>
         <tr>
-        <td>139</td>
+        <td>140</td>
         <td>["!tar","!gz"]</td>
         <td>["shellscript"] </td>
         <td>带<的代码不能用html显示,详见 undefined</td>
         </tr>
     <tr>
-      <td>140</td>
+      <td>141</td>
       <td>["!single_pattern","!single"]</td>
       <td>["typescript"] </td>
       <td><pre><code>
@@ -1687,7 +1694,7 @@ isEqual=\$(test \$((${1:\$value})) -eq \$((${2:\$value2})))
       </code></pre></td>
     </tr>
     <tr>
-      <td>141</td>
+      <td>142</td>
       <td>["!single_pattern","!single"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1704,7 +1711,7 @@ isEqual=\$(test \$((${1:\$value})) -eq \$((${2:\$value2})))
       </code></pre></td>
     </tr>
     <tr>
-      <td>142</td>
+      <td>143</td>
       <td>["!snippet"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1721,7 +1728,7 @@ module.exports = {
       </code></pre></td>
     </tr>
     <tr>
-      <td>143</td>
+      <td>144</td>
       <td>["state"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>
@@ -1736,7 +1743,7 @@ module.exports = {
       </code></pre></td>
     </tr>
     <tr>
-      <td>144</td>
+      <td>145</td>
       <td>[".thencatch"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1748,14 +1755,14 @@ module.exports = {
       </code></pre></td>
     </tr>
     <tr>
-      <td>145</td>
+      <td>146</td>
       <td>["throttle"]</td>
       <td>["javascript"] </td>
       <td><pre><code>debounce 实现，虽然已经有 lodash 库 但是有时候不用 lodash
       </code></pre></td>
     </tr>
     <tr>
-      <td>146</td>
+      <td>147</td>
       <td>["trycc"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>try{
@@ -1766,14 +1773,14 @@ module.exports = {
       </code></pre></td>
     </tr>
     <tr>
-      <td>147</td>
+      <td>148</td>
       <td>["typeOf"]</td>
       <td>["javascript"] </td>
       <td><pre><code>检验数据类型
       </code></pre></td>
     </tr>
     <tr>
-      <td>148</td>
+      <td>149</td>
       <td>["!vh"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>
@@ -1787,13 +1794,13 @@ module.exports = {
       </code></pre></td>
     </tr>
         <tr>
-        <td>149</td>
+        <td>150</td>
         <td>["!vh"]</td>
         <td>["vue"] </td>
         <td>带<的代码不能用html显示,详见 undefined</td>
         </tr>
     <tr>
-      <td>150</td>
+      <td>151</td>
       <td>["!watch"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1808,21 +1815,21 @@ module.exports = {
       </code></pre></td>
     </tr>
     <tr>
-      <td>151</td>
+      <td>152</td>
       <td>["vfor"]</td>
       <td>["vue-html","html"] </td>
       <td><pre><code>vfor has a key
       </code></pre></td>
     </tr>
     <tr>
-      <td>152</td>
+      <td>153</td>
       <td>["!vue2"]</td>
       <td>["vue"] </td>
       <td><pre><code>vue2
       </code></pre></td>
     </tr>
     <tr>
-      <td>153</td>
+      <td>154</td>
       <td>["oef"]</td>
       <td>["javascript","typescript","javascriptreact","typescriptreact"] </td>
       <td><pre><code>export default {
@@ -1845,25 +1852,25 @@ module.exports = {
       </code></pre></td>
     </tr>
         <tr>
-        <td>154</td>
+        <td>155</td>
         <td>["!vue3t"]</td>
         <td>["vue"] </td>
         <td>带<的代码不能用html显示,详见 undefined</td>
         </tr>
         <tr>
-        <td>155</td>
+        <td>156</td>
         <td>["!vue3"]</td>
         <td>["vue"] </td>
         <td>带<的代码不能用html显示,详见 undefined</td>
         </tr>
         <tr>
-        <td>156</td>
+        <td>157</td>
         <td>["!vueo"]</td>
         <td>["vue"] </td>
         <td>带<的代码不能用html显示,详见 undefined</td>
         </tr>
     <tr>
-      <td>157</td>
+      <td>158</td>
       <td>["!directive"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1892,7 +1899,7 @@ const ${RELATIVE_FILEPATH/.*[\\|\/](.*)[\\|\/]index\..*|.*[\\|\/](.*)\..*|(.*)\.
       </code></pre></td>
     </tr>
     <tr>
-      <td>158</td>
+      <td>159</td>
       <td>["!writable"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
@@ -1910,7 +1917,7 @@ const writableStream = new Writable({
       </code></pre></td>
     </tr>
     <tr>
-      <td>159</td>
+      <td>160</td>
       <td>["!zxs"]</td>
       <td>["javascript"] </td>
       <td><pre><code>
