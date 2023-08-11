@@ -1,5 +1,5 @@
 const body = `
-#include "$1"
+#include "$1.h"
 `;
 const description = "";
 
