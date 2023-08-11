@@ -4,8 +4,8 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!include", "#include"],
-  type: ["cpp", "c"],
+  prefix: ["#include"],
+  type: ["cpp"],
   description: description || body,
   body: body.trim(),
 };

@@ -1,11 +1,11 @@
 const body = `
-"$1": "$2",
+#include "$1"
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["!", "!line", "ll"],
-  type: ["json", "jsonc"],
+  prefix: ["!include"],
+  type: ["cpp"],
   description: description || body,
   body: body.trim(),
 };

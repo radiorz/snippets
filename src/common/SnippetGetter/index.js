@@ -29,7 +29,7 @@ class SnippetGetter {
           body,
         });
       } catch (error) {
-        logger.error(`获取${filePath} text snippet出错`, error.message);
+        logger.error(`获取 ${filePath} text snippet出错`, error.message);
         return null;
       }
     });
@@ -42,7 +42,7 @@ class SnippetGetter {
         ));
         return SnippetGetter.tranSnippet({ filePath, ...snippetOptions });
       } catch (error) {
-        logger.error(`获取${filePath} snippet出错`, error.message);
+        logger.error(`获取 ${filePath} snippet出错`, error.message);
         return null;
       }
     });

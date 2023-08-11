@@ -2,5 +2,14 @@
   "files.associations": {
     "*.conf": "yaml",
     "helloworld.C": "cpp"
-  }
+  },
+  "workbench.colorCustomizations": {
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#003dda",
+    "titleBar.activeBackground": "#002fa7",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#002fa799",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#002fa7",
 }
