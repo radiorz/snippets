@@ -1,5 +1,5 @@
 const body = `
-set($1: "$2")
+set($1 "$2")
 `;
 const description = "";
 
