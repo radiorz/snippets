@@ -1,5 +1,5 @@
 const body = `
-printf("$1\\n");
+printf(\"$1\\n");
 `;
 const description = "";
 
