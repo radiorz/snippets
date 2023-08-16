@@ -1,5 +1,9 @@
+
 # 设置最低版本要求
 cmake_minimum_required(VERSION 3.16)
+# project(hello VERSION 1.0.0)
+# set(CMAKE_C_STANDARD 99)
+
 # 添加库的源文件
 add_library(hello SHARED ${CMAKE_CURRENT_SOURCE_DIR}/hello.cpp)
 # 头文件
