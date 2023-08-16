@@ -1,11 +1,12 @@
 const body = `
-const timeout = \${1:1000}
-await new Promise((resolve) => setTimeout(resolve, timeout))
+function () {
+  $1
+}
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["wait","!wait", "delay",'await'],
+  prefix: ["!fn", "fn", "func"],
   type: ["javascript"],
   description: description || body,
   body: body.trim(),
