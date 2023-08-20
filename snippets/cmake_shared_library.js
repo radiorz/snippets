@@ -12,7 +12,7 @@ install(FILES \\\${CMAKE_CURRENT_SOURCE_DIR}/hello.h DESTINATION \\\${CMAKE_CURR
 const description = "";
 
 module.exports = {
-  prefix: ["!share"],
+  prefix: ["!share",'!dynamic'],
   type: ["cmake"],
   description: description || body,
   body: body.trim(),
