@@ -36,21 +36,19 @@ SOURCES := $(wildcard *.c) $(wildcard *.cpp)
 OBJECTS := $(patsubst %.c,%.o,$(patsubst %.cpp,%.o,$(SOURCES)))
 DEPENDS := $(addsuffix .d,$(OBJECTS))
 
-.PHONY : everything objs clean cleanall rebuild
-
-everything : $(TARGET)
+.PHONY : all objs cleanObjs clean rebuild
 
 all : $(TARGET)
 
-clean :
+cleanObjs:
 	rm -fr *.o
     
-cleanall : clean
+clean : clean
 	rm -fr $(TARGET)
 
 objs : $(OBJECTS)
 
-rebuild: cleanall everything
+rebuild: clean all
   
 $(TARGET) : $(OBJECTS)
 	$(CC) $(CXXFLAGS) $(SHARE) $@ $(OBJECTS) $(LDFLAGS) $(LIBS)
