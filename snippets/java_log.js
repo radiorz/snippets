@@ -11,7 +11,7 @@ const body = `System.out.println("$1" + " " + $1);`;
 const description = "";
 
 module.exports = {
-  prefix: ["csl", "system", "logg", "sop"],
+  prefix: ["csl", "logg", "sop", "print"],
   type: ["java"],
   description: description || body,
   body: body.trim(),
