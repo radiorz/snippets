@@ -38,7 +38,7 @@ $(TARGET) : $(OBJECTS)
 const description = "";
 
 module.exports = {
-  prefix: ["!makefile"],
+  prefix: ["!makefile","!"],
   type: ["makefile"],
   description: description || body,
   body: body.trim(),
