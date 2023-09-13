@@ -7,13 +7,15 @@
  * @done
  * @example
  */
+const { LANGUAGE_LABELS } = require("../src/common/consts/types");
+
 const body = `
 \${BLOCK_COMMENT_START}* ****** \$1 ****** \${BLOCK_COMMENT_END}
 `;
 const description = "/** ******  ****** */";
 module.exports = {
   prefix: [`//`, "ccc"],
-  type: ["javascript", "typescript","java"],
+  type: LANGUAGE_LABELS,
   description: description || body,
   body: body.trim(),
 };

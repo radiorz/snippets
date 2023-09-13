@@ -30,4 +30,4 @@ function genLanguageObj(labels = LANGUAGE_LABELS) {
   return obj;
 }
 const TYPES = genLanguageObj();
-module.exports = TYPES;
+module.exports = { TYPES, LANGUAGE_LABELS };
