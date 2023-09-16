@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2023.8.10",
+  "version": "2023.9.15",
   "publisher": "tikkhun",
   "engines": {
     "vscode": "^1.69.0"
@@ -25,8 +25,16 @@
         "path": "./snippets/c.json"
       },
       {
+        "language": "cmake",
+        "path": "./snippets/cmake.json"
+      },
+      {
         "language": "cpp",
         "path": "./snippets/cpp.json"
+      },
+      {
+        "language": "css",
+        "path": "./snippets/css.json"
       },
       {
         "language": "dart",
@@ -61,12 +69,24 @@
         "path": "./snippets/jsonc.json"
       },
       {
+        "language": "makefile",
+        "path": "./snippets/makefile.json"
+      },
+      {
         "language": "markdown",
         "path": "./snippets/markdown.json"
       },
       {
+        "language": "plaintext",
+        "path": "./snippets/plaintext.json"
+      },
+      {
         "language": "powershell",
         "path": "./snippets/powershell.json"
+      },
+      {
+        "language": "sass",
+        "path": "./snippets/sass.json"
       },
       {
         "language": "scss",
@@ -95,6 +115,10 @@
       {
         "language": "vue",
         "path": "./snippets/vue.json"
+      },
+      {
+        "language": "xml",
+        "path": "./snippets/xml.json"
       },
       {
         "language": "yaml",
