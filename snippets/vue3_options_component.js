@@ -18,7 +18,7 @@ export default defineComponent({
   }
   // computed:{},
   // watch:{},
-  // create(){},
+  // created(){},
   // methods:{}
 })
 </script>
