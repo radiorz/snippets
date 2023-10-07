@@ -10,9 +10,12 @@ export default defineComponent({
   // components: {},
   props: {},
   // 从组件触发 emits 事件
-  // emits:{},
+  // emits:[],
   // 暴露
   // expose: {},
+  setup(props,ctx){
+
+  },
   data() {
     return {}
   }
@@ -33,7 +36,7 @@ export default defineComponent({
 const description = "";
 
 module.exports = {
-  prefix: ["!vueo"],
+  prefix: ["!vueo", "!option"],
   type: ["vue"],
   description: description || body,
   body: body.trim(),

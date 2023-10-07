@@ -1,4 +1,4 @@
-const TYPES = require("./types");
+const {TYPES} = require("./types");
 /**
  * 文件后缀对应的文件类型(语言)
  */

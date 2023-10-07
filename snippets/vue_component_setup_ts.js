@@ -25,7 +25,7 @@ ${vueHeader.origin}
   };
 </script>
 <script setup lang="ts">
-
+  
 </script>
 
 <template>
@@ -41,7 +41,7 @@ ${vueHeader.origin}
 const description = "";
 
 module.exports = {
-  prefix: ["!vue3t"],
+  prefix: ["!vue3t", "!setupTs"],
   type: ["vue"],
   description: description || body,
   body: body.trim(),
