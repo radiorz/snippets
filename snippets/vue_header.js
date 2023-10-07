@@ -23,7 +23,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!vh"],
+  prefix: ["!header",'!vh'],
   type: ["vue"],
   description: description || body,
   origin: body,

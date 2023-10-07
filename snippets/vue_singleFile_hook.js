@@ -14,7 +14,7 @@ export default function \${1:${file_name}} {
 const description = "";
 
 module.exports = {
-  prefix: ["!vue_hook"],
+  prefix: ["!vue_hook",'!composable'],
   type: ["javascript"],
   description: description || body,
   body: body.trim(),
