@@ -18,6 +18,7 @@ const LANGUAGE_LABELS = [
   "shellscript",
   "typescript",
   "typescriptreact",
+  "ignore",
   "vue",
   "xml",
   "yaml",
