@@ -1,14 +1,13 @@
 const body = `
-# 生产文件
-dist
-# 依赖
-node_modules**
+ \${1:func}(){
+
+ }
 `
 const description = "";
 
 module.exports = {
-  prefix: ["!vue"],
-  type: ["ignore"],
+  prefix: ["!fun"],
+  type: ["javascript"],
   description: description || body,
   body: body.trim(),
 };
