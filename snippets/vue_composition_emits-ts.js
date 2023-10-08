@@ -7,7 +7,7 @@ const emit = defineEmits<{
 const description = "";
 
 module.exports = {
-  prefix: ["!props"],
+  prefix: ["!emit"],
   type: ["typescript"],
   description: description || body,
   body: body.trim(),

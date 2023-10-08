@@ -19,7 +19,7 @@ const body = `export default {
 const description = "";
 
 module.exports = {
-  prefix: ["oef","!mixin"],
+  prefix: ["!mixin"],
   type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   description: description || body,
   body,

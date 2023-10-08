@@ -6,7 +6,7 @@ watchEffect(async ()=>{
 const description = "";
 
 module.exports = {
-  prefix: ["!cwatchEffect"],
+  prefix: ["!watchEffect"],
   type: ["javascript",'typescript'],
   description: description || body,
   body: body.trim(),

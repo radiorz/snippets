@@ -7,7 +7,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!props"],
-  type: ["javascript",'typescript'],
+  type: ["javascript"],
   description: description || body,
   body: body.trim(),
 };

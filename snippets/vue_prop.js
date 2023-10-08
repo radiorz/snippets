@@ -9,7 +9,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!props"],
+  prefix: ["!prop"],
   type: ["javascript",'typescript'],
   description: description || body,
   body: body.trim(),

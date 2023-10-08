@@ -15,7 +15,7 @@ watch(
 const description = "";
 
 module.exports = {
-  prefix: ["!cwatch"],
+  prefix: ["!watchc"],
   type: ["javascript",'typescript'],
   description: description || body,
   body: body.trim(),

@@ -6,7 +6,7 @@ watchPostEffect(async ()=>{
 const description = "";
 
 module.exports = {
-  prefix: ["!cwatchPostEffect"],
+  prefix: ["!watchPostEffect"],
   type: ["javascript",'typescript'],
   description: description || body,
   body: body.trim(),

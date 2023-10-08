@@ -5,7 +5,7 @@ const emit = defineEmits(['$1'])
 const description = "";
 
 module.exports = {
-  prefix: ["!props"],
+  prefix: ["!emit"],
   type: ["javascript"],
   description: description || body,
   body: body.trim(),
