@@ -1,7 +1,7 @@
 const body = `
   \${1:value}: {
     type: \${2: String},
-    // default : ()=>'',
+    // default: ()=> '',
     // required: true,
     // validator() { return  }
   }
