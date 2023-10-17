@@ -1,7 +1,7 @@
 const body = `
 "\${1:value}": {
   handler(newVal,oldVal) {
-    console.log(newVal);
+    console.log(\`\${1:value}\`,newVal,oldVal);
   },
   // deep: true,
   // immediate: true
