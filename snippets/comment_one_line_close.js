@@ -14,9 +14,8 @@ const body = `
 `;
 const description = "/** ******  ****** */";
 module.exports = {
-  prefix: [`//`, "ccc"],
+  prefix: [`//`, "cc"],
   type: LANGUAGE_LABELS,
   description: description || body,
   body: body.trim(),
 };
-

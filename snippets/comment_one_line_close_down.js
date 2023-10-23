@@ -14,7 +14,7 @@ const body = `
 `;
 const description = "/** ******  ****** */";
 module.exports = {
-  prefix: ['!down'],
+  prefix: ['!down1'],
   type: LANGUAGE_LABELS,
   description: description || body,
   body: body.trim(),
