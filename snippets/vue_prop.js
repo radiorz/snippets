@@ -4,7 +4,7 @@ const body = `
     // default: ()=> '',
     // required: true,
     // validator() { return  }
-  }
+  },
 `
 const description = "";
 
