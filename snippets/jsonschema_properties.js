@@ -1,10 +1,8 @@
 const body = `
-
-    "\${1:value}":{
-      "name": "\${1:value}",
-      "type": "\${2:string}",
-    }
-
+"\${1:value}":{
+  "name": "\${1:value}",
+  "type": "\${2:string}",
+}
 `;
 const description = "";
 
