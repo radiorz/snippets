@@ -7,7 +7,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!properties"],
+  prefix: ["!propertiesSchema"],
   type: ["javascript", "json", "jsonc"],
   description: description || body,
   body: body.trim(),
