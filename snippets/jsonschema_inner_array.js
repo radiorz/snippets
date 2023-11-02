@@ -1,14 +1,14 @@
 const body = `
-  type: 'array',
-  items: {
-    $2
+  "type": "array",
+  "items": {
+    $1
   },
 `;
 const description = "";
 
 module.exports = {
   prefix: ["!inArray"],
-  type: ["javascript", "typescript"],
+  type: ["javascript", "typescript","json",'jsonc'],
   description: description || body,
   body: body.trim(),
 };

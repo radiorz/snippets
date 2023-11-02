@@ -13,7 +13,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!object"],
-  type: ["javascript",'json','jsonc'],
+  type: ["javascript", "typescript", "json", "jsonc"],
   description: description || body,
   body: body.trim(),
 };
