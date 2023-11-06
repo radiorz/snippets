@@ -1,6 +1,6 @@
 const body = `
-console.time("timer\${1}")
-console.timeEnd("timer\${1}")
+console.time("\${1}")
+console.timeEnd("\${1}")
 `
 const description = "";
 
