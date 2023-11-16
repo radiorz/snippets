@@ -8,7 +8,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!enumschema"],
+  prefix: ["!enumSchema"],
   type: ["javascript", "typescript", "json", "jsonc"],
   description: description || body,
   body: body.trim(),
