@@ -1,10 +1,10 @@
 const body = `
-println!("$1 {}", $1);
-`
+println!("$1");
+`;
 const description = "";
 
 module.exports = {
-  prefix: ["logg","!print","csl"],
+  prefix: ["logm", "!printm"],
   type: ["rust"],
   description: description || body,
   body: body.trim(),
