@@ -3,6 +3,8 @@ const {TYPES} = require("./types");
  * 文件后缀对应的文件类型(语言)
  */
 const EXTS_LANGUAGE_MAP = {
+  yaml: TYPES.yaml,
+  yml: TYPES.yaml,
   js: TYPES.javascript,
   ts: TYPES.typescript,
   sh: TYPES.shellscript,
