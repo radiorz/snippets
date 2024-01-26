@@ -1,11 +1,11 @@
 const body = `
-"$1": "$2",
+$1 = "$1",
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["!line"],
-  type: ["json", "jsonc",'javascript','typescript'],
+  prefix: ["!enum_prop"],
+  type: ['typescript'],
   description: description || body,
   body: body.trim(),
 };

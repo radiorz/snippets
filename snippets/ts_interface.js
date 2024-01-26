@@ -1,11 +1,13 @@
 const body = `
-"$1": "$2",
-`;
+export interface $1 {
+  
+}
+`
 const description = "";
 
 module.exports = {
-  prefix: ["!line"],
-  type: ["json", "jsonc",'javascript','typescript'],
+  prefix: ["!interface"],
+  type: ["typescript"],
   description: description || body,
   body: body.trim(),
 };
