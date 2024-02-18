@@ -20,7 +20,7 @@ export class \${1:${fileName}} extends Component {
 const description = "";
 
 module.exports = {
-  prefix: ["!cocos_manager"],
+  prefix: ["!cc_manager"],
   type: ["typescript"],
   description: description || body,
   body: body.trim(),
