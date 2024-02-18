@@ -2,7 +2,9 @@ const { origin: file_name } = require("./file_name");
 
 const body = `
 const { TYPES } = require("../src/common/consts/types");
-const body = \`\`
+const body = \`
+  $2
+\`
 const description = "";
 
 module.exports = {
