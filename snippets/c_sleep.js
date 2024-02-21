@@ -11,7 +11,7 @@ const description =
   "这个是使用原生时间循环进行的delay,大部分时候应该使用线程的sleep方法可能会常用一些";
 
 module.exports = {
-  prefix: ["!wait", "!delay"],
+  prefix: ["!sleep", "!delay"],
   type: ["c"],
   description: description || body,
   body: body.trim(),
