@@ -1,0 +1,21 @@
+const { TYPES } = require("../src/common/consts/types");
+const body = `
+/**
+ * 说明: 函数用于
+ * @param 
+ * @returns
+ * @example
+ * \$1() // ->
+ */
+export function \${1:fun}(){
+
+}
+`;
+const description = "";
+
+module.exports = {
+  prefix: ["!comment_function","!func"],
+  type: [TYPES.typescript,TYPES.javascript],
+  description: description || body,
+  body: body.trim(),
+};
