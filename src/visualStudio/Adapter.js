@@ -17,7 +17,7 @@ const path = require("path");
 const { isArray } = require("../common/funcs");
 const logger = require("../common/logger");
 const snippetDir = path.join(__dirname, "../../.build-vs");
-if(!fs.existsSync(snippetDir)){
+if (!fs.existsSync(snippetDir)) {
   fs.mkdirSync(snippetDir);
 }
 const SnippetGetter = require("../common/SnippetGetter");
@@ -46,10 +46,16 @@ class Adapter {
         ? snippetOption.type
         : [snippetOption.type];
       types.forEach((type) => {
-        const xml = this.tranSnippet({ ...snippetOption, type });
         const fileType = languageFileMap[type];
         if (!fileType) {
-          logger.error("这个类型暂不支持");
+          logger.error("这个类型暂不支持", type);
+          return;
+        }
+        let xml;
+        try {
+          xml = this.tranSnippet({ ...snippetOption, type });
+        } catch (error) {
+          logger.error("snippet转换出错", snippetOption, error);
           return;
         }
         // 存储
@@ -68,7 +74,7 @@ class Adapter {
     logger.info("结束生成");
   }
   tranSnippet(snippetOption = {}) {
-    let { key, type, body, description, prefix } = snippetOption;
+    let { key, type, body = "", description, prefix } = snippetOption;
     const root = getRoot();
     const header = create()
       .ele("Header")
@@ -91,8 +97,13 @@ class Adapter {
       .ele("SnippetType")
       .txt("SurroundsWith")
       .up();
-    // 替换 body中的 变量
-    let _body = body.join("\n");
+    // body 变成字符串才能转换
+    let _body = body;
+    if (typeof body !== "string") {
+      if (Array.isArray(body)) {
+        _body = body.join("\n");
+      }
+    }
     const snippet = create({
       version: "1.0",
       encoding: "123",
