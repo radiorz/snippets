@@ -1,10 +1,11 @@
+const { origin: fileName } = require("./file_name_big_camel");
 const { TYPES } = require("../src/common/consts/types");
-const { origin: fileName } = require("./file_name");
+
 const body = `
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { IsNotEmpty, IsOptional } from 'class-validator';
 @Entity()
-export class ${fileName} {
+export class \${1:${fileName}} {
   @PrimaryGeneratedColumn()
   id: number;
 
