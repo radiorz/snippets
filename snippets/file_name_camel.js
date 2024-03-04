@@ -1,23 +1,15 @@
-/**
- * file_name
- * @author
- * @file file_name.js
- * @fileBase file_name
- * @path snippets\file_name.js
- * @dir D:\code\snippets\snippets
- * @desc 如果是 index.* 则取他的目录名，如果是 xxx.* 那么取 xxx
- * @todo
- *
- * @done
- * @example
- */
-const body =
-  "${RELATIVE_FILEPATH/.*[\\\\|\\/](.*)[\\\\|\\/]index\\..*|.*[\\\\|\\/](.*)\\..*|(.*)\\..*/$1$2$3/}";
+const { TYPES } = require("../src/common/consts/types");
+const body = "${TM_FILENAME_BASE/(\\w+)\\.(.*)/${1:/camelcase}/}";
 const description = "";
 
 module.exports = {
-  prefix: ["!file_name_camel"],
-  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+  prefix: ["!fileName"],
+  type: [
+    TYPES.javascript,
+    TYPES.typescript,
+    TYPES.javascriptreact,
+    TYPES.typescriptreact,
+  ],
   description: description || body,
   origin: body,
   body: body.trim(),

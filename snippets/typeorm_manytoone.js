@@ -1,10 +1,12 @@
+// 暂时没找到$1转大写的方法
 const { TYPES } = require("../src/common/consts/types");
+const {origin: file_name_camel} = require("./file_name_camel");
 const body = `
 /**
  * 说明: 
  */
-@ManyToOne(() => $2, ($1) => $1.\${2:values})
-\${1:obj}: \${2:Type};
+@ManyToOne(() => \${1:ObjectType}, ($2) => $2.\${3:${file_name_camel}})
+\${2:object}: \${1:ObjectType};
 `;
 const description = "";
 

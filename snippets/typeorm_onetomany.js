@@ -1,7 +1,8 @@
 const { TYPES } = require("../src/common/consts/types");
+const { origin: file_name_camel } = require("./file_name_camel");
 const body = `
-    @OneToMany(() => $2, ($1) => $1.user)
-    \${1:object}s: \${2:Type}[]
+    @OneToMany(() => \${1:ObjectType}, ($2) => $2.${file_name_camel})
+    \${2:object}s: \${1:ObjectType}[]
 `;
 const description = "";
 
