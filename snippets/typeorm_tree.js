@@ -1,7 +1,9 @@
 const { TYPES } = require("../src/common/consts/types");
+const { origin: file_header } = require("./file_header");
 const { origin: fileName } = require("./file_name_big_camel");
 
 const body = `
+${file_header}
 import {Entity, Tree, Column, PrimaryGeneratedColumn, TreeChildren, TreeParent, TreeLevelColumn} from "typeorm";
 
 @Entity()

@@ -1,7 +1,9 @@
 const { origin: fileName } = require("./file_name_big_camel");
 const { TYPES } = require("../src/common/consts/types");
+const { origin: file_header } = require("./file_header");
 
 const body = `
+${file_header}
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 import { IsNotEmpty, IsOptional } from 'class-validator';
 @Entity()
