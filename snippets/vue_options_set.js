@@ -1,6 +1,6 @@
 const { TYPES } = require("../src/common/consts/types");
 const body = `
-  Vue.set(this.\${1},\`\${2:key}\`,\${3:undefined})
+  Vue.set(this.\${1:name},\`\${2:key}\`,\${3:undefined})
 `;
 const description = "";
 
