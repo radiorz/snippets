@@ -1,5 +1,6 @@
 const { TYPES } = require("../src/common/consts/types");
-const body = "${TM_FILENAME_BASE/(\\w+)\\.(.*)/${1:/capitalize}/}";
+const body =
+  "${TM_FILENAME_BASE/(^[A-Za-z]+).*?(\\.[^\\\\\\/]+)?$/${1:/capitalize}/}";
 const description = "";
 
 module.exports = {
