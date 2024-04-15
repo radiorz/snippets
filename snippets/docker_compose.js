@@ -1,5 +1,5 @@
 const body = `
-version:"3"
+version: "3"
 services:
   # ——————————————————————————————————————————————————————————
   \${1:containerName}:

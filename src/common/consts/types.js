@@ -22,6 +22,7 @@ const LANGUAGE_LABELS = [
   "vue",
   "xml",
   "yaml",
+  "nginx",
 ];
 function genLanguageObj(labels = LANGUAGE_LABELS) {
   const obj = {};
