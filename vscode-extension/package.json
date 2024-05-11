@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2024.3.2",
+  "version": "2024.5.11",
   "publisher": "tikkhun",
   "engines": {
     "vscode": "^1.69.0"
@@ -79,6 +79,10 @@
       {
         "language": "markdown",
         "path": "./snippets/markdown.json"
+      },
+      {
+        "language": "nginx",
+        "path": "./snippets/nginx.json"
       },
       {
         "language": "plaintext",
