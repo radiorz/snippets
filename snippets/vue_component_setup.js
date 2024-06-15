@@ -16,9 +16,9 @@
  */
 
 const { origin: fileName } = require("./file_name");
-const vueHeader = require("./vue_header");
+const { origin: vueHeader } = require("./vue_header");
 const body = `
-${vueHeader.origin}
+${vueHeader}
 <script>
   export default {
     name: \"\${2:${fileName}}\"
@@ -40,7 +40,7 @@ ${vueHeader.origin}
 const description = "";
 
 module.exports = {
-  prefix: ["!vue3", '!setup'],
+  prefix: ["!vue3", "!setup"],
   type: ["vue"],
   description: description || body,
   body: body.trim(),
