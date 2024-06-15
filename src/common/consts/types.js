@@ -23,6 +23,7 @@ const LANGUAGE_LABELS = [
   "xml",
   "yaml",
   "nginx",
+  "prisma",
 ];
 function genLanguageObj(labels = LANGUAGE_LABELS) {
   const obj = {};

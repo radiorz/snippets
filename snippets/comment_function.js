@@ -1,7 +1,8 @@
 const { TYPES } = require("../src/common/consts/types");
 const body = `
 /**
- * 说明: 函数用于
+ * @function $1 $2
+ * @description 函数用于
  * @param 
  * @returns
  * @example
