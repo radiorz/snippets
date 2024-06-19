@@ -22,7 +22,7 @@ const body = `
  * @fileBase ${filename}
  * @path $RELATIVE_FILEPATH
  * @from 
- * @desc $2
+ * @desc $0
  * @todo
  * 
  *
