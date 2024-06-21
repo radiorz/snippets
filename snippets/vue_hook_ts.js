@@ -3,10 +3,13 @@ const { origin: file_name } = require("./file_name");
 const body = `${fileHeader}
 import { ref } from "vue";
 
-export const default$2Options = {
+export interface \${2:${file_name_big_camel}}Options {
+}
+
+export const default$2Options: $2Options = {
 };
 
-export function \${1:${file_name}}(options = {}) {
+export function \${1:${file_name}}(options: Partial<$2Options> = {}) {
   const opts = { ...default$2Options, ...options };
   const \${3:value}  = ref(null);
 
@@ -18,7 +21,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!vhook"],
-  type: ["javascript", "javascriptreact"],
+  type: ["typescript", "typescriptreact"],
   description: description || body,
   body: body.trim(),
 };
