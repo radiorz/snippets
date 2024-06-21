@@ -4,13 +4,12 @@ const { origin: file_name_big_camel } = require("./file_name_big_camel");
 const body = `${fileHeader}
 import { useState, useEffect } from "react";
 // import { useDispatch } from "react-redux";
-export interface \${2:${file_name_big_camel}}Options {
-}
 
-export const default$2Options: $2Options = {
+
+export const default$2Options = {
 };
 
-export default function \${1:${file_name}}(options: Partial<$2Options> = {}) {
+export default function \${1:${file_name}}(options= {}) {
   const opts = { ...default$2Options, ...options };
   const [\${3:value}] = useState(null);
 
@@ -22,7 +21,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!hook", "!rhook"],
-  type: ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+  type: ["javascript", "javascriptreact"],
   description: description || body,
   body: body.trim(),
 };

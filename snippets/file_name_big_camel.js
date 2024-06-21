@@ -19,4 +19,3 @@ module.exports = {
   origin: body,
   body: body.trim(),
 };
-!vue
