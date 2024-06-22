@@ -19,13 +19,16 @@ const { origin: fileName } = require("./file_name");
 const vueHeader = require("./vue_header");
 const body = `
 ${vueHeader.origin}
-<script lang="ts">
-  export default {
-    name: \"\${2:${fileName}}\"
-  };
-</script>
 <script setup lang="ts">
-  
+  defineOptions({
+    name: \"\${2:${fileName}}\"
+  })
+  defineProps<{
+    foo: string
+  }>()
+  defineEmits<{
+    (event:'change'):void
+  }>()
 </script>
 
 <template>

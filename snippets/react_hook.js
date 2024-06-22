@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 // import { useDispatch } from "react-redux";
 
 
-export const default$2Options = {
+export const default\${2:${file_name_big_camel}}Options = {
 };
 
 export default function \${1:${file_name}}(options= {}) {
