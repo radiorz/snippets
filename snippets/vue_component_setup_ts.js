@@ -29,9 +29,10 @@ export interface Props {
 const props = withDefaults(defineProps<Props>(),{
   foo: ''
 })
-const emits = defineEmits<{
-  (event:'change'):void
-}>()
+export interface Emits {
+  (e:'change', value: number): void
+}
+const emit = defineEmits<Emits>()
 </script>
 
 <template>
