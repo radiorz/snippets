@@ -1,17 +1,23 @@
 const { TYPES } = require("../src/common/consts/types");
 const body = `
-#ifndef __\${1:HELLO_H}__
-#define __\${1:HELLO_H}__
-
-$2
-
+// 变成c 才能被调用
+#ifdef __cplusplus
+extern "C"
+{
 #endif
+namespace $1 {
+  $2
+
+}
+
+#ifdef __cplusplus
+}
 `;
 const description = "";
 
 module.exports = {
-  prefix: ["!ifndef"],
-  type: [TYPES.c, TYPES.cpp],
+  prefix: ["!hc"],
+  type: [TYPES.cpp],
   description: description || body,
   body: body.trim(),
 };
