@@ -20,15 +20,18 @@ const vueHeader = require("./vue_header");
 const body = `
 ${vueHeader.origin}
 <script setup lang="ts">
-  defineOptions({
-    name: \"\${2:${fileName}}\"
-  })
-  defineProps<{
-    foo: string
-  }>()
-  defineEmits<{
-    (event:'change'):void
-  }>()
+defineOptions({
+  name: \"\${2:${fileName}}\"
+})
+export interface Props {
+  foo: string
+}
+const props = withDefaults(defineProps<Props>(),{
+  foo: ''
+})
+const emits = defineEmits<{
+  (event:'change'):void
+}>()
 </script>
 
 <template>

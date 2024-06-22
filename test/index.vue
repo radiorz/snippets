@@ -1,29 +1,38 @@
-<!--,  
-* @file 该文件的描述信息,
-* @Date 2022年07月16日 15:02:52,  
-* TODO,  
-* [] ,  * @example,  * ,-->
+<!--
+ 
+/**
+ * @author
+ * @file index.vue
+ * @fileBase index
+ * @path test\index.vue
+ * @from 
+ * @desc 
+ * @todo
+ * 
+ *
+ * @done
+ * @example
+ */
 
-<script>
+-->
 
-export default {
-  name: "",
-   watch:{
-    value: {
-      handler(newVal,oldVal) {
-        console.log(newVal);
-      },
-      // deep: true,
-      // immediate: true
-    }
-   }
-};
+<script setup lang="ts">
+defineOptions({
+  name: "index",
+});
+export interface Props {
+  foo: string;
+}
+const props = withDefaults(defineProps<Props>(), {
+  foo: "",
+});
+const emits = defineEmits<{
+  (event: "change"): void;
+}>();
 </script>
-<script setup></script>
 
 <template>
-  <div class=""></div>
+  <div class="index">index</div>
 </template>
 
 <style lang="scss" scoped></style>
-"
