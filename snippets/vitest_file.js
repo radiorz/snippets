@@ -9,7 +9,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!vitest"],
-  type: [TYPES.javascript],
+  type: [TYPES.javascript, TYPES.typescript],
   description: description || body,
   body: body.trim(),
 };
