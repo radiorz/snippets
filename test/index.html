@@ -1,13 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
-  <script>
-   
-  </script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+  .heart {
+    width: 200px;
+    height:200px;
+    background: red;
+    transform: rotate(45deg)
+  }
+  .heart::after {
+    content: '';
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    background: blue;
+    transform: translateX(-100px);
+  }
+  .heart::before {
+    content: '';
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    background: red;
+    transform: translateY(-100px)
+  }
+  </style>
+</head>
+
+<body>
+  <div class="heart">.box</div>
+</body>
+<script>
+
+</script>
+
 </html>
