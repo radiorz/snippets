@@ -3,6 +3,8 @@ const LANGUAGE_LABELS = [
   "c",
   "cpp",
   "css",
+  "sass",
+  "scss",
   "go",
   "html",
   "java",

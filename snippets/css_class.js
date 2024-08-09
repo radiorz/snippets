@@ -8,7 +8,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!class",'..'],
-  type: [TYPES.css],
+    type: [TYPES.css, TYPES.sass, TYPES.scss],
   description: description || body,
   body: body.trim(),
 };
