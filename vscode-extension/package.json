@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2024.5.11",
+  "version": "2024.8.9",
   "publisher": "tikkhun",
   "engines": {
     "vscode": "^1.69.0"
@@ -91,6 +91,10 @@
       {
         "language": "powershell",
         "path": "./snippets/powershell.json"
+      },
+      {
+        "language": "prisma",
+        "path": "./snippets/prisma.json"
       },
       {
         "language": "rust",
