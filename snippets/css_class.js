@@ -7,8 +7,8 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!class"],
-  type: [TYPES.javascript],
+  prefix: ["!class",'..'],
+  type: [TYPES.css],
   description: description || body,
   body: body.trim(),
 };

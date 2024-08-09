@@ -30,7 +30,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!heart"],
-  type: [TYPES.javascript],
+  type: [TYPES.css],
   description: description || body,
   body: body.trim(),
 };

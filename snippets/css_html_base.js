@@ -9,7 +9,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!html"],
-  type: [TYPES.javascript],
+  type: [TYPES.css],
   description: description || body,
   body: body.trim(),
 };

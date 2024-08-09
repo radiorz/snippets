@@ -9,7 +9,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!after"],
-  type: [TYPES.javascript],
+  type: [TYPES.css],
   description: description || body,
   body: body.trim(),
 };

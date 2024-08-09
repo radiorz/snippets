@@ -10,7 +10,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!flex_center"],
-  type: [TYPES.javascript],
+  type: [TYPES.css],
   description: description || body,
   body: body.trim(),
 };
