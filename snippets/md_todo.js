@@ -4,7 +4,7 @@ const body = `
 # TODO
 - $1
 # DONE
-${md_current_day}
+## ${md_current_day}
 - 
 # FUTURE
 `;
