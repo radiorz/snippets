@@ -1,9 +1,9 @@
 /**
- * @TODO
- * - 暂时保留# 虽然@是蓝色显示
- * @DONE
+ * # TODO
+ * # DONE
  * ## 20240912 星期四
- * @FUTURE
+ * - 暂时保留# 虽然@是蓝色显示
+ * # FUTURE
  */
 const { TYPES } = require("../src/common/consts/types");
 const { LANGUAGE_LABELS } = require("../src/common/consts/types");
