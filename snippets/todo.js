@@ -1,4 +1,12 @@
+/**
+ * @TODO
+ * - 暂时保留# 虽然@是蓝色显示
+ * @DONE
+ * ## 20240912 星期四
+ * @FUTURE
+ */
 const { TYPES } = require("../src/common/consts/types");
+const { LANGUAGE_LABELS } = require("../src/common/consts/types");
 const { body: today } = require("./today");
 const body = `
 \${BLOCK_COMMENT_START}* 
@@ -13,7 +21,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!todo"],
-  type: [TYPES.javascript, TYPES.typescript],
+  type: LANGUAGE_LABELS.filter((language) => language !== TYPES.markdown),
   description: description || body,
   body: body.trim(),
 };

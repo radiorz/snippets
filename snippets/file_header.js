@@ -23,10 +23,6 @@ const body = `
  * @path $RELATIVE_FILEPATH
  * @from 
  * @desc $10
- * @todo
- * 
- *
- * @done
  * @example
  */
 `;

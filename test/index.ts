@@ -3,26 +3,19 @@
  * @file index.ts
  * @fileBase index
  * @path test\index.ts
- * @from 
- * @desc 
+ * @from
+ * @desc
  * @todo
- * 
+ *
  *
  * @done
  * @example
  */
 
-import { ref } from "vue";
-
-export interface indexOptions {
+import React, { useState, useEffect, memo } from "react";
+interface Props {
+  // value: propTypes.any
 }
-
-export const defaultindexOptions: indexOptions = {
+export const I: React.FC<Props> = () => {
+  return <div>123</div>;
 };
-
-export function index(options: Partial<indexOptions> = {}) {
-  const opts = { ...defaultindexOptions, ...options };
-  const value  = ref(null);
-
-  return {value};
-}

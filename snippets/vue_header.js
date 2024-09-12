@@ -7,11 +7,6 @@
  * @desc
  *  vue 的文件头部标注
  *  采用了统一的 file_header 标准
- *  
- * @todo
-
- *
- * @done
  * @example
  */
 const { origin: fileHeader } = require("./file_header");

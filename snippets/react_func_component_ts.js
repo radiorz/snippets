@@ -5,7 +5,7 @@ import { useState, useEffect, memo } from "react"
 interface Props {
   // value: propTypes.any
 }
-function \${1:${fileName}}() {
+export const \${1:${fileName}}:React.FC<Props> = ()=> {
   return (
     <div>
       \${1}
@@ -13,7 +13,6 @@ function \${1:${fileName}}() {
   )
 }
 
-export default \${1}
 
 `;
 
