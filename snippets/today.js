@@ -5,8 +5,14 @@ $CURRENT_YEAR$CURRENT_MONTH$CURRENT_DATE $CURRENT_DAY_NAME
 const description = "";
 
 module.exports = {
-  prefix: ["!current_day", "!day"],
-  type: [TYPES.markdown],
+  prefix: ["!today"],
+  type: [
+    TYPES.markdown,
+    TYPES.javascript,
+    TYPES.typescript,
+    TYPES.typescriptreact,
+    TYPES.javascriptreact,
+  ],
   description: description || body,
   body: body.trim(),
 };
