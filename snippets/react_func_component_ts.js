@@ -2,7 +2,7 @@ const { origin: fileHeader } = require("./file_header");
 const { origin: fileName } = require("./file_name");
 const body = `${fileHeader}
 import { useState, useEffect, memo } from "react"
-interface Props {
+export interface \${1}Props {
   // value: propTypes.any
 }
 export const \${1:${fileName}}:React.FC<Props> = ()=> {
