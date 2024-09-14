@@ -11,7 +11,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!icu"],
-  type: [TYPES.javascript],
+  type: [TYPES.typescript],
   description: description || body,
   body: body.trim(),
 };
