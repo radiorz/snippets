@@ -2,16 +2,16 @@ const { origin: fileHeader } = require("./file_header");
 const { origin: fileName } = require("./file_name");
 
 const body = `${fileHeader}
-export interface Options {
+export interface $1Options {
 
 }
-export const DEFAULT_OPTIONS = {
 
-};
 export class \${1:${fileName}} {
-  options: Options;
-  constructor(options?: Partial<Options>) {
-    this.options = Object.assign(DEFAULT_OPTIONS, options);
+  static defaultOptions:$1Options = {
+  }
+  options: $1Options
+  constructor(options?: Partial<$1Options>) {
+    this.options = Object.assign($1.defaultOptions, options);
   }
 }
 
