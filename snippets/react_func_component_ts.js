@@ -5,7 +5,7 @@ import { useState, useEffect, memo } from "react"
 export interface \${1}Props {
   // value: propTypes.any
 }
-export const \${1:${fileName}}:React.FC<Props> = ()=> {
+export const \${1:${fileName}}:React.FC<\${1}Props> = ()=> {
   return (
     <div>
       \${1}
