@@ -11,7 +11,7 @@ export class \${1:${fileName}} {
   }
   options: $1Options
   constructor(options?: Partial<$1Options>) {
-    this.options = Object.assign($1.defaultOptions, options);
+    this.options = Object.assign({}, $1.defaultOptions, options);
   }
 }
 
