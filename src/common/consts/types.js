@@ -14,6 +14,7 @@ const LANGUAGE_LABELS = [
   "makefile",
   "markdown",
   "plaintext",
+  'plantuml',
   "powershell",
   "sass",
   "scss",
