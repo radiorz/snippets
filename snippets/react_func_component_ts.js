@@ -12,6 +12,8 @@ export const \${1:${fileName}}:React.FC<\${1}Props> = ()=> {
     </div>
   )
 }
+// 默认导出
+export default $1
 
 
 `;
