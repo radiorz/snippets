@@ -7,8 +7,9 @@ export interface $1Options {
 }
 
 export class \${1:${fileName}} {
-  static defaultOptions:$1Options = {
-  }
+  static defaultOptions:$1Options = Object.freeze({
+  
+  })
   options: $1Options
   constructor(options?: Partial<$1Options>) {
     this.options = Object.assign({}, $1.defaultOptions, options);
