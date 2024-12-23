@@ -9,12 +9,14 @@ import { useState, useEffect } from "react";
 export const default\${2:${file_name_big_camel}}Options = {
 };
 
-export default function \${1:${file_name}}(options= {}) {
+export function \${1:${file_name}}(options= {}) {
   const opts = { ...default$2Options, ...options };
   const [\${3:value}] = useState(null);
 
   return {\$3};
 }
+
+export default \${1:${file_name}}
 
 `;
 const description = "";
