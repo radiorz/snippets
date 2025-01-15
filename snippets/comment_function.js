@@ -16,7 +16,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!comment_function","!func"],
-  type: [TYPES.typescript,TYPES.javascript],
+  type: [TYPES.typescript,TYPES.javascript,TYPES.typescriptreact,TYPES.javascriptreact],
   description: description || body,
   body: body.trim(),
 };

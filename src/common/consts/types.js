@@ -14,7 +14,7 @@ const LANGUAGE_LABELS = [
   "makefile",
   "markdown",
   "plaintext",
-  'plantuml',
+  "plantuml",
   "powershell",
   "sass",
   "scss",
@@ -27,7 +27,7 @@ const LANGUAGE_LABELS = [
   "yaml",
   "nginx",
   "prisma",
-  "python"
+  "python",
 ];
 function genLanguageObj(labels = LANGUAGE_LABELS) {
   const obj = {};
@@ -37,4 +37,10 @@ function genLanguageObj(labels = LANGUAGE_LABELS) {
   return obj;
 }
 const TYPES = genLanguageObj();
-module.exports = { TYPES, LANGUAGE_LABELS };
+const JS_LIKE = [
+  TYPES.typescript,
+  TYPES.javascript,
+  TYPES.typescriptreact,
+  TYPES.javascriptreact,
+];
+module.exports = { TYPES, LANGUAGE_LABELS, JS_LIKE };
