@@ -5,11 +5,11 @@ async function bootstrap(){
 }
 bootstrap()
 `;
-const description = "";
+const description = "";4
 
 module.exports = {
   prefix: ["!bootstrap"],
-  type: [TYPES.javascript,TYPES.typescript],
+  type: [TYPES.javascript,TYPES.typescript,TYPES.typescriptreact,TYPES.javascriptreact],
   description: description || body,
   body: body.trim(),
 };
