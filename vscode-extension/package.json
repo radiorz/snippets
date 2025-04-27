@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2024.9.14",
+  "version": "2025.2.14",
   "publisher": "tikkhun",
   "engines": {
     "vscode": "^1.69.0"
@@ -89,12 +89,20 @@
         "path": "./snippets/plaintext.json"
       },
       {
+        "language": "plantuml",
+        "path": "./snippets/plantuml.json"
+      },
+      {
         "language": "powershell",
         "path": "./snippets/powershell.json"
       },
       {
         "language": "prisma",
         "path": "./snippets/prisma.json"
+      },
+      {
+        "language": "python",
+        "path": "./snippets/python.json"
       },
       {
         "language": "rust",
@@ -111,6 +119,10 @@
       {
         "language": "shellscript",
         "path": "./snippets/shellscript.json"
+      },
+      {
+        "language": "typescript,javascript,typescriptreact,javascriptreact",
+        "path": "./snippets/typescript,javascript,typescriptreact,javascriptreact.json"
       },
       {
         "language": "typescript",
