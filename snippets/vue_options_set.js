@@ -5,7 +5,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!vueSet"],
+  prefix: ["!vSet"],
   type: [TYPES.javascript, TYPES.typescript],
   description: description || body,
   body: body.trim(),

@@ -7,7 +7,7 @@ node_modules**
 const description = "";
 
 module.exports = {
-  prefix: ["!vue"],
+  prefix: ["!v"],
   type: ["ignore"],
   description: description || body,
   body: body.trim(),
