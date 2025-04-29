@@ -21,7 +21,7 @@ export function \${1:${file_name}}(options: Partial<$2Options> = {}) {
 const description = "";
 
 module.exports = {
-  prefix: ["!vhook"],
+  prefix: ["!vhook", "!vue_hook"],
   type: ["typescript", "typescriptreact"],
   description: description || body,
   body: body.trim(),

@@ -18,7 +18,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!v2_directive",'!zl2'],
+  prefix: ["!directive_v2",'!zl2'],
   type: ["javascript"],
   description: description || body,
   body: body.trim(),

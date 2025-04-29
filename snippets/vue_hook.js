@@ -18,7 +18,7 @@ export function \${1:${file_name}}(options = {}) {
 const description = "";
 
 module.exports = {
-  prefix: ["!vhook"],
+  prefix: ["!vhook","!vue_hook"],
   type: ["javascript", "javascriptreact"],
   description: description || body,
   body: body.trim(),

@@ -3,7 +3,7 @@
  * @file vue_header.js
  * @fileBase vue_header
  * @path snippets\vue_header.js
- * @from 
+ * @from
  * @desc
  *  vue 的文件头部标注
  *  采用了统一的 file_header 标准
@@ -18,7 +18,7 @@ const body = `
 const description = "";
 
 module.exports = {
-  prefix: ["!header",'!vh'],
+  prefix: ["!header", "!vueh", "!h"],
   type: ["vue"],
   description: description || body,
   origin: body,

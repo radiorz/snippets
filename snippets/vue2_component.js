@@ -36,7 +36,7 @@ export default {
 const description = "vue2";
 
 module.exports = {
-  prefix: ["!v2"],
+  prefix: ["!v2",'!vue2'],
   type: ["vue"],
   description: description || body,
   body,

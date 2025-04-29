@@ -36,7 +36,7 @@ export default defineComponent({
 const description = "";
 
 module.exports = {
-  prefix: ["!vo", "!option",'!o'],
+  prefix: ["!vueo","!vo", "!option",'!o'],
   type: ["vue"],
   description: description || body,
   body: body.trim(),
