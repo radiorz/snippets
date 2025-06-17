@@ -1,4 +1,4 @@
-const body = `console.log(\`\$1\`,\$1, \${TM_FILENAME},\${TM_LINE_INDEX})`;
+const body = `console.log(\`\$1\`,\$1, "\${TM_FILENAME}",\${TM_LINE_INDEX})`;
 
 module.exports = {
   key: "console_log",
