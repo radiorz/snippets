@@ -5,6 +5,7 @@ const body = `
 ${vueHeader.origin}
 <script>
 import { defineComponent } from 'vue'
+
 export default defineComponent({
   name: '\${2:${fileName.origin}}',
   // components: {},

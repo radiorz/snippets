@@ -7,32 +7,37 @@
  * @path test\index.vue
  * @from 
  * @desc 
- * @todo
- * 
- *
- * @done
  * @example
  */
 
 -->
 
-<script setup lang="ts">
-defineOptions({
-  name: "index",
-});
-export interface Props {
-  foo: string;
-}
-const props = withDefaults(defineProps<Props>(), {
-  foo: "",
-});
-const emits = defineEmits<{
-  (event: "change"): void;
-}>();
+<script>
+import { defineComponent } from 'vue'
+export default defineComponent({
+  name: 'index',
+  // components: {},
+  props: {},
+  // 从组件触发 emits 事件
+  // emits:[],
+  // 暴露
+  // expose: {},
+  setup(props,ctx){
+
+  },
+  data() {
+    return {}
+  }
+  // computed:{},
+  // watch:{},
+  // created(){},
+  // methods:{}
+})
 </script>
 
 <template>
-  <div class="index">index</div>
+  <div class="">
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
