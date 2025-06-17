@@ -10,7 +10,7 @@ onUnmounted(() => window.removeEventListener('$1',  on$1))
 const description = "";
 
 module.exports = {
-  prefix: ["!vue3_listener"],
+  prefix: ["!v3_listener"],
   type: [TYPES.javascript],
   description: description || body,
   body: body.trim(),

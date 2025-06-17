@@ -24,7 +24,7 @@ const myDirective = {
 const description = "";
 
 module.exports = {
-  prefix: ["!vue3_directive","!zl3"],
+  prefix: ["!directive_v3","!zl3"],
   type: ["javascript"],
   description: description || body,
   body: body.trim(),

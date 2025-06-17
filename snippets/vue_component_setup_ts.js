@@ -48,7 +48,7 @@ const emit = defineEmits<Emits>()
 const description = "";
 
 module.exports = {
-  prefix: ["!vue3t"],
+  prefix: ["!v3t",'!vue3t'],
   type: ["vue"],
   description: description || body,
   body: body.trim(),

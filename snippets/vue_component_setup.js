@@ -40,7 +40,7 @@ ${vueHeader}
 const description = "";
 
 module.exports = {
-  prefix: ["!vue3", "!setup"],
+  prefix: ["!vue3", "!v3", "!setup"],
   type: ["vue"],
   description: description || body,
   body: body.trim(),
