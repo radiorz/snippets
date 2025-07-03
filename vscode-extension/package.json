@@ -2,7 +2,7 @@
   "name": "tikkhun-vscode-snippets",
   "displayName": "tikkhun-vscode-snippets",
   "description": "tikkhun-vscode-snippets",
-  "version": "2025.2.14",
+  "version": "2025.7.3",
   "publisher": "tikkhun",
   "engines": {
     "vscode": "^1.69.0"
@@ -119,10 +119,6 @@
       {
         "language": "shellscript",
         "path": "./snippets/shellscript.json"
-      },
-      {
-        "language": "typescript,javascript,typescriptreact,javascriptreact",
-        "path": "./snippets/typescript,javascript,typescriptreact,javascriptreact.json"
       },
       {
         "language": "typescript",
