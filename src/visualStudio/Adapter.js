@@ -42,9 +42,13 @@ class Adapter {
     logger.info("开始生成");
     const snippetOptions = SnippetGetter.get();
     snippetOptions.forEach((snippetOption = {}) => {
-      const types = isArray(snippetOption.type)
+      let types = isArray(snippetOption.type)
         ? snippetOption.type
         : [snippetOption.type];
+      if (types.length === 0) {
+        logger.error("没有类型,无法生成", snippetOption);
+        return;
+      }
       types.forEach((type) => {
         const fileType = languageFileMap[type];
         if (!fileType) {

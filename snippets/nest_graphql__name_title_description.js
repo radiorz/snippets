@@ -13,7 +13,7 @@ const description = "";
 
 module.exports = {
   prefix: ["!ntd"],
-  type: [TYPES.tyepscript],
+  type: [TYPES.typescript],
   description: description || body,
   body: body.trim(),
 };
