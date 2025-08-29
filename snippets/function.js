@@ -8,7 +8,12 @@ const description = "";
 
 module.exports = {
   prefix: ["!fn", "fn", "func"],
-  type: [TYPES.javascript, TYPES.typescript],
+  type: [
+    TYPES.typescript,
+    TYPES.javascript,
+    TYPES.typescriptreact,
+    TYPES.javascriptreact,
+  ],
   description: description || body,
   body: body.trim(),
 };
